@@ -1,0 +1,55 @@
+{
+    "compilerOptions": {
+        /* Emit */
+        "target": "es2022",
+        "module": "Commonjs",
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "jsx": "react-native",
+        "rootDir": "src",
+        "outDir": "lib",
+        "declaration": true,
+        "removeComments": true,
+        "sourceMap": true,
+        /* Type Checking */
+        "allowUnreachableCode": false,
+        "noImplicitReturns": true,
+        "noUncheckedIndexedAccess": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "strict": true,
+        // Set the same strict mode options that are required for packages
+        // published in the @types namespace.
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        /* Modules */
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": ".",
+        "types": [
+            "node",
+            "@docusaurus/module-type-aliases",
+        ],
+        /* Plugins */
+        "plugins": [
+            {
+                // TODO(dnguyen0304): Consider setting the classnameTransform
+                // option so we can use standard CSS naming conventions instead
+                // of camelCase.
+                "name": "typescript-plugin-css-modules",
+            },
+        ],
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/lib/**/*",
+        "**/__tests__/**",
+    ]
+}

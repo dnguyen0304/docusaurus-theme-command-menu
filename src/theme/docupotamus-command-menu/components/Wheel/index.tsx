@@ -1,3 +1,4 @@
+import { SlotData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
@@ -21,17 +22,50 @@ export default function Wheel({ sx }: Props): JSX.Element {
     // TODO(dnguyen0304): Fix missing responsive design.
     // TODO(dnguyen0304): Investigate changing to use vmax or vmin so width and
     //   height are relative to the same unit.
-    const slots = [
-        { sx: { translate: '0 -100%' } },
-        { sx: { translate: '150% -30%' } },
-        { sx: { translate: '80% 100%' } },
-        { sx: { translate: '-80% 100%' } },
-        { sx: { translate: '-150% -30%' } },
+    const slots: SlotData[] = [
+        {
+            description: '',
+            heading: 'Heading',
+            snippet: 'Snippet',
+            sx: { translate: '0 -100%' }
+        },
+        {
+            description: '',
+            heading: 'Heading',
+            snippet: 'Snippet',
+            sx: { translate: '150% -30%' }
+        },
+        {
+            description: '',
+            heading: 'Heading',
+            snippet: 'Snippet',
+            sx: { translate: '80% 100%' }
+        },
+        {
+            description: '',
+            heading: 'Heading',
+            snippet: 'Snippet',
+            sx: { translate: '-80% 100%' }
+        },
+        {
+            description: '',
+            heading: 'Heading',
+            snippet: 'Snippet',
+            sx: { translate: '-150% -30%' }
+        },
     ];
 
     return (
         <StyledBox sx={{ ...sx }}>
-            {slots.map((slot, index) => <Slot index={index} sx={slot.sx} />)}
+            {slots.map((slot, index) => (
+                <Slot
+                    index={index}
+                    description={slot.description}
+                    heading={slot.heading}
+                    snippet={slot.snippet}
+                    sx={slot.sx}
+                />
+            ))}
         </StyledBox>
     );
 };

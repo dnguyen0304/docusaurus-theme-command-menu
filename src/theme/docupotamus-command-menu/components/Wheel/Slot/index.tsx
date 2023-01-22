@@ -1,5 +1,6 @@
+import { SlotData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
-import { styled, SxProps, Theme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import * as React from 'react';
 
 const StyledBox = styled(Box)({
@@ -18,20 +19,24 @@ const StyledBox = styled(Box)({
     // boxShadow: '10px 10px 10px rgba(46, 54, 68, 0.03)',
 });
 
-interface Props {
+interface Props extends SlotData {
     readonly index: number;
-    readonly sx?: SxProps<Theme>;
 };
 
 export default function Slot(
     {
         index,
+        description,
         sx,
     }: Props,
 ): JSX.Element {
     return (
-        <StyledBox sx={{ ...sx }}>
-            {`Slot ${index}`}
+        <StyledBox
+            component='section'
+            sx={{ ...sx }}
+        >
+            <h2>{description || `Slot ${index}`}</h2>
+            <p></p>
         </StyledBox>
     );
 };

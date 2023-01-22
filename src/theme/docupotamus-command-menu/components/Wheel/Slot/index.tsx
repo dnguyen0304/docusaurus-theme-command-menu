@@ -4,6 +4,9 @@ import { styled } from '@mui/material/styles';
 import * as React from 'react';
 
 const StyledBox = styled(Box)({
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
     width: '100%',
     height: '100%',
 
@@ -35,8 +38,8 @@ export default function Slot(
             component='section'
             sx={{ ...sx }}
         >
-            <h2>{description || `Slot ${index}`}</h2>
-            <p></p>
+            <h2 style={{ margin: 0 }}>{description || `Slot ${index}`}</h2>
+            <p style={{ margin: 'auto 0' }}>Heading: snippet</p>
         </StyledBox>
     );
 };

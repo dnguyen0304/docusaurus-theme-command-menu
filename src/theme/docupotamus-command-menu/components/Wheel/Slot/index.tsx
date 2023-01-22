@@ -1,6 +1,7 @@
 import { SlotData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
 import * as React from 'react';
 import styles from './styles.module.css';
 
@@ -38,12 +39,26 @@ export default function Slot(
         sx,
     }: Props,
 ): JSX.Element {
+    const [value, setValue] =
+        React.useState<string>(description || `Slot ${index}`);
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(event.target.value);
+    };
+
     return (
         <StyledBox
             component='section'
             sx={{ ...sx }}
         >
-            <h2 style={{ margin: 0 }}>{description || `Slot ${index}`}</h2>
+            <h2 style={{ margin: 0 }}>
+                <TextField
+                    autoComplete='off'
+                    onChange={handleChange}
+                    value={value}
+                    variant='outlined'
+                />
+            </h2>
             <p style={{ margin: 'auto 0' }}>
                 <span className={styles.Slot_heading}>{heading}: </span>
                 <span>{snippet}</span>

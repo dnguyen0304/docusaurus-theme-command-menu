@@ -51,7 +51,7 @@ export default function Slot(
             component='section'
             sx={{ ...sx }}
         >
-            <h2 style={{ margin: 0 }}>
+            <h2 className={styles.Slot_description}>
                 <TextField
                     autoComplete='off'
                     onChange={handleChange}

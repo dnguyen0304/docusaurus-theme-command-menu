@@ -17,6 +17,7 @@ const StyledModal = styled(Modal)({
 });
 
 const GridContainer = styled(Box)({
+    height: '100vh',
     display: 'grid',
     gridTemplate: 'auto 1fr auto / auto 1fr auto',
     gridTemplateAreas:

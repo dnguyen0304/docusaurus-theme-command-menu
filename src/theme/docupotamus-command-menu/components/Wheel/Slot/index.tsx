@@ -2,6 +2,7 @@ import { SlotData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
+import styles from './styles.module.css';
 
 const StyledBox = styled(Box)({
     display: 'flex',
@@ -32,6 +33,8 @@ export default function Slot(
     {
         index,
         description,
+        heading,
+        snippet,
         sx,
     }: Props,
 ): JSX.Element {
@@ -41,7 +44,10 @@ export default function Slot(
             sx={{ ...sx }}
         >
             <h2 style={{ margin: 0 }}>{description || `Slot ${index}`}</h2>
-            <p style={{ margin: 'auto 0' }}>Heading: snippet</p>
+            <p style={{ margin: 'auto 0' }}>
+                <span className={styles.Slot_heading}>{heading}: </span>
+                <span>{snippet}</span>
+            </p>
         </StyledBox>
     );
 };

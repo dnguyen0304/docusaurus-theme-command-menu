@@ -12,9 +12,10 @@ const StyledBox = styled(Box)({
 
     position: 'absolute',
 
+    borderRadius: 'var(--space-m)',
     // TODO(dnguyen0304): Remove development code.
     outline: '2px solid red',
-    padding: 'var(--space-s)',
+    padding: 'var(--space-m)',
 
     // backgroundColor: 'rgba(255, 255, 255, 0.01)',
     // backdropFilter: 'blur(40px)',

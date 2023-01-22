@@ -26,6 +26,12 @@ const StyledBox = styled(Box)({
     // boxShadow: '10px 10px 10px rgba(46, 54, 68, 0.03)',
 });
 
+const StyledTextField = styled(TextField)({
+    '& .MuiInputBase-input': {
+        padding: 0,
+    },
+});
+
 interface Props extends SlotData {
     readonly index: number;
 };
@@ -52,7 +58,7 @@ export default function Slot(
             sx={{ ...sx }}
         >
             <h2 className={styles.Slot_description}>
-                <TextField
+                <StyledTextField
                     autoComplete='off'
                     onChange={handleChange}
                     value={value}

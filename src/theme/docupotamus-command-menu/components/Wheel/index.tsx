@@ -11,9 +11,6 @@ const StyledBox = styled(Box)({
 
     position: 'relative',
     placeSelf: 'center',
-
-    // TODO(dnguyen0304): Remove development code.
-    backgroundColor: 'red',
 });
 
 interface Props {

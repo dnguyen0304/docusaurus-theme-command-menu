@@ -84,10 +84,7 @@ export default function Slot(
                     variant='outlined'
                 />
             </h2>
-            <p
-                className={styles.Slot_snippet}
-                style={{ margin: 'auto 0' }}
-            >
+            <p className={styles.Slot_snippet} >
                 {snippet}
             </p>
             <ButtonGroup />

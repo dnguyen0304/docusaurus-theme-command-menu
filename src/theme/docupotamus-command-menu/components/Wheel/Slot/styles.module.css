@@ -36,6 +36,7 @@
 
 .Slot_description {
     margin: 0;
+    margin-bottom: var(--space-3xs);
 }
 
 .Slot_snippet {

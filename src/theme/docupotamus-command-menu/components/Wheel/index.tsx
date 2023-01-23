@@ -27,32 +27,32 @@ export default function Wheel({ sx }: Props): JSX.Element {
     const slots: SlotData[] = [
         {
             description: '',
-            heading: 'Heading',
-            snippet: 'Snippet',
+            heading: 'Dimensions',
+            snippet: 'between 996px and 1440px',
             sx: { translate: '0 -80%' }
         },
         {
             description: '',
-            heading: 'Heading',
+            heading: 'Latin',
             snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             sx: { translate: '130% -30%' }
         },
         {
             description: '',
-            heading: 'Heading',
-            snippet: 'Snippet',
+            heading: 'useReduce hook',
+            snippet: 'const [state, dispatch] = useReducer(reducer, initialState);',
             sx: { translate: '70% 90%' }
         },
         {
             description: '',
-            heading: 'Heading',
-            snippet: 'Snippet',
+            heading: 'Environment',
+            snippet: 'CLIENT_ID, CLIENT_SECRET, REFERER_ALLOWLIST',
             sx: { translate: '-70% 90%' }
         },
         {
             description: '',
-            heading: 'Heading',
-            snippet: 'Snippet',
+            heading: 'Last Position Shortcut',
+            snippet: 'shift + ctrl + left',
             sx: { translate: '-130% -30%' }
         },
     ];

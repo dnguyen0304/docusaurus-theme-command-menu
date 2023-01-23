@@ -28,6 +28,16 @@ const StyledCard = styled(Box)({
 
     borderRadius: 'var(--space-m)',
     padding: 'var(--space-m)',
+    // TODO(dnguyen0304): Investigate improving performance.
+    '&:hover': {
+        backdropFilter: 'blur(6px) saturate(100%) brightness(200%)',
+        boxShadow: `
+            0px 0px 24px 0px rgba(136, 165, 191, 0.7),
+            0px 0px 24px 0px rgba(255, 255, 255, 0.9)
+        `,
+        transition: 'all 1s ease-in-out',
+        transitionProperty: 'backdrop-filter, box-shadow',
+    },
 });
 
 const StyledTextField = styled(TextField)({

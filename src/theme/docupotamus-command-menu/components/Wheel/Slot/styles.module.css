@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;600&display=swap');
+
+.Slot_card {
+    font-family: 'Karla', sans-serif;
+    font-size: var(--step--1);;
+    line-height: 1.2;
+}
+
 .Slot_description {
     margin: 0;
 }
 
 .Slot_heading {
-    font-weight: bold;
+    font-weight: 600;
+}
+
+.Slot_snippet {
+    font-weight: 200;
 }

@@ -58,6 +58,7 @@ export default function Slot(
 
     return (
         <StyledCard
+            className={styles.Slot_card}
             component='section'
             sx={{ ...sx }}
         >
@@ -71,7 +72,7 @@ export default function Slot(
             </h2>
             <p style={{ margin: 'auto 0' }}>
                 <span className={styles.Slot_heading}>{heading}: </span>
-                <span>{snippet}</span>
+                <span className={styles.Slot_snippet}>{snippet}</span>
             </p>
         </StyledCard>
     );

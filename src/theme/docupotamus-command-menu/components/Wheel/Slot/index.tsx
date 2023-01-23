@@ -12,7 +12,7 @@ const GlassStyles: React.CSSProperties = {
     backgroundColor: 'rgba(17, 25, 40, 0.6)',
     backdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
     WebkitBackdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
-    border: '6px solid rgba(255, 255, 255, 0.9)',
+    border: '8px solid rgba(255, 255, 255, 0.9)',
     boxShadow: `
         0px 0px 12px 0px rgba(136, 165, 191, 0.48),
         0px 0px 12px 0px rgba(255, 255, 255, 0.8)

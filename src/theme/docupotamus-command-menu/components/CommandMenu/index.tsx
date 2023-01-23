@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import History from '../History';
 import Wheel from '../Wheel';
+import Backdrop from './Backdrop';
 import './styles.css';
 
 const StyledModal = styled(Modal)({
@@ -35,6 +36,7 @@ export default function CommandMenu({ }: Props): JSX.Element {
         <StyledModal
             onClose={() => setIsOpen(false)}
             open={isOpen}
+            slots={{ backdrop: Backdrop }}
             // Override the default Chrome outline behavior.
             // See: https://github.com/mui/material-ui/issues/11504#issuecomment-390506409
             disableAutoFocus

@@ -41,9 +41,11 @@ const StyledCard = styled(Box)({
         transition: `all ${TRANSITION_DURATION} ease-in-out`,
         transitionProperty: 'backdrop-filter, box-shadow',
     },
-    '&:hover button': {
-        color: 'rgba(255, 255, 255, 1)',
-        transition: `color ${TRANSITION_DURATION} ease-in-out`,
+    '&:hover svg': {
+        color: 'rgba(255, 255, 255, 0.3)',
+    },
+    '& svg:hover': {
+        color: 'rgba(255, 255, 255, 1.0)',
     },
 });
 

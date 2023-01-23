@@ -54,8 +54,9 @@ const Tile = styled(Box)({
     '&:before': {
         content: '""',
         position: 'absolute',
-        // TODO(dnguyen0304): Investigate adding opacity.
-        backgroundColor: 'rgb(15, 15, 15)',
+        // TODO(dnguyen0304): Extract to a centralized location to facilitate
+        //   maintenance.
+        backgroundColor: 'rgb(17, 25, 40)',
         inset: `${TILE_BORDER_WIDTH_PX}px`,
     },
 });

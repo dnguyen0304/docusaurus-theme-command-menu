@@ -1,11 +1,9 @@
 import { SlotData } from '@docusaurus/theme-command-menu';
-import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
-import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import * as React from 'react';
+import ButtonGroup from './ButtonGroup';
 import styles from './styles.module.css';
 
 const TRANSITION_DURATION: React.CSSProperties['transitionDuration'] = '1s';
@@ -93,25 +91,7 @@ export default function Slot(
                 <span className={styles.Slot_heading}>{heading}: </span>
                 <span className={styles.Slot_snippet}>{snippet}</span>
             </p>
-            <Box
-                component='footer'
-                sx={{
-                    color: 'rgba(255, 255, 255, 0.1)'
-                }}
-            >
-                <IconButton
-                    aria-label='copy'
-                    color='inherit'
-                >
-                    <ContentCopyOutlinedIcon />
-                </IconButton>
-                <IconButton
-                    aria-label='open in a new tab'
-                    color='inherit'
-                >
-                    <OpenInNewOutlinedIcon />
-                </IconButton>
-            </Box>
+            <ButtonGroup />
         </StyledCard>
     );
 };

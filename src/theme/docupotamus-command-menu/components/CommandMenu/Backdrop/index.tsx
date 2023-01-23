@@ -75,7 +75,7 @@ interface Props extends MuiBackdropProps { };
 export default function Backdrop(props: Props): JSX.Element {
     const [tileCount, setTileCount] = React.useState<number>(0);
 
-    const tilesRef = React.useRef();
+    const tilesRef = React.useRef<HTMLDivElement>();
 
     React.useEffect(() => {
         const columnCount = Math.floor(getViewportWidth() / TILE_SIZE_PX);

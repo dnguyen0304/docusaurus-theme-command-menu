@@ -55,13 +55,10 @@ const StyledTextField = styled(TextField)({
     },
 });
 
-interface Props extends SlotData {
-    readonly index: number;
-};
+interface Props extends SlotData { };
 
 export default function Slot(
     {
-        index,
         heading,
         snippet,
         sx,

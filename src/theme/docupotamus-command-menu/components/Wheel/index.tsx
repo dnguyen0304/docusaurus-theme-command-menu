@@ -54,9 +54,8 @@ export default function Wheel({ sx }: Props): JSX.Element {
 
     return (
         <StyledBox sx={{ ...sx }}>
-            {slots.map((slot, index) => (
+            {slots.map((slot) => (
                 <Slot
-                    index={index}
                     heading={slot.heading}
                     snippet={slot.snippet}
                     sx={slot.sx}

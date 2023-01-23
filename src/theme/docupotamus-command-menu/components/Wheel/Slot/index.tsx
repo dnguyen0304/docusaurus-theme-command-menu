@@ -6,13 +6,13 @@ import * as React from 'react';
 import styles from './styles.module.css';
 
 const StyledBox = styled(Box)({
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
+    position: 'absolute',
     width: '100%',
     height: '100%',
 
-    position: 'absolute',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
 
     borderRadius: 'var(--space-m)',
     // TODO(dnguyen0304): Remove development code.

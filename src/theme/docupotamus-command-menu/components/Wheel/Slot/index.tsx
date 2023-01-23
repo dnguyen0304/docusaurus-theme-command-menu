@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import * as React from 'react';
 import styles from './styles.module.css';
 
-const StyledBox = styled(Box)({
+const StyledCard = styled(Box)({
     position: 'absolute',
     width: '100%',
     height: '100%',
@@ -53,7 +53,7 @@ export default function Slot(
     };
 
     return (
-        <StyledBox
+        <StyledCard
             component='section'
             sx={{ ...sx }}
         >
@@ -69,6 +69,6 @@ export default function Slot(
                 <span className={styles.Slot_heading}>{heading}: </span>
                 <span>{snippet}</span>
             </p>
-        </StyledBox>
+        </StyledCard>
     );
 };

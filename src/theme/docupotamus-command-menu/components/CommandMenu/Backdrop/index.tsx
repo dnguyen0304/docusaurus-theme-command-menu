@@ -40,8 +40,8 @@ const Gradient = styled(Box)({
 
 const TilesLayout = styled(Box)({
     position: 'absolute',
-    width: `calc(100vw - ${TILE_BORDER_WIDTH_PX}px)`,
-    height: `calc(100vh - ${TILE_BORDER_WIDTH_PX}px)`,
+    width: `calc(100% - ${TILE_BORDER_WIDTH_PX}px)`,
+    height: `calc(100% - ${TILE_BORDER_WIDTH_PX}px)`,
 
     display: 'grid',
     gridTemplateColumns: `repeat(auto-fit, minmax(${TILE_SIZE_PX}px, 1fr))`,

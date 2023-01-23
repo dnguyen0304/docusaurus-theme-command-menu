@@ -16,7 +16,7 @@ const StyledModal = styled(Modal)({
     },
 });
 
-const GridContainer = styled(Box)({
+const Layout = styled(Box)({
     height: '100vh',
     display: 'grid',
     gridTemplate: 'auto 1fr auto / auto 1fr auto',
@@ -39,13 +39,13 @@ export default function CommandMenu({ }: Props): JSX.Element {
             // See: https://github.com/mui/material-ui/issues/11504#issuecomment-390506409
             disableAutoFocus
         >
-            <GridContainer>
+            <Layout>
                 <header style={{ gridArea: 'header' }}>Header</header>
                 <div style={{ gridArea: 'left-sidebar' }}>Left Sidebar</div>
                 <Wheel sx={{ gridArea: 'wheel' }} />
                 <History sx={{ gridArea: 'history' }} />
                 <footer style={{ gridArea: 'footer' }}>Footer</footer>
-            </GridContainer>
+            </Layout>
         </StyledModal>
     );
 };

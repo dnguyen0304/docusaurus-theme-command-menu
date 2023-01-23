@@ -5,7 +5,6 @@ import * as React from 'react';
 import History from '../History';
 import Wheel from '../Wheel';
 import Backdrop from './Backdrop';
-import './styles.css';
 
 const StyledModal = styled(Modal)({
     // TODO(dnguyen0304): Replace temporary placeholder stub.

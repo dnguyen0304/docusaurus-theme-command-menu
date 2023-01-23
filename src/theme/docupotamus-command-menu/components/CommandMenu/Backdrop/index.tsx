@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import { keyframes } from '@mui/system';
 import * as React from 'react';
+import useDomRect from '../../../hooks/useDomRect';
 
 const TILE_SIZE_PX: number = 100;
 const TILE_BORDER_WIDTH_PX: number = 0.5;
@@ -58,30 +59,22 @@ const Tile = styled(Box)({
     },
 });
 
-const getViewportWidth = (): number => {
-    return window.innerWidth
-        || document.documentElement.clientWidth
-        || document.body.clientWidth;
-};
-
-const getViewportHeight = (): number => {
-    return window.innerHeight
-        || document.documentElement.clientHeight
-        || document.body.clientHeight;
-};
-
 interface Props extends MuiBackdropProps { };
 
 export default function Backdrop(props: Props): JSX.Element {
     const [tileCount, setTileCount] = React.useState<number>(0);
 
     const tilesRef = React.useRef<HTMLDivElement>();
+    const domRect = useDomRect<HTMLDivElement>(tilesRef);
 
     React.useEffect(() => {
-        const columnCount = Math.floor(getViewportWidth() / TILE_SIZE_PX);
-        const rowCount = Math.floor(getViewportHeight() / TILE_SIZE_PX);
+        if (domRect === undefined) {
+            return;
+        }
+        const columnCount = Math.floor(domRect.width / TILE_SIZE_PX);
+        const rowCount = Math.floor(domRect.height / TILE_SIZE_PX);
         setTileCount(columnCount * rowCount);
-    }, []);
+    }, [domRect]);
 
     return (
         <MuiBackdrop {...props}>

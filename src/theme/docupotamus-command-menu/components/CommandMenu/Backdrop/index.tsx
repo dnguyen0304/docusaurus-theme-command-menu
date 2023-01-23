@@ -88,7 +88,10 @@ export default function Backdrop(props: Props): JSX.Element {
             <Gradient />
             <TilesLayout ref={tilesRef}>
                 {[...Array(tileCount)].map((_, i) =>
-                    <Tile key={`tile-${i}`} />
+                    <Tile
+                        key={`tile-${i}`}
+                        onClick={props.onClick}
+                    />
                 )}
             </TilesLayout>
         </MuiBackdrop>

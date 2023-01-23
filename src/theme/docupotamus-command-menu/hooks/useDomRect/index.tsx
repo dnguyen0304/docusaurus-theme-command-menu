@@ -2,7 +2,7 @@ import useResizeObserver from '@react-hook/resize-observer';
 import * as React from 'react';
 
 export default function useDomRect<T extends HTMLElement>(
-    target: React.MutableRefObject<T>,
+    target: React.MutableRefObject<T | undefined>,
 ): DOMRect | undefined {
     const [domRect, setDomRect] = React.useState<DOMRect>();
 

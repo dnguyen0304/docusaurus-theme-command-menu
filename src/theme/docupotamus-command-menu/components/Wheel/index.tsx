@@ -12,6 +12,8 @@ const StyledBox = styled(Box)({
 
     position: 'relative',
     placeSelf: 'center',
+
+    color: 'white',
 });
 
 interface Props {

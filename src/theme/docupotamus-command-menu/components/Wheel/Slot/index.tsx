@@ -6,7 +6,7 @@ import * as React from 'react';
 import ButtonGroup from './ButtonGroup';
 import styles from './styles.module.css';
 
-const TRANSITION_DURATION: React.CSSProperties['transitionDuration'] = '1s';
+const TRANSITION_DURATION: React.CSSProperties['transitionDuration'] = '0.3s';
 
 const GlassStyles: React.CSSProperties = {
     backgroundColor: 'rgba(17, 25, 40, 0.6)',

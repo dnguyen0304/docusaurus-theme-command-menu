@@ -1,9 +1,14 @@
 import { SlotData } from '@docusaurus/theme-command-menu';
+import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
+import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import * as React from 'react';
 import styles from './styles.module.css';
+
+const TRANSITION_DURATION: React.CSSProperties['transitionDuration'] = '1s';
 
 const GlassStyles: React.CSSProperties = {
     backgroundColor: 'rgba(17, 25, 40, 0.6)',
@@ -35,8 +40,12 @@ const StyledCard = styled(Box)({
             0px 0px 24px 0px rgba(136, 165, 191, 0.7),
             0px 0px 24px 0px rgba(255, 255, 255, 0.9)
         `,
-        transition: 'all 1s ease-in-out',
+        transition: `all ${TRANSITION_DURATION} ease-in-out`,
         transitionProperty: 'backdrop-filter, box-shadow',
+    },
+    '&:hover button': {
+        color: 'rgba(255, 255, 255, 1)',
+        transition: `color ${TRANSITION_DURATION} ease-in-out`,
     },
 });
 
@@ -84,6 +93,25 @@ export default function Slot(
                 <span className={styles.Slot_heading}>{heading}: </span>
                 <span className={styles.Slot_snippet}>{snippet}</span>
             </p>
+            <Box
+                component='footer'
+                sx={{
+                    color: 'rgba(255, 255, 255, 0.1)'
+                }}
+            >
+                <IconButton
+                    aria-label='copy'
+                    color='inherit'
+                >
+                    <ContentCopyOutlinedIcon />
+                </IconButton>
+                <IconButton
+                    aria-label='open in a new tab'
+                    color='inherit'
+                >
+                    <OpenInNewOutlinedIcon />
+                </IconButton>
+            </Box>
         </StyledCard>
     );
 };

@@ -29,31 +29,31 @@ export default function Wheel({ sx }: Props): JSX.Element {
             description: '',
             heading: 'Heading',
             snippet: 'Snippet',
-            sx: { translate: '0 -100%' }
+            sx: { translate: '0 -80%' }
         },
         {
             description: '',
             heading: 'Heading',
             snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            sx: { translate: '150% -30%' }
+            sx: { translate: '130% -30%' }
         },
         {
             description: '',
             heading: 'Heading',
             snippet: 'Snippet',
-            sx: { translate: '80% 100%' }
+            sx: { translate: '70% 90%' }
         },
         {
             description: '',
             heading: 'Heading',
             snippet: 'Snippet',
-            sx: { translate: '-80% 100%' }
+            sx: { translate: '-70% 90%' }
         },
         {
             description: '',
             heading: 'Heading',
             snippet: 'Snippet',
-            sx: { translate: '-150% -30%' }
+            sx: { translate: '-130% -30%' }
         },
     ];
 

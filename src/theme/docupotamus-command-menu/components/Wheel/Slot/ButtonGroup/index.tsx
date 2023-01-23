@@ -7,7 +7,14 @@ import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
 
 const StyledFooter = styled(Box)({
+    display: 'flex',
+    justifyContent: 'flex-end',
+    gap: 'var(--space-2xs)',
+
     color: 'rgba(255, 255, 255, 0.1)',
+    '& .MuiIconButton-root': {
+        padding: 0,
+    },
 });
 
 export default function ButtonGroup(): JSX.Element {

@@ -6,7 +6,6 @@ declare module '@docusaurus/theme-command-menu' {
     }
 
     interface SlotData {
-        readonly description: string;
         readonly heading: string;
         readonly snippet: string;
         readonly sx?: SxProps<Theme>;

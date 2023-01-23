@@ -62,14 +62,12 @@ interface Props extends SlotData {
 export default function Slot(
     {
         index,
-        description,
         heading,
         snippet,
         sx,
     }: Props,
 ): JSX.Element {
-    const [value, setValue] =
-        React.useState<string>(description || `Slot ${index}`);
+    const [value, setValue] = React.useState<string>(heading);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setValue(event.target.value);
@@ -89,9 +87,11 @@ export default function Slot(
                     variant='outlined'
                 />
             </h2>
-            <p style={{ margin: 'auto 0' }}>
-                <span className={styles.Slot_heading}>{heading}: </span>
-                <span className={styles.Slot_snippet}>{snippet}</span>
+            <p
+                className={styles.Slot_snippet}
+                style={{ margin: 'auto 0' }}
+            >
+                {snippet}
             </p>
             <ButtonGroup />
         </StyledCard>

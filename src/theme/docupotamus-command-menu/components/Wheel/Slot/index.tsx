@@ -5,7 +5,19 @@ import TextField from '@mui/material/TextField';
 import * as React from 'react';
 import styles from './styles.module.css';
 
+const GlassStyles = {
+    backgroundColor: 'rgba(17, 25, 40, 0.6)',
+    backdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
+    WebkitBackdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
+    border: '6px solid rgba(255, 255, 255, 0.9)',
+    boxShadow: `
+        0px 0px 12px 0px rgba(136, 165, 191, 0.48),
+        0px 0px 12px 0px rgba(255, 255, 255, 0.8)
+    `,
+};
+
 const StyledCard = styled(Box)({
+    ...GlassStyles,
     position: 'absolute',
     width: '100%',
     height: '100%',
@@ -15,15 +27,7 @@ const StyledCard = styled(Box)({
     justifyContent: 'flex-start',
 
     borderRadius: 'var(--space-m)',
-    // TODO(dnguyen0304): Remove development code.
-    outline: '2px solid red',
     padding: 'var(--space-m)',
-
-    // backgroundColor: 'rgba(255, 255, 255, 0.01)',
-    // backdropFilter: 'blur(40px)',
-    // backgroundClip: 'padding-box',
-    // border: '2px solid transparent',
-    // boxShadow: '10px 10px 10px rgba(46, 54, 68, 0.03)',
 });
 
 const StyledTextField = styled(TextField)({

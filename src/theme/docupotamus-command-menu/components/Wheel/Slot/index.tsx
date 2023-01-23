@@ -1,7 +1,7 @@
 import { SlotData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
+import InputBase from '@mui/material/InputBase';
 import { styled } from '@mui/material/styles';
-import TextField from '@mui/material/TextField';
 import * as React from 'react';
 import ButtonGroup from './ButtonGroup';
 import styles from './styles.module.css';
@@ -49,10 +49,11 @@ const StyledCard = styled(Box)({
     },
 });
 
-const StyledTextField = styled(TextField)({
-    '& .MuiInputBase-input': {
-        padding: 0,
-    },
+const StyledInput = styled(InputBase)({
+    color: 'inherit',
+    fontFamily: 'inherit',
+    fontSize: 'var(--font-size--1)',
+    fontWeight: '600',
 });
 
 interface Props extends SlotData { };
@@ -76,12 +77,13 @@ export default function Slot(
             component='section'
             sx={{ ...sx }}
         >
-            <h2 className={styles.Slot_description}>
-                <StyledTextField
+            <h2 className={styles.Slot_descriptionContainer}>
+                <StyledInput
                     autoComplete='off'
+                    maxRows={Infinity}
                     onChange={handleChange}
                     value={value}
-                    variant='outlined'
+                    multiline
                 />
             </h2>
             <p className={styles.Slot_snippet} >

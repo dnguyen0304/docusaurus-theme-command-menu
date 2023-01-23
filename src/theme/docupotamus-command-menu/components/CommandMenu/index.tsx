@@ -6,16 +6,6 @@ import History from '../History';
 import Wheel from '../Wheel';
 import Backdrop from './Backdrop';
 
-const StyledModal = styled(Modal)({
-    // TODO(dnguyen0304): Replace temporary placeholder stub.
-    color: 'white',
-    // '& .MuiBackdrop-root': {
-    //     backdropFilter: 'blur(5px) saturate(30%)',
-    //     WebkitBackdropFilter: 'blur(5px) saturate(30%)',
-    //     backgroundColor: 'rgba(10, 10, 10, 0.8)',
-    // },
-});
-
 const Layout = styled(Box)({
     height: '100vh',
     display: 'grid',
@@ -32,7 +22,7 @@ export default function CommandMenu({ }: Props): JSX.Element {
     const [isOpen, setIsOpen] = React.useState<boolean>(true);
 
     return (
-        <StyledModal
+        <Modal
             onClose={() => setIsOpen(false)}
             open={isOpen}
             slots={{ backdrop: Backdrop }}
@@ -47,6 +37,6 @@ export default function CommandMenu({ }: Props): JSX.Element {
                 <History sx={{ gridArea: 'history' }} />
                 <footer style={{ gridArea: 'footer' }}>Footer</footer>
             </Layout>
-        </StyledModal>
+        </Modal>
     );
 };

@@ -41,10 +41,10 @@ const StyledCard = styled(Box)({
         transition: `all ${TRANSITION_DURATION} ease-in-out`,
         transitionProperty: 'backdrop-filter, box-shadow',
     },
-    '&:hover svg': {
+    '&:hover .MuiSvgIcon-root': {
         color: 'rgba(255, 255, 255, 0.3)',
     },
-    '& svg:hover': {
+    '& .MuiSvgIcon-root:hover': {
         color: 'rgba(255, 255, 255, 1.0)',
     },
 });

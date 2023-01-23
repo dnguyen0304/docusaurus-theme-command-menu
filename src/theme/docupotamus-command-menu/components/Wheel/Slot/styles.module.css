@@ -4,6 +4,34 @@
     font-family: 'Karla', sans-serif;
     font-size: var(--step--1);;
     line-height: 1.2;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    animation-delay: calc(0.09s * var(--animation-order));
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-name: fade-in-from-top;
+    animation-timing-function: cubic-bezier(0.15, 0.54, 0.51, 0.37);
+}
+
+.Slot_card:nth-of-type(1) {
+    --animation-order: 0;
+}
+
+.Slot_card:nth-of-type(2) {
+    --animation-order: 1;
+}
+
+.Slot_card:nth-of-type(3) {
+    --animation-order: 2;
+}
+
+.Slot_card:nth-of-type(4) {
+    --animation-order: 3;
+}
+
+.Slot_card:nth-of-type(5) {
+    --animation-order: 4;
 }
 
 .Slot_description {
@@ -16,4 +44,15 @@
 
 .Slot_snippet {
     font-weight: 200;
+}
+
+@keyframes fade-in-from-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

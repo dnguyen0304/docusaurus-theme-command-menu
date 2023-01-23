@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import * as React from 'react';
 import styles from './styles.module.css';
 
-const GlassStyles = {
+const GlassStyles: React.CSSProperties = {
     backgroundColor: 'rgba(17, 25, 40, 0.6)',
     backdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
     WebkitBackdropFilter: 'blur(6px) saturate(100%) brightness(140%)',

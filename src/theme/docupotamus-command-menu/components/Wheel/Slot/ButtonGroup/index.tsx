@@ -3,6 +3,7 @@ import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
+import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
 
 const StyledFooter = styled(Box)({
@@ -12,12 +13,24 @@ const StyledFooter = styled(Box)({
 export default function ButtonGroup(): JSX.Element {
     return (
         <StyledFooter component='footer'>
-            <IconButton aria-label='copy'>
-                <ContentCopyOutlinedIcon />
-            </IconButton>
-            <IconButton aria-label='open in a new tab'>
-                <OpenInNewOutlinedIcon />
-            </IconButton>
+            <Tooltip
+                placement='bottom'
+                title='Copy'
+                arrow
+            >
+                <IconButton aria-label='copy'>
+                    <ContentCopyOutlinedIcon />
+                </IconButton>
+            </Tooltip>
+            <Tooltip
+                placement='bottom'
+                title='Open in New Tab'
+                arrow
+            >
+                <IconButton aria-label='open in a new tab'>
+                    <OpenInNewOutlinedIcon />
+                </IconButton>
+            </Tooltip>
         </StyledFooter>
     );
 };

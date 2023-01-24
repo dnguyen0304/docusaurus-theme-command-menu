@@ -59,6 +59,9 @@ const Tile = styled(Box)({
         backgroundColor: 'rgb(17, 25, 40)',
         inset: `${TILE_BORDER_WIDTH_PX}px`,
     },
+    '&:hover:before': {
+        backgroundColor: 'rgb(34, 50, 80)',
+    },
 });
 
 interface Props extends MuiBackdropProps { };

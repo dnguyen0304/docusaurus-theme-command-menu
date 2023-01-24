@@ -4,8 +4,6 @@ import * as React from 'react';
 
 const NotColored = styled(Box)({
     position: 'absolute',
-
-    backgroundColor: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.1)',
 });
 
 const Colored = styled(Box)({

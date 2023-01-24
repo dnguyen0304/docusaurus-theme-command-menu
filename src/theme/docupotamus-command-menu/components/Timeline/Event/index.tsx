@@ -23,6 +23,7 @@ const StyledCard = styled(Box)({
 });
 
 interface Props extends TimelineEventData {
+    readonly lineNotColoredBackgroundColor: React.CSSProperties['backgroundColor'];
     readonly linePositionLeft: React.CSSProperties['left'];
     readonly lineWidthPx: number;
 };
@@ -33,6 +34,7 @@ export default function Event(
         type,
         heading,
         snippet,
+        lineNotColoredBackgroundColor,
         linePositionLeft,
         lineWidthPx,
     }: Props,
@@ -40,6 +42,7 @@ export default function Event(
     return (
         <Layout>
             <Anchor
+                lineNotColoredBackgroundColor={lineNotColoredBackgroundColor}
                 linePositionLeft={linePositionLeft}
                 lineWidthPx={lineWidthPx}
             />

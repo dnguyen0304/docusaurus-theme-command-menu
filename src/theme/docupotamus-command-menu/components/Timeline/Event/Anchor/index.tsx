@@ -26,12 +26,14 @@ const getPosition = (
 };
 
 interface Props {
+    lineNotColoredBackgroundColor: React.CSSProperties['backgroundColor'];
     linePositionLeft: React.CSSProperties['left'];
     lineWidthPx: number;
 };
 
 export default function Event(
     {
+        lineNotColoredBackgroundColor,
         linePositionLeft,
         lineWidthPx,
     }: Props,

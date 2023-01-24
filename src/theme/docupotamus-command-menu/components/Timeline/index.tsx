@@ -8,6 +8,8 @@ import Line from './Line';
 
 const LINE_WIDTH_PX: number = 4;
 const LINE_POSITION_LEFT: React.CSSProperties['left'] = 'var(--space-l)';
+const LINE_NOT_COLORED_BACKGROUND_COLOR: React.CSSProperties['backgroundColor'] =
+    'rgba(var(--docupotamus-color-grey-800-rgb), 0.1)';
 
 const StyledContainer = styled(Box)({
     // TODO(dnguyen0304): Investigate why this or z-index: 0 is needed for the
@@ -126,6 +128,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
                 width: `${LINE_WIDTH_PX}px`,
                 height: lineHeight,
                 left: LINE_POSITION_LEFT,
+                backgroundColor: LINE_NOT_COLORED_BACKGROUND_COLOR,
             }} />
             <EventsLayout ref={eventsLayoutRef}>
                 {events
@@ -137,6 +140,9 @@ export default function Timeline({ sx }: Props): JSX.Element {
                             type={type}
                             heading={heading}
                             snippet={snippet}
+                            lineNotColoredBackgroundColor={
+                                LINE_NOT_COLORED_BACKGROUND_COLOR
+                            }
                             linePositionLeft={LINE_POSITION_LEFT}
                             lineWidthPx={LINE_WIDTH_PX}
                         />

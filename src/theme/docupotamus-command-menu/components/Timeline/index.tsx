@@ -10,7 +10,7 @@ const StyledContainer = styled(Box)({
     //   timeline to be visible.
     position: 'relative',
 
-    backgroundColor: 'var(--color-grey-100)',
+    backgroundColor: 'var(--docupotamus-color-grey-100)',
     overflowY: 'auto',
 });
 

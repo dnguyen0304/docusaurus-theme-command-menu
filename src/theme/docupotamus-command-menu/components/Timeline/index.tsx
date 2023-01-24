@@ -9,7 +9,7 @@ import Line from './Line';
 const LINE_WIDTH_PX: number = 4;
 const LINE_POSITION_LEFT: React.CSSProperties['left'] = 'var(--space-l)';
 const LINE_NOT_COLORED_BACKGROUND_COLOR: React.CSSProperties['backgroundColor'] =
-    'rgba(var(--docupotamus-color-grey-800-rgb), 0.1)';
+    'var(--docupotamus-color-grey-300)';
 
 const StyledContainer = styled(Box)({
     // TODO(dnguyen0304): Investigate why this or z-index: 0 is needed for the

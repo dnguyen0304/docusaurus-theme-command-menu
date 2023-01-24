@@ -41,7 +41,10 @@ export default function Event(
     return (
         <StyledBox
             size='var(--font-size--1)'
-            sx={getPosition(linePositionLeft, lineWidthPx)}
+            sx={{
+                ...getPosition(linePositionLeft, lineWidthPx),
+                backgroundColor: lineNotColoredBackgroundColor,
+            }}
         />
     );
 };

@@ -17,9 +17,11 @@ const StyledBox = styled(Box)<StyledBoxProps>(({ size }) => ({
 const getPosition = (
     linePositionLeft: React.CSSProperties['left'],
     lineWidthPx: number,
-): Pick<React.CSSProperties, 'position' | 'left' | 'translate'> => {
+): Pick<React.CSSProperties, 'position' | 'top' | 'left' | 'translate'> => {
     return {
         position: 'absolute',
+        // TODO(dnguyen0304): Investigate if this can be done programmatically.
+        top: '4px',
         left: linePositionLeft,
         translate: `calc(-50% + ${lineWidthPx / 2}px) 0`,
     };

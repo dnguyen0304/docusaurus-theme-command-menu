@@ -28,21 +28,36 @@ export default function Timeline({ sx }: Props): JSX.Element {
     // 1393178568
     // 1188249780
     // 1640174795
-    // 1190397622
-    // 1257131006
-    // 1049231539
     const events: TimelineEventData[] = [
         {
             timestampMilli: 1674576222031,
             type: 'Read Recently',
-            heading: 'heading 1',
-            snippet: 'snippet 1',
+            heading: 'Dimensions',
+            snippet: 'between 996px and 1440px',
         },
         {
             timestampMilli: 1400229158,
             type: 'Read Recently',
-            heading: 'heading 2',
-            snippet: 'snippet 2',
+            heading: 'Latin',
+            snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        },
+        {
+            timestampMilli: 1049231539,
+            type: 'Read Recently',
+            heading: 'useReduce hook',
+            snippet: 'const [state, dispatch] = useReducer(reducer, initialState);',
+        },
+        {
+            timestampMilli: 1257131006,
+            type: 'Read Recently',
+            heading: 'Environment',
+            snippet: 'CLIENT_ID, CLIENT_SECRET, REFERER_ALLOWLIST',
+        },
+        {
+            timestampMilli: 1190397622,
+            type: 'Read Recently',
+            heading: 'Last Position Shortcut',
+            snippet: 'shift + ctrl + left',
         },
     ];
 

@@ -19,8 +19,6 @@ const StyledCard = styled(Box)({
     borderRadius: 'var(--space-m)',
     color: 'var(--docupotamus-color-grey-800)',
     fontFamily: 'var(--docupotamus-font-family)',
-    fontSize: 'var(--docupotamus-font-size)',
-    fontWeight: 'var(--docupotamus-body-font-weight)',
     lineHeight: '1.2',
 });
 
@@ -71,6 +69,8 @@ export default function Event(
                 <p
                     className='ifm_text__reset'
                     style={{
+                        fontSize: 'var(--docupotamus-font-size)',
+                        fontWeight: 400,
                         marginBottom: 'var(--space-xs)',
                     }}
                 >

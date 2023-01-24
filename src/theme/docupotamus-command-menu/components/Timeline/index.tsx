@@ -21,6 +21,10 @@ const EventsLayout = styled(Box)({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-end',
+
+    '& > * + *': {
+        marginTop: 'var(--space-s)',
+    },
 });
 
 interface Props {

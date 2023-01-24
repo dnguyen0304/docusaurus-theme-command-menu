@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
-import History from '../History';
+import Timeline from '../Timeline';
 import Wheel from '../Wheel';
 import Backdrop from './Backdrop';
 
@@ -12,7 +12,7 @@ const Layout = styled(Box)({
     gridTemplate: 'auto 1fr auto / auto 1fr auto',
     gridTemplateAreas:
         '"header header header" ' +
-        '"left-sidebar wheel history" ' +
+        '"left-sidebar wheel timeline" ' +
         '"footer footer footer"',
 });
 
@@ -34,7 +34,7 @@ export default function CommandMenu({ }: Props): JSX.Element {
                 <header style={{ gridArea: 'header' }}>Header</header>
                 <div style={{ gridArea: 'left-sidebar' }}>Left Sidebar</div>
                 <Wheel sx={{ gridArea: 'wheel' }} />
-                <History sx={{ gridArea: 'history' }} />
+                <Timeline sx={{ gridArea: 'timeline' }} />
                 <footer style={{ gridArea: 'footer' }}>Footer</footer>
             </Layout>
         </Modal>

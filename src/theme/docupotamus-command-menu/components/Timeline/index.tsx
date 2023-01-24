@@ -6,10 +6,10 @@ interface Props {
     readonly sx?: SxProps<Theme>;
 };
 
-export default function History({ sx }: Props): JSX.Element {
+export default function Timeline({ sx }: Props): JSX.Element {
     return (
         <Box sx={{ ...sx }}>
-            History
+            Timeline
         </Box>
     );
 };

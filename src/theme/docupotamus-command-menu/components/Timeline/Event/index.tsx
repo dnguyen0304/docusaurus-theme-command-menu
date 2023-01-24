@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import Anchor from './Anchor';
+import Tag from './Tag';
 
 const Layout = styled(Box)({
     position: 'relative',
@@ -67,7 +68,7 @@ export default function Event(
                     <Box>{timestampMilli}</Box>
                 </StyledCardHeader>
                 <p className='ifm_text__reset'>{snippet}</p>
-                <Box>{type}</Box>
+                <Tag label={type} />
             </StyledCard>
         </Layout>
     );

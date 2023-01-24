@@ -2,7 +2,7 @@
 
 .Slot_card {
     font-family: 'Karla', sans-serif;
-    font-size: var(--step--1);;
+    font-size: var(--step--1);
     line-height: 1.2;
 
     opacity: 0;

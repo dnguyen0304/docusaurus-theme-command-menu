@@ -47,7 +47,16 @@ export default function Event(
                 lineWidthPx={lineWidthPx}
             />
             <StyledCard component='section'>
-                <h2 className='ifm_text__reset'>{heading}</h2>
+                <h2
+                    className='ifm_text__reset'
+                    style={{
+                        fontSize: 'var(--font-size--1)',
+                        fontWeight: 'var(--docupotamus-heading-font-weight)',
+                        letterSpacing: '2px',
+                    }}
+                >
+                    {heading}
+                </h2>
                 <p className='ifm_text__reset'>{snippet}</p>
                 <Box>{type}</Box>
                 <Box>{timestampMilli}</Box>

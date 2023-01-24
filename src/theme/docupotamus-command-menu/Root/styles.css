@@ -47,5 +47,6 @@
     --space-xl-2xl: clamp(3.38rem, calc(2.81rem + 2.83vw), 5.00rem);
     --space-2xl-3xl: clamp(4.50rem, calc(3.46rem + 5.22vw), 7.50rem);
 
-    --color-grey-100: 'rgb(17, 25, 40)';
+    --color-grey-100-rgb: 17, 25, 40;
+    --color-grey-100: rgb(var(--color-grey-100-rgb));
 }

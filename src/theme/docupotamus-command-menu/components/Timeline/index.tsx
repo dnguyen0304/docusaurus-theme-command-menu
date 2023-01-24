@@ -6,6 +6,8 @@ import useDomRect from '../../hooks/useDomRect';
 import Event from './Event';
 import Line from './Line';
 
+const LINE_POSITION_LEFT: React.CSSProperties['left'] = 'var(--space-l)';
+
 const StyledContainer = styled(Box)({
     // TODO(dnguyen0304): Investigate why this or z-index: 0 is needed for the
     //   timeline to be visible.
@@ -121,7 +123,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
         <StyledContainer sx={{ ...sx }}>
             <Line sx={{
                 height: lineHeight,
-                left: 'var(--space-l)',
+                left: LINE_POSITION_LEFT,
             }} />
             <EventsLayout ref={eventsLayoutRef}>
                 {events
@@ -133,6 +135,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
                             type={type}
                             heading={heading}
                             snippet={snippet}
+                            linePositionLeft={LINE_POSITION_LEFT}
                         />
                     )
                 }

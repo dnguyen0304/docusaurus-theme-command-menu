@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import * as React from 'react';
 
 interface StyledBoxProps {
+    readonly linePositionLeft: React.CSSProperties['left'];
     readonly size: React.CSSProperties['width' | 'height'];
 };
 
@@ -14,13 +15,19 @@ const StyledBox = styled(Box)<StyledBoxProps>(({ size }) => ({
     borderRadius: '50%',
 }));
 
-interface Props { };
+interface Props {
+    linePositionLeft: React.CSSProperties['left'];
+};
 
 export default function Event(
     {
+        linePositionLeft,
     }: Props,
 ): JSX.Element {
     return (
-        <StyledBox size='var(--font-size--1)' />
+        <StyledBox
+            linePositionLeft={linePositionLeft}
+            size='var(--font-size--1)'
+        />
     );
 };

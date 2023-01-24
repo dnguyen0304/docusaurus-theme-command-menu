@@ -52,8 +52,8 @@ const StyledCard = styled(Box)({
 const StyledInput = styled(InputBase)({
     color: 'inherit',
     fontFamily: 'inherit',
-    fontSize: 'var(--font-size--1)',
-    fontWeight: '600',
+    fontSize: 'var(--docupotamus-font-size)',
+    fontWeight: 'var(--docupotamus-heading-font-weight)',
 });
 
 interface Props extends SlotData { };

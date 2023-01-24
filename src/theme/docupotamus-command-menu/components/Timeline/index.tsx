@@ -6,6 +6,7 @@ import useDomRect from '../../hooks/useDomRect';
 import Event from './Event';
 import Line from './Line';
 
+const LINE_WIDTH_PX: number = 4;
 const LINE_POSITION_LEFT: React.CSSProperties['left'] = 'var(--space-l)';
 
 const StyledContainer = styled(Box)({
@@ -122,6 +123,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
     return (
         <StyledContainer sx={{ ...sx }}>
             <Line sx={{
+                width: `${LINE_WIDTH_PX}px`,
                 height: lineHeight,
                 left: LINE_POSITION_LEFT,
             }} />
@@ -136,6 +138,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
                             heading={heading}
                             snippet={snippet}
                             linePositionLeft={LINE_POSITION_LEFT}
+                            lineWidthPx={LINE_WIDTH_PX}
                         />
                     )
                 }

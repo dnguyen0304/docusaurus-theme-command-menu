@@ -24,6 +24,7 @@ const StyledCard = styled(Box)({
 
 interface Props extends TimelineEventData {
     readonly linePositionLeft: React.CSSProperties['left'];
+    readonly lineWidthPx: number;
 };
 
 export default function Event(
@@ -33,11 +34,15 @@ export default function Event(
         heading,
         snippet,
         linePositionLeft,
+        lineWidthPx,
     }: Props,
 ): JSX.Element {
     return (
         <Layout>
-            <Anchor linePositionLeft={linePositionLeft} />
+            <Anchor
+                linePositionLeft={linePositionLeft}
+                lineWidthPx={lineWidthPx}
+            />
             <StyledCard component='section'>
                 <h2>{heading}</h2>
                 <p>{snippet}</p>

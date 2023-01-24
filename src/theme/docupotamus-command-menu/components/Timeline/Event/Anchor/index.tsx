@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 import * as React from 'react';
 
 interface StyledBoxProps {
-    readonly linePositionLeft: React.CSSProperties['left'];
     readonly size: React.CSSProperties['width' | 'height'];
 };
 
@@ -17,17 +16,16 @@ const StyledBox = styled(Box)<StyledBoxProps>(({ size }) => ({
 
 interface Props {
     linePositionLeft: React.CSSProperties['left'];
+    lineWidthPx: number;
 };
 
 export default function Event(
     {
         linePositionLeft,
+        lineWidthPx,
     }: Props,
 ): JSX.Element {
     return (
-        <StyledBox
-            linePositionLeft={linePositionLeft}
-            size='var(--font-size--1)'
-        />
+        <StyledBox size='var(--font-size--1)' />
     );
 };

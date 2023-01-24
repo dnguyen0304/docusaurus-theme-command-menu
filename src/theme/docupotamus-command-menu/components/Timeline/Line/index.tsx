@@ -3,8 +3,6 @@ import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
 
 const NotColored = styled(Box)({
-    width: '4px',
-
     position: 'absolute',
 
     backgroundColor: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.1)',

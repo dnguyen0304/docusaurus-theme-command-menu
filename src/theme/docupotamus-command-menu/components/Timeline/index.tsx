@@ -33,9 +33,6 @@ const EventsLayout = styled(Box)({
     '& > *:first-of-type': {
         marginTop: 'var(--space-l)',
     },
-    '& > * + *': {
-        marginTop: 'var(--space-xl)',
-    },
     '& > *:last-of-type': {
         marginBottom: 'var(--space-l)',
     },

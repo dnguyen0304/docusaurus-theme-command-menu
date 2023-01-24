@@ -12,6 +12,8 @@ const Layout = styled(Box)({
 
     display: 'flex',
     justifyContent: 'flex-end',
+
+    paddingBottom: 'var(--space-xl)',
 });
 
 const StyledCard = styled(Box)({

@@ -50,6 +50,8 @@
     /* Docupotamus Theme */
     --docupotamus-color-grey-100-rgb: 17, 25, 40;
     --docupotamus-color-grey-100: rgb(var(--docupotamus-color-grey-100-rgb));
+    --docupotamus-color-grey-300-rgb: 41, 48, 62;
+    --docupotamus-color-grey-300: rgb(var(--docupotamus-color-grey-300-rgb));
     --docupotamus-color-grey-800-rgb: 255, 255, 255;
     --docupotamus-color-grey-800: rgb(var(--docupotamus-color-grey-800-rgb));
 

@@ -29,7 +29,7 @@ const StyledCard = styled(Box)({
     flexDirection: 'column',
     justifyContent: 'flex-start',
 
-    borderRadius: 'var(--space-m)',
+    borderRadius: 'var(--docupotamus-border-radius-m)',
     padding: 'var(--space-m)',
     // TODO(dnguyen0304): Investigate improving performance.
     '&:hover': {

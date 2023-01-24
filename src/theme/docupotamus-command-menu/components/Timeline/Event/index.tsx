@@ -62,17 +62,16 @@ export default function Event(
     };
 
     return (
-        <Layout>
+        <Layout
+            onMouseDown={startRipple}
+            onMouseUp={stopRipple}
+        >
             <Anchor
                 lineNotColoredBackgroundColor={lineNotColoredBackgroundColor}
                 linePositionLeft={linePositionLeft}
                 lineWidthPx={lineWidthPx}
             />
-            <StyledCard
-                component='section'
-                onMouseDown={startRipple}
-                onMouseUp={stopRipple}
-            >
+            <StyledCard component='section'>
                 <StyledCardHeader component='header'>
                     <h2
                         className='ifm_text__reset'
@@ -98,8 +97,8 @@ export default function Event(
                     {snippet}
                 </p>
                 <Tag label={type} />
-                <TouchRipple ref={rippleRef} center={false} />
             </StyledCard>
+            <TouchRipple ref={rippleRef} center={false} />
         </Layout>
     );
 };

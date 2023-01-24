@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
 import Events from './Events';
-import Line from './Line';
 
 const StyledContainer = styled(Box)({
     // TODO(dnguyen0304): Investigate why this or z-index: 0 is needed for the
@@ -87,7 +86,6 @@ export default function Timeline({ sx }: Props): JSX.Element {
 
     return (
         <StyledContainer sx={{ ...sx }}>
-            <Line />
             <Events events={events} />
         </StyledContainer>
     );

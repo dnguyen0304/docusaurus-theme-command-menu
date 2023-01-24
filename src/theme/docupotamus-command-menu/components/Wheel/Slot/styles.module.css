@@ -35,6 +35,10 @@
 }
 
 .Slot_descriptionContainer {
+    color: inherit;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: inherit;
     margin: 0;
     margin-bottom: var(--space-3xs);
 }

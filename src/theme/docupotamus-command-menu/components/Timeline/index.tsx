@@ -12,6 +12,7 @@ const StyledContainer = styled(Box)({
 
     // TODO(dnguyen0304): Remove development code.
     backgroundColor: 'red',
+    overflowY: 'auto',
 });
 
 const StyledEvents = styled(Box)({});

@@ -47,8 +47,8 @@ export default function Event(
                 lineWidthPx={lineWidthPx}
             />
             <StyledCard component='section'>
-                <h2>{heading}</h2>
-                <p>{snippet}</p>
+                <h2 className='ifm_text__reset'>{heading}</h2>
+                <p className='ifm_text__reset'>{snippet}</p>
                 <Box>{type}</Box>
                 <Box>{timestampMilli}</Box>
             </StyledCard>

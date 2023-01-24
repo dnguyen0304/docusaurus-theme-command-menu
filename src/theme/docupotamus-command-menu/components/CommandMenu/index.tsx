@@ -9,7 +9,7 @@ import Backdrop from './Backdrop';
 const Layout = styled(Box)({
     height: '100vh',
     display: 'grid',
-    gridTemplate: 'auto 1fr auto / auto 1fr auto',
+    gridTemplate: 'auto 1fr auto / auto 1fr max(250px, 25%)',
     gridTemplateAreas:
         '"header header timeline" ' +
         '"left-sidebar wheel timeline" ' +

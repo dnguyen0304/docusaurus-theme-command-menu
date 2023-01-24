@@ -1,9 +1,18 @@
 import Box from '@mui/material/Box';
+import { SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
 
-export default function Line(): JSX.Element {
+interface Props {
+    readonly sx?: SxProps<Theme>;
+};
+
+export default function Line(
+    {
+        sx,
+    }: Props
+): JSX.Element {
     return (
-        <Box>
+        <Box sx={{ ...sx }}>
         </Box>
     );
 };

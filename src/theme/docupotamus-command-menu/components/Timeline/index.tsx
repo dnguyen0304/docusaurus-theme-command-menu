@@ -12,52 +12,52 @@ interface Props {
 };
 
 export default function Timeline({ sx }: Props): JSX.Element {
-    // 1192149658
-    // 1530712788
-    // 1613816700
-    // 1114786958
-    // 1367703939
-    // 1515359339
-    // 1016797395
-    // 1210554980
-    // 1653891149
-    // 1035680140
-    // 1471264494
-    // 1300759953
-    // 1020760682
-    // 1393178568
-    // 1188249780
-    // 1640174795
+    // 1192149658000
+    // 1530712788000
+    // 1613816700000
+    // 1114786958000
+    // 1367703939000
+    // 1515359339000
+    // 1016797395000
+    // 1210554980000
+    // 1653891149000
+    // 1035680140000
+    // 1471264494000
+    // 1300759953000
+    // 1020760682000
+    // 1393178568000
+    // 1188249780000
+    // 1640174795000
     const events: TimelineEventData[] = [
         {
-            timestampMilli: 1674576222031,
-            type: 'Read Recently',
-            heading: 'Dimensions',
-            snippet: 'between 996px and 1440px',
-        },
-        {
-            timestampMilli: 1400229158,
-            type: 'Read Recently',
-            heading: 'Latin',
-            snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        },
-        {
-            timestampMilli: 1049231539,
+            timestampMilli: 1049231539000,
             type: 'Read Recently',
             heading: 'useReduce hook',
             snippet: 'const [state, dispatch] = useReducer(reducer, initialState);',
         },
         {
-            timestampMilli: 1257131006,
+            timestampMilli: 1190397622000,
+            type: 'Read Recently',
+            heading: 'Last Position Shortcut',
+            snippet: 'shift + ctrl + left',
+        },
+        {
+            timestampMilli: 1257131006000,
             type: 'Read Recently',
             heading: 'Environment',
             snippet: 'CLIENT_ID, CLIENT_SECRET, REFERER_ALLOWLIST',
         },
         {
-            timestampMilli: 1190397622,
+            timestampMilli: 1400229158000,
             type: 'Read Recently',
-            heading: 'Last Position Shortcut',
-            snippet: 'shift + ctrl + left',
+            heading: 'Latin',
+            snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        },
+        {
+            timestampMilli: 1674576222000,
+            type: 'Read Recently',
+            heading: 'Dimensions',
+            snippet: 'between 996px and 1440px',
         },
     ];
 

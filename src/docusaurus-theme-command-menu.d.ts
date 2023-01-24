@@ -22,5 +22,5 @@ declare module '@docusaurus/theme-command-menu' {
         readonly snippet: string;
     }
 
-    type TimelineEventType = 'Read Recently';
+    type TimelineEventType = 'Read';
 }

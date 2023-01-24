@@ -49,4 +49,6 @@
 
     --color-grey-100-rgb: 17, 25, 40;
     --color-grey-100: rgb(var(--color-grey-100-rgb));
+    --color-grey-800-rgb: 255, 255, 255;
+    --color-grey-800: rgb(var(--color-grey-800-rgb));
 }

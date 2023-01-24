@@ -1,8 +1,10 @@
-import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 
-const StyledBox = styled(Box)({});
+const StyledButton = styled(Button)({
+    textTransform: 'lowercase',
+});
 
 interface Props {
     readonly label: string;
@@ -14,8 +16,8 @@ export default function Tag(
     }: Props,
 ): JSX.Element {
     return (
-        <StyledBox>
+        <StyledButton variant='outlined'>
             {label}
-        </StyledBox>
+        </StyledButton>
     );
 };

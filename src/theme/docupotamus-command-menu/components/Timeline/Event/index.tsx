@@ -8,7 +8,9 @@ const HEADING_FONT_SIZE: React.CSSProperties['fontSize'] =
     'var(--font-size--1)';
 
 const Layout = styled(Box)({
+    position: 'relative',
     width: '100%',
+
     display: 'flex',
     justifyContent: 'flex-end',
 });

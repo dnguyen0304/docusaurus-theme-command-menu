@@ -17,7 +17,6 @@ const StyledBox = styled(Box)<StyledBoxProps>(({ size }) => ({
 const getPosition = (
     linePositionLeft: React.CSSProperties['left'],
     lineWidthPx: number,
-    headingFontSize: React.CSSProperties['fontSize'],
 ): Pick<React.CSSProperties, 'position' | 'left' | 'translate'> => {
     return {
         position: 'absolute',
@@ -30,7 +29,6 @@ interface Props {
     lineNotColoredBackgroundColor: React.CSSProperties['backgroundColor'];
     linePositionLeft: React.CSSProperties['left'];
     lineWidthPx: number;
-    headingFontSize: React.CSSProperties['fontSize'];
 };
 
 export default function Event(
@@ -38,14 +36,13 @@ export default function Event(
         lineNotColoredBackgroundColor,
         linePositionLeft,
         lineWidthPx,
-        headingFontSize,
     }: Props,
 ): JSX.Element {
     return (
         <StyledBox
             size='var(--font-size--1)'
             sx={{
-                ...getPosition(linePositionLeft, lineWidthPx, headingFontSize),
+                ...getPosition(linePositionLeft, lineWidthPx),
                 backgroundColor: lineNotColoredBackgroundColor,
             }}
         />

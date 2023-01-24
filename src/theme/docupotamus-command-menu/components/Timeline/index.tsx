@@ -5,6 +5,15 @@ import * as React from 'react';
 import Event from './Event';
 import Line from './Line';
 
+const StyledContainer = styled(Box)({
+    // TODO(dnguyen0304): Investigate why this or z-index: 0 is needed for the
+    //   timeline to be visible.
+    position: 'relative',
+
+    // TODO(dnguyen0304): Remove development code.
+    backgroundColor: 'red',
+});
+
 const StyledEvents = styled(Box)({});
 
 interface Props {
@@ -62,7 +71,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
     ];
 
     return (
-        <Box sx={{ position: 'relative', backgroundColor: 'red', ...sx }}>
+        <StyledContainer sx={{ ...sx }}>
             <Line />
             <StyledEvents>
                 {events.map(({ timestampMilli, type, heading, snippet }) =>
@@ -75,6 +84,6 @@ export default function Timeline({ sx }: Props): JSX.Element {
                     />
                 )}
             </ StyledEvents>
-        </Box>
+        </StyledContainer>
     );
 };

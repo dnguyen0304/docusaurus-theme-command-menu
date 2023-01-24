@@ -20,6 +20,7 @@ const StyledContainer = styled(Box)({
     margin: 'var(--space-s)',
     marginLeft: 0,
     overflowY: 'auto',
+    paddingRight: 'var(--space-s)',
 });
 
 const EventsLayout = styled(Box)({

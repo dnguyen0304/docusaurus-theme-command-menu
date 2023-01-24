@@ -14,7 +14,11 @@ const StyledContainer = styled(Box)({
     overflowY: 'auto',
 });
 
-const StyledEvents = styled(Box)({});
+const EventsLayout = styled(Box)({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+});
 
 interface Props {
     readonly sx?: SxProps<Theme>;
@@ -88,7 +92,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
     return (
         <StyledContainer sx={{ ...sx }}>
             <Line />
-            <StyledEvents>
+            <EventsLayout>
                 {events
                     .sort((x, y) => y.timestampMilli - x.timestampMilli)
                     .map(({ timestampMilli, type, heading, snippet }) =>
@@ -101,7 +105,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
                         />
                     )
                 }
-            </ StyledEvents>
+            </ EventsLayout>
         </StyledContainer>
     );
 };

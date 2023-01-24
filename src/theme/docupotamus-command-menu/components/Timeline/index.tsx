@@ -10,8 +10,7 @@ const StyledContainer = styled(Box)({
     //   timeline to be visible.
     position: 'relative',
 
-    // TODO(dnguyen0304): Remove development code.
-    backgroundColor: 'red',
+    backgroundColor: 'var(--color-grey-100)',
     overflowY: 'auto',
 });
 

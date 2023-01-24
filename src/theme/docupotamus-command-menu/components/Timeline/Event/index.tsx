@@ -8,7 +8,7 @@ const Layout = styled(Box)({
     width: '100%',
 
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
 });
 
 const StyledCard = styled(Box)({

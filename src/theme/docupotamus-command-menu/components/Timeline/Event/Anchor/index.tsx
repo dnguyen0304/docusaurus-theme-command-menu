@@ -14,6 +14,17 @@ const StyledBox = styled(Box)<StyledBoxProps>(({ size }) => ({
     borderRadius: '50%',
 }));
 
+const getPosition = (
+    linePositionLeft: React.CSSProperties['left'],
+    lineWidthPx: number,
+): Pick<React.CSSProperties, 'position' | 'left' | 'translate'> => {
+    return {
+        position: 'absolute',
+        left: linePositionLeft,
+        translate: `calc(-50% + ${lineWidthPx / 2}px) 0`,
+    };
+};
+
 interface Props {
     linePositionLeft: React.CSSProperties['left'];
     lineWidthPx: number;
@@ -26,6 +37,9 @@ export default function Event(
     }: Props,
 ): JSX.Element {
     return (
-        <StyledBox size='var(--font-size--1)' />
+        <StyledBox
+            size='var(--font-size--1)'
+            sx={getPosition(linePositionLeft, lineWidthPx)}
+        />
     );
 };

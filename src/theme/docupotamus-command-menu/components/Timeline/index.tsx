@@ -2,7 +2,7 @@ import { TimelineEventData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
-import Events from './Events';
+import Event from './Event';
 import Line from './Line';
 
 const StyledContainer = styled(Box)({
@@ -14,6 +14,12 @@ const StyledContainer = styled(Box)({
     margin: 'var(--space-s)',
     marginLeft: 0,
     overflowY: 'auto',
+});
+
+const EventsLayout = styled(Box)({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
 });
 
 interface Props {
@@ -88,7 +94,20 @@ export default function Timeline({ sx }: Props): JSX.Element {
     return (
         <StyledContainer sx={{ ...sx }}>
             <Line />
-            <Events events={events} />
+            <EventsLayout>
+                {events
+                    .sort((x, y) => y.timestampMilli - x.timestampMilli)
+                    .map(({ timestampMilli, type, heading, snippet }) =>
+                        <Event
+                            key={timestampMilli}
+                            timestampMilli={timestampMilli}
+                            type={type}
+                            heading={heading}
+                            snippet={snippet}
+                        />
+                    )
+                }
+            </ EventsLayout>
         </StyledContainer>
     );
 };

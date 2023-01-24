@@ -22,7 +22,6 @@ const Layout = styled(Box)({
 const StyledCard = styled(Box)({
     width: '80%',
 
-    borderRadius: 'var(--space-m)',
     color: 'var(--docupotamus-color-grey-800)',
     fontFamily: 'var(--docupotamus-font-family)',
     lineHeight: '1.2',

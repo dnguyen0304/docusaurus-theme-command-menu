@@ -1,5 +1,6 @@
 import { TimelineEventData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
+import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchRipple';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import Anchor from './Anchor';
@@ -44,6 +45,22 @@ export default function Event(
         lineWidthPx,
     }: Props,
 ): JSX.Element {
+    const rippleRef = React.useRef<TouchRippleActions>(null);
+
+    const startRipple = (event: React.SyntheticEvent) => {
+        if (!rippleRef.current) {
+            return;
+        }
+        rippleRef.current.start(event);
+    };
+
+    const stopRipple = (event: React.SyntheticEvent) => {
+        if (!rippleRef.current) {
+            return;
+        }
+        rippleRef.current?.stop(event);
+    };
+
     return (
         <Layout>
             <Anchor
@@ -51,7 +68,11 @@ export default function Event(
                 linePositionLeft={linePositionLeft}
                 lineWidthPx={lineWidthPx}
             />
-            <StyledCard component='section'>
+            <StyledCard
+                component='section'
+                onMouseDown={startRipple}
+                onMouseUp={stopRipple}
+            >
                 <StyledCardHeader component='header'>
                     <h2
                         className='ifm_text__reset'
@@ -77,6 +98,7 @@ export default function Event(
                     {snippet}
                 </p>
                 <Tag label={type} />
+                <TouchRipple ref={rippleRef} center={false} />
             </StyledCard>
         </Layout>
     );

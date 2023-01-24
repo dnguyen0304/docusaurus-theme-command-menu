@@ -61,13 +61,21 @@ export default function Event(
                             fontSize: 'var(--font-size--1)',
                             fontWeight: 'var(--docupotamus-heading-font-weight)',
                             letterSpacing: '2px',
+                            marginBottom: 'var(--space-xs)',
                         }}
                     >
                         {heading}
                     </h2>
                     <Box>{timestampMilli}</Box>
                 </StyledCardHeader>
-                <p className='ifm_text__reset'>{snippet}</p>
+                <p
+                    className='ifm_text__reset'
+                    style={{
+                        marginBottom: 'var(--space-xs)',
+                    }}
+                >
+                    {snippet}
+                </p>
                 <Tag label={type} />
             </StyledCard>
         </Layout>

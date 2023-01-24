@@ -31,7 +31,7 @@ const EventsLayout = styled(Box)({
     // Use margin on the children instead of padding on the parent because we
     // programmatically get the size.
     '& > *:first-of-type': {
-        marginTop: 'var(--space-ll)',
+        marginTop: 'var(--space-l)',
     },
     '& > * + *': {
         marginTop: 'var(--space-xl)',

@@ -2,7 +2,6 @@ import { SlotData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import { styled } from '@mui/material/styles';
-import Color from 'color';
 import * as React from 'react';
 import ButtonGroup from './ButtonGroup';
 import styles from './styles.module.css';
@@ -10,7 +9,7 @@ import styles from './styles.module.css';
 const TRANSITION_DURATION: React.CSSProperties['transitionDuration'] = '0.3s';
 
 const GlassStyles: React.CSSProperties = {
-    backgroundColor: Color('var(--color-grey-100)').fade(0.4).toString(),
+    backgroundColor: 'rgba(var(--color-grey-100-rgb), 0.6)',
     backdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
     WebkitBackdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
     border: '8px solid rgba(255, 255, 255, 0.9)',

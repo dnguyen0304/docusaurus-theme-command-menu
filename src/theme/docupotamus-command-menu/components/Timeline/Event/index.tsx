@@ -70,7 +70,7 @@ export default function Event(
                     className='ifm_text__reset'
                     style={{
                         fontSize: 'var(--docupotamus-font-size)',
-                        fontWeight: 400,
+                        fontWeight: 200,
                         marginBottom: 'var(--space-xs)',
                     }}
                 >

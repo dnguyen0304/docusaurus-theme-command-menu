@@ -11,9 +11,9 @@ const Layout = styled(Box)({
     display: 'grid',
     gridTemplate: 'auto 1fr auto / auto 1fr auto',
     gridTemplateAreas:
-        '"header header header" ' +
+        '"header header timeline" ' +
         '"left-sidebar wheel timeline" ' +
-        '"footer footer footer"',
+        '"footer footer timeline"',
 });
 
 interface Props { };

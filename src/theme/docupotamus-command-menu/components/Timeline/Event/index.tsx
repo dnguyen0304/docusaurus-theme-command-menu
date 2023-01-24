@@ -14,6 +14,9 @@ const Layout = styled(Box)({
     justifyContent: 'flex-end',
 
     paddingBottom: 'var(--space-xl)',
+    '& .MuiTouchRipple-child': {
+        backgroundColor: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.5)',
+    },
 });
 
 const StyledCard = styled(Box)({

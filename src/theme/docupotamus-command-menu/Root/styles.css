@@ -47,8 +47,15 @@
     --space-xl-2xl: clamp(3.38rem, calc(2.81rem + 2.83vw), 5.00rem);
     --space-2xl-3xl: clamp(4.50rem, calc(3.46rem + 5.22vw), 7.50rem);
 
+    /* Docupotamus Theme */
     --docupotamus-color-grey-100-rgb: 17, 25, 40;
     --docupotamus-color-grey-100: rgb(var(--docupotamus-color-grey-100-rgb));
     --docupotamus-color-grey-800-rgb: 255, 255, 255;
     --docupotamus-color-grey-800: rgb(var(--docupotamus-color-grey-800-rgb));
+
+    --docupotamus-font-family: 'Karla', sans-serif;
+    --docupotamus-font-size: var(--font-size--1);
+
+    --docupotamus-heading-font-weight: 600;
+    --docupotamus-body-font-weight: 200;
 }

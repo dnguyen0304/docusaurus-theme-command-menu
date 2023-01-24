@@ -2,6 +2,7 @@ import { TimelineEventData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
+import useDomRect from '../../hooks/useDomRect';
 import Event from './Event';
 import Line from './Line';
 
@@ -27,6 +28,11 @@ interface Props {
 };
 
 export default function Timeline({ sx }: Props): JSX.Element {
+    const [lineHeight, setLineHeight] = React.useState<number>(0);
+
+    const eventsLayoutRef = React.useRef<HTMLDivElement>();
+    const domRect = useDomRect<HTMLDivElement>(eventsLayoutRef);
+
     // Assume events are sorted by timestampMilli in ascending order.
     const events: TimelineEventData[] = [
         {
@@ -91,10 +97,18 @@ export default function Timeline({ sx }: Props): JSX.Element {
         },
     ];
 
+    // TODO(dnguyen0304): Investigate if this can be done in CSS.
+    React.useEffect(() => {
+        if (domRect === undefined) {
+            return;
+        }
+        setLineHeight(domRect.height);
+    }, [domRect]);
+
     return (
         <StyledContainer sx={{ ...sx }}>
-            <Line />
-            <EventsLayout>
+            <Line sx={{ height: lineHeight }} />
+            <EventsLayout ref={eventsLayoutRef}>
                 {events
                     .sort((x, y) => y.timestampMilli - x.timestampMilli)
                     .map(({ timestampMilli, type, heading, snippet }) =>

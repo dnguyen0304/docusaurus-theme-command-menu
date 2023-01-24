@@ -21,6 +21,7 @@ interface Props {
 };
 
 export default function Timeline({ sx }: Props): JSX.Element {
+    // Assume events are sorted by timestampMilli in ascending order.
     const events: TimelineEventData[] = [
         {
             timestampMilli: 1049231539000,

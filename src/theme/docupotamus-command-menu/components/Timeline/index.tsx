@@ -22,6 +22,7 @@ const EventsLayout = styled(Box)({
     flexDirection: 'column',
     alignItems: 'flex-end',
 
+    padding: 'var(--space-m) 0',
     '& > * + *': {
         marginTop: 'var(--space-s)',
     },

@@ -90,15 +90,18 @@ export default function Timeline({ sx }: Props): JSX.Element {
         <StyledContainer sx={{ ...sx }}>
             <Line />
             <StyledEvents>
-                {events.map(({ timestampMilli, type, heading, snippet }) =>
-                    <Event
-                        key={timestampMilli}
-                        timestampMilli={timestampMilli}
-                        type={type}
-                        heading={heading}
-                        snippet={snippet}
-                    />
-                )}
+                {events
+                    .sort((x, y) => y.timestampMilli - x.timestampMilli)
+                    .map(({ timestampMilli, type, heading, snippet }) =>
+                        <Event
+                            key={timestampMilli}
+                            timestampMilli={timestampMilli}
+                            type={type}
+                            heading={heading}
+                            snippet={snippet}
+                        />
+                    )
+                }
             </ StyledEvents>
         </StyledContainer>
     );

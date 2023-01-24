@@ -71,6 +71,7 @@ h6.ifm_text__reset,
 p.ifm_text__reset {
     color: inherit;
     font-family: inherit;
+    font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
     margin: 0;

@@ -119,7 +119,10 @@ export default function Timeline({ sx }: Props): JSX.Element {
 
     return (
         <StyledContainer sx={{ ...sx }}>
-            <Line sx={{ height: lineHeight }} />
+            <Line sx={{
+                height: lineHeight,
+                left: 'var(--space-l)',
+            }} />
             <EventsLayout ref={eventsLayoutRef}>
                 {events
                     .sort((x, y) => y.timestampMilli - x.timestampMilli)

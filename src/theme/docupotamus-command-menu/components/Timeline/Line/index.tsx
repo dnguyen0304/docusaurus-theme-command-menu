@@ -6,7 +6,6 @@ const NotColored = styled(Box)({
     width: '4px',
 
     position: 'absolute',
-    left: 'var(--space-l)',
 
     backgroundColor: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.1)',
 });

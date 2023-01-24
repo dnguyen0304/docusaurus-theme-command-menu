@@ -48,6 +48,8 @@
     --space-2xl-3xl: clamp(4.50rem, calc(3.46rem + 5.22vw), 7.50rem);
 
     /* Docupotamus Theme */
+    --docupotamus-border-radius-m: var(--space-m);
+
     --docupotamus-color-grey-100-rgb: 17, 25, 40;
     --docupotamus-color-grey-100: rgb(var(--docupotamus-color-grey-100-rgb));
     --docupotamus-color-grey-300-rgb: 41, 48, 62;

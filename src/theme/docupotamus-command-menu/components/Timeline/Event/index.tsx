@@ -13,6 +13,7 @@ const Layout = styled(Box)({
     display: 'flex',
     justifyContent: 'flex-end',
 
+    cursor: 'pointer',
     padding: 'var(--space-m) var(--space-s) var(--space-l) 0',
     '& .MuiTouchRipple-child': {
         backgroundColor: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.5)',

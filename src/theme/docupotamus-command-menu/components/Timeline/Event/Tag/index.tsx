@@ -8,6 +8,8 @@ const StyledChip = styled(Chip)({
     backgroundColor: 'rgb(98, 0, 234)',
     borderRadius: 'var(--docupotamus-border-radius-s)',
     color: 'var(--docupotamus-color-grey-800)',
+    fontFamily: 'var(--docupotamus-font-family)',
+    fontWeight: 400,
     '&&:hover': {
         backgroundColor: 'var(--docupotamus-color-grey-300)',
     },

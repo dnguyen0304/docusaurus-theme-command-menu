@@ -22,9 +22,16 @@ const EventsLayout = styled(Box)({
     flexDirection: 'column',
     alignItems: 'flex-end',
 
-    padding: 'var(--space-m) 0',
+    // Use margin on the children instead of padding on the parent because we
+    // programmatically get the size.
+    '& > *:first-child': {
+        marginTop: 'var(--space-m)',
+    },
     '& > * + *': {
         marginTop: 'var(--space-s)',
+    },
+    '& > *:last-child': {
+        marginBottom: 'var(--space-m)',
     },
 });
 

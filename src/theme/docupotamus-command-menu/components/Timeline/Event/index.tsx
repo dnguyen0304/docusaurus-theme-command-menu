@@ -59,7 +59,7 @@ export default function Event(
                             fontSize: 'var(--font-size--1)',
                             fontWeight: 'var(--docupotamus-heading-font-weight)',
                             letterSpacing: '2px',
-                            marginBottom: 'var(--space-xs)',
+                            marginBottom: 'var(--space-2xs)',
                         }}
                     >
                         {heading}

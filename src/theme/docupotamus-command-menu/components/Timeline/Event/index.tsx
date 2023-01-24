@@ -3,12 +3,15 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 
-const StyledCard = styled(Box)({
-    width: '80%',
+const Layout = styled(Box)({
+    width: '100%',
 
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
+});
+
+const StyledCard = styled(Box)({
+    width: '80%',
 
     borderRadius: 'var(--space-m)',
     color: 'var(--docupotamus-color-grey-800)',
@@ -29,7 +32,7 @@ export default function Event(
     }: Props,
 ): JSX.Element {
     return (
-        <Box sx={{ width: '100%' }}>
+        <Layout>
             <Box sx={{
                 width: '10px',
                 height: '10px',
@@ -42,6 +45,6 @@ export default function Event(
                 <Box>{type}</Box>
                 <Box>{timestampMilli}</Box>
             </StyledCard>
-        </Box>
+        </Layout>
     );
 };

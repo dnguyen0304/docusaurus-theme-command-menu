@@ -23,6 +23,11 @@ const StyledCard = styled(Box)({
     lineHeight: '1.2',
 });
 
+const StyledCardHeader = styled(Box)({
+    display: 'flex',
+    justifyContent: 'space-between',
+});
+
 interface Props extends TimelineEventData {
     readonly lineNotColoredBackgroundColor: React.CSSProperties['backgroundColor'];
     readonly linePositionLeft: React.CSSProperties['left'];
@@ -48,19 +53,21 @@ export default function Event(
                 lineWidthPx={lineWidthPx}
             />
             <StyledCard component='section'>
-                <h2
-                    className='ifm_text__reset'
-                    style={{
-                        fontSize: 'var(--font-size--1)',
-                        fontWeight: 'var(--docupotamus-heading-font-weight)',
-                        letterSpacing: '2px',
-                    }}
-                >
-                    {heading}
-                </h2>
+                <StyledCardHeader component='header'>
+                    <h2
+                        className='ifm_text__reset'
+                        style={{
+                            fontSize: 'var(--font-size--1)',
+                            fontWeight: 'var(--docupotamus-heading-font-weight)',
+                            letterSpacing: '2px',
+                        }}
+                    >
+                        {heading}
+                    </h2>
+                    <Box>{timestampMilli}</Box>
+                </StyledCardHeader>
                 <p className='ifm_text__reset'>{snippet}</p>
                 <Box>{type}</Box>
-                <Box>{timestampMilli}</Box>
             </StyledCard>
         </Layout>
     );

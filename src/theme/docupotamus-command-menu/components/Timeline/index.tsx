@@ -11,6 +11,8 @@ const StyledContainer = styled(Box)({
     position: 'relative',
 
     backgroundColor: 'var(--docupotamus-color-grey-100)',
+    margin: 'var(--space-s)',
+    marginLeft: 0,
     overflowY: 'auto',
 });
 

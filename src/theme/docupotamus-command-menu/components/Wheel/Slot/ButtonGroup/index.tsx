@@ -11,7 +11,7 @@ const StyledFooter = styled(Box)({
     justifyContent: 'flex-end',
     gap: 'var(--space-2xs)',
 
-    color: 'rgba(255, 255, 255, 0.1)',
+    color: 'rgba(var(--color-grey-800-rgb), 0.1)',
     marginTop: 'auto',
     '& .MuiIconButton-root': {
         padding: 0,

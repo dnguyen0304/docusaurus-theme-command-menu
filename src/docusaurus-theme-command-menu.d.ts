@@ -10,4 +10,15 @@ declare module '@docusaurus/theme-command-menu' {
         readonly snippet: string;
         readonly sx?: SxProps<Theme>;
     }
+
+    interface TimelineEventData {
+        // Created at time as a Unix epoch timestamp, in milliseconds.
+        readonly timestampMilli: number;
+
+        readonly type: TimelineEventType;
+        readonly heading: string;
+        readonly snippet: string;
+    }
+
+    type TimelineEventType = 'Read Recently';
 }

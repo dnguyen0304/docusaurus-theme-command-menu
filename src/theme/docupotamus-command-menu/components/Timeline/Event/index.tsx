@@ -2,6 +2,7 @@ import { TimelineEventData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
+import Anchor from './Anchor';
 
 const Layout = styled(Box)({
     width: '100%',
@@ -33,12 +34,7 @@ export default function Event(
 ): JSX.Element {
     return (
         <Layout>
-            <Box sx={{
-                width: '10px',
-                height: '10px',
-                border: '2px solid blue',
-                borderRadius: '50%',
-            }} />
+            <Anchor />
             <StyledCard component='section'>
                 <h2>{heading}</h2>
                 <p>{snippet}</p>

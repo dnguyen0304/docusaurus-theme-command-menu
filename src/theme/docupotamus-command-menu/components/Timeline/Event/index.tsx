@@ -4,9 +4,11 @@ import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import Anchor from './Anchor';
 
+const HEADING_FONT_SIZE: React.CSSProperties['fontSize'] =
+    'var(--font-size--1)';
+
 const Layout = styled(Box)({
     width: '100%',
-
     display: 'flex',
     justifyContent: 'flex-end',
 });
@@ -45,12 +47,13 @@ export default function Event(
                 lineNotColoredBackgroundColor={lineNotColoredBackgroundColor}
                 linePositionLeft={linePositionLeft}
                 lineWidthPx={lineWidthPx}
+                headingFontSize={HEADING_FONT_SIZE}
             />
             <StyledCard component='section'>
                 <h2
                     className='ifm_text__reset'
                     style={{
-                        fontSize: 'var(--font-size--1)',
+                        fontSize: HEADING_FONT_SIZE,
                         fontWeight: 'var(--docupotamus-heading-font-weight)',
                         letterSpacing: '2px',
                     }}

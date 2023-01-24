@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import Event from './Event';
-import Line from './Line';
 
 const Layout = styled(Box)({
     display: 'flex',
@@ -22,7 +21,6 @@ export default function Events(
 ): JSX.Element {
     return (
         <Layout>
-            <Line />
             {[...events]
                 .sort((x, y) => y.timestampMilli - x.timestampMilli)
                 .map(({ timestampMilli, type, heading, snippet }) =>

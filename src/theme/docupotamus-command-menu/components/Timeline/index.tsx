@@ -25,10 +25,10 @@ const StyledContainer = styled(Box)({
 const EventsLayout = styled(Box)({
     // Use margin on the children instead of padding on the parent because we
     // programmatically get the size.
-    '& > *:first-of-type': {
+    '& > .MuiBox-root:first-of-type': {
         marginTop: 'var(--space-l)',
     },
-    '& > *:last-of-type': {
+    '& > .MuiBox-root:last-of-type': {
         marginBottom: 'var(--space-l)',
     },
 });

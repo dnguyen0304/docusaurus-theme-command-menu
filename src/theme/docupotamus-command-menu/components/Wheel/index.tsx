@@ -6,7 +6,7 @@ import Slot from './Slot';
 
 const StyledBox = styled(Box)({
     // TODO(dnguyen0304): Fix missing responsive design.
-    width: '20%',
+    width: '25%',
     minWidth: '100px',
     aspectRatio: '3 / 2.5',
 

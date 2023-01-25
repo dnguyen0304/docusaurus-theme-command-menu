@@ -4,6 +4,7 @@ import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchR
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import Anchor from './Anchor';
+import styles from './styles.module.css';
 import Tag from './Tag';
 
 const PADDING_TOP: React.CSSProperties['paddingTop'] = 'var(--space-m)';
@@ -17,9 +18,6 @@ const Layout = styled(Box)({
 
     cursor: 'pointer',
     padding: `${PADDING_TOP} var(--space-s) var(--space-l) 0`,
-    '& .MuiTouchRipple-child': {
-        backgroundColor: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.5)',
-    },
     '&:hover': {
         backgroundColor: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.05)',
     }
@@ -109,7 +107,13 @@ export default function Event(
                 </p>
                 <Tag label={type} />
             </StyledCard>
-            <TouchRipple ref={rippleRef} center={false} />
+            <TouchRipple
+                ref={rippleRef}
+                center={false}
+                classes={{
+                    child: styles.MuiTouchRipple_childOverride,
+                }}
+            />
         </Layout>
     );
 };

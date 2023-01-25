@@ -20,6 +20,7 @@ const Layout = styled(Box)({
     padding: `${PADDING_TOP} var(--space-s) var(--space-l) 0`,
     '&:hover': {
         backgroundColor: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.05)',
+        transition: 'background-color 0.1s',
     }
 });
 

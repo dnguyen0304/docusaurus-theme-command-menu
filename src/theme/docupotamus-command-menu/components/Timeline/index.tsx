@@ -134,7 +134,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
             snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         },
         {
-            timestampMilli: 1674664229000,
+            timestampMilli: Date.now(),
             type: 'Read',
             heading: 'Dimensions',
             snippet: 'between 996px and 1440px',

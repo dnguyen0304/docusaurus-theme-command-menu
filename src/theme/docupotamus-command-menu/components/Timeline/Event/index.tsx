@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchRipple';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
+import { dayjs } from '../../../services/datetime';
 import Anchor from './Anchor';
 import styles from './styles.module.css';
 import Tag from './Tag';
@@ -100,7 +101,7 @@ export default function Event(
                     >
                         {heading}
                     </h2>
-                    <Box>{timestampMilli}</Box>
+                    <Box>{dayjs(timestampMilli).fromNow()}</Box>
                 </StyledCardHeader>
                 <p
                     className='ifm_text__reset'

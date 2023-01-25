@@ -43,7 +43,10 @@ interface Props {
 
 export default function Timeline({ sx }: Props): JSX.Element {
     const [lineHeight, setLineHeight] = React.useState<number>(0);
+    const [lineHeightColoredPx, setLineHeightColoredPx] =
+        React.useState<number>(0);
 
+    const timelineRef = React.useRef<HTMLDivElement>();
     const eventsLayoutRef = React.useRef<HTMLDivElement>();
     const domRect = useDomRect<HTMLDivElement>(eventsLayoutRef);
 
@@ -111,6 +114,17 @@ export default function Timeline({ sx }: Props): JSX.Element {
         },
     ];
 
+    const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = (event) => {
+        if (!timelineRef.current) {
+            return;
+        }
+        const newHeight =
+            timelineRef.current.scrollTop
+            + event.clientY
+            - timelineRef.current.getBoundingClientRect().top;
+        setLineHeightColoredPx((newHeight > 0) ? newHeight : 0);
+    };
+
     // TODO(dnguyen0304): Investigate if this can be done in CSS.
     React.useEffect(() => {
         if (domRect === undefined) {
@@ -120,14 +134,23 @@ export default function Timeline({ sx }: Props): JSX.Element {
     }, [domRect]);
 
     return (
-        <StyledContainer sx={{ ...sx }}>
-            <Line sx={{
-                width: `${LINE_WIDTH_PX}px`,
-                height: lineHeight,
-                left: LINE_POSITION_LEFT,
-                backgroundColor: LINE_NOT_COLORED_BACKGROUND_COLOR,
-            }} />
-            <EventsLayout ref={eventsLayoutRef}>
+        <StyledContainer
+            ref={timelineRef}
+            sx={{ ...sx }}
+        >
+            <Line
+                coloredHeightPx={lineHeightColoredPx}
+                sx={{
+                    width: `${LINE_WIDTH_PX}px`,
+                    height: lineHeight,
+                    left: LINE_POSITION_LEFT,
+                    backgroundColor: LINE_NOT_COLORED_BACKGROUND_COLOR,
+                }}
+            />
+            <EventsLayout
+                ref={eventsLayoutRef}
+                onMouseMove={handleMouseMove}
+            >
                 {events
                     .sort((x, y) => y.timestampMilli - x.timestampMilli)
                     .map(({ timestampMilli, type, heading, snippet }) =>

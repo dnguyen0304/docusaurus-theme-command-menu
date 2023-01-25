@@ -8,8 +8,6 @@ const NotColored = styled(Box)({
 
 const Colored = styled(Box)({
     width: '100%',
-    // TODO(dnguyen0304): Add dynamic effect.
-    height: '200px',
 
     background: `linear-gradient(
         to bottom,
@@ -19,17 +17,19 @@ const Colored = styled(Box)({
 });
 
 interface Props {
+    readonly coloredHeightPx: number;
     readonly sx?: SxProps<Theme>;
 };
 
 export default function Line(
     {
+        coloredHeightPx,
         sx,
     }: Props
 ): JSX.Element {
     return (
         <NotColored sx={{ ...sx }}>
-            <Colored />
+            <Colored sx={{ height: `${coloredHeightPx}px` }} />
         </NotColored>
     );
 };

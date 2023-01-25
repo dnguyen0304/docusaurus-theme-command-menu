@@ -45,7 +45,7 @@ const StyledHeading = (): JSX.Element => {
                 fontWeight: 'var(--docupotamus-heading-font-weight)',
                 letterSpacing: '4px',
                 lineHeight: '1.2',
-                padding: 'var(--space-l) 0',
+                padding: 'var(--space-l) 0 var(--space-m)',
                 textAlign: 'center',
                 textTransform: 'uppercase',
             }}

@@ -4,6 +4,7 @@ import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchR
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { dayjs } from '../../../services/datetime';
+import stylesCommandMenu from '../../styles.module.css';
 import Anchor from './Anchor';
 import styles from './styles.module.css';
 import Tag from './Tag';
@@ -103,14 +104,9 @@ export default function Event(
                         {dayjs(timestampMilli).fromNow()}
                     </span>
                 </StyledCardHeader>
-                <p
-                    className='ifm_text__reset'
-                    style={{
-                        fontSize: 'var(--docupotamus-font-size)',
-                        fontWeight: 200,
-                        marginBottom: 'var(--space-xs)',
-                    }}
-                >
+                <p className={
+                    `${stylesCommandMenu.text} ${stylesCommandMenu.textBody}`
+                } >
                     {snippet}
                 </p>
                 {/* TODO(dnguyen0304): Fix onClick bubbling propagation. */}

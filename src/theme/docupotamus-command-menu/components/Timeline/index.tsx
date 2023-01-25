@@ -13,9 +13,8 @@ const LINE_NOT_COLORED_BACKGROUND_COLOR: React.CSSProperties['backgroundColor'] 
 
 const Z_INDEX = {
     heading: 10,
-    lineColored: 20,
-    lineNotColored: 30,
-    eventAnchor: 40,
+    line: 20,
+    eventAnchor: 30,
 };
 
 const StyledContainer = styled(Box)({
@@ -37,7 +36,7 @@ const StyledHeading = (): JSX.Element => {
             style={{
                 position: 'sticky',
                 top: 0,
-                zIndex: Z_INDEX['heading'],
+                zIndex: Z_INDEX.heading,
 
                 backgroundColor: 'var(--docupotamus-color-grey-100)',
                 color: 'var(--docupotamus-color-grey-800)',
@@ -179,6 +178,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
                     width: `${LINE_WIDTH_PX}px`,
                     height: lineHeight,
                     left: LINE_POSITION_LEFT,
+                    zIndex: Z_INDEX.line,
                     backgroundColor: LINE_NOT_COLORED_BACKGROUND_COLOR,
                 }}
             />
@@ -193,6 +193,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
                             type={type}
                             heading={heading}
                             snippet={snippet}
+                            anchorZIndex={Z_INDEX.eventAnchor}
                             lineNotColoredBackgroundColor={
                                 LINE_NOT_COLORED_BACKGROUND_COLOR
                             }

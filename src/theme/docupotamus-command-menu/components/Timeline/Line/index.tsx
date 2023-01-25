@@ -4,13 +4,10 @@ import * as React from 'react';
 
 const NotColored = styled(Box)({
     position: 'absolute',
-    zIndex: 10,
 });
 
 const Colored = styled(Box)({
     width: '100%',
-
-    zIndex: 20,
 
     background: `linear-gradient(
         to bottom,

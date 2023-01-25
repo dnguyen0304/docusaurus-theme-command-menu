@@ -38,6 +38,7 @@ const StyledCardHeader = styled(Box)({
 });
 
 interface Props extends TimelineEventData {
+    readonly anchorZIndex: React.CSSProperties['zIndex'];
     readonly lineNotColoredBackgroundColor: React.CSSProperties['backgroundColor'];
     readonly linePositionLeft: React.CSSProperties['left'];
     readonly lineWidthPx: number;
@@ -50,6 +51,7 @@ export default function Event(
         type,
         heading,
         snippet,
+        anchorZIndex,
         lineNotColoredBackgroundColor,
         linePositionLeft,
         lineWidthPx,
@@ -78,6 +80,7 @@ export default function Event(
             onMouseUp={stopRipple}
         >
             <Anchor
+                zIndex={anchorZIndex}
                 lineNotColoredBackgroundColor={lineNotColoredBackgroundColor}
                 linePositionLeft={linePositionLeft}
                 lineWidthPx={lineWidthPx}

@@ -7,8 +7,6 @@ interface StyledBoxProps {
 };
 
 const StyledBox = styled(Box)<StyledBoxProps>(({ size }) => ({
-    zIndex: 40,
-
     width: size,
     height: size,
 
@@ -31,6 +29,7 @@ const getPosition = (
 };
 
 interface Props {
+    zIndex: React.CSSProperties['zIndex'];
     lineNotColoredBackgroundColor: React.CSSProperties['backgroundColor'];
     linePositionLeft: React.CSSProperties['left'];
     lineWidthPx: number;
@@ -40,6 +39,7 @@ interface Props {
 
 export default function Event(
     {
+        zIndex,
         lineNotColoredBackgroundColor,
         linePositionLeft,
         lineWidthPx,
@@ -73,6 +73,7 @@ export default function Event(
             sx={{
                 ...getPosition(linePositionLeft, lineWidthPx, eventPaddingTop),
                 backgroundColor,
+                zIndex,
             }}
         />
     );

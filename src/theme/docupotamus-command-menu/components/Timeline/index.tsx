@@ -114,6 +114,10 @@ export default function Timeline({ sx }: Props): JSX.Element {
         },
     ];
 
+    const handleMouseLeave = () => {
+        setLineHeightColoredPx(0);
+    };
+
     const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = (event) => {
         if (!timelineRef.current) {
             return;
@@ -136,6 +140,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
     return (
         <StyledContainer
             ref={timelineRef}
+            onMouseLeave={handleMouseLeave}
             onMouseMove={handleMouseMove}
             sx={{ ...sx }}
         >

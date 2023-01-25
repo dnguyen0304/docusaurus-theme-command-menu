@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
+import stylesCommandMenu from '../../styles.module.css';
 import ButtonGroup from './ButtonGroup';
 import styles from './styles.module.css';
 
@@ -86,7 +87,9 @@ export default function Slot(
                     multiline
                 />
             </h2>
-            <p className={styles.Slot_snippet} >
+            <p className={
+                `${stylesCommandMenu.text} ${stylesCommandMenu.textBody}`
+            } >
                 {snippet}
             </p>
             <ButtonGroup />

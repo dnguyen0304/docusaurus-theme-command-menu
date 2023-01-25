@@ -41,10 +41,6 @@
     margin-bottom: var(--space-3xs);
 }
 
-.Slot_snippet {
-    font-weight: var(--docupotamus-body-font-weight);
-}
-
 @keyframes fade-in-from-top {
     0% {
         opacity: 0;

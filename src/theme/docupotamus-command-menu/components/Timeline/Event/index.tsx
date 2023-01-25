@@ -27,15 +27,15 @@ const Layout = styled(Box)({
 
 const StyledCard = styled(Box)({
     width: '80%',
-
-    color: 'var(--docupotamus-color-grey-800)',
-    fontFamily: 'var(--docupotamus-font-family)',
-    lineHeight: '1.2',
 });
 
 const StyledCardHeader = styled(Box)({
     display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'baseline',
+
+    marginBottom: 'var(--space-2xs)',
 });
 
 interface Props extends TimelineEventData {
@@ -88,20 +88,17 @@ export default function Event(
                 eventPaddingTop={PADDING_TOP}
                 timelineMouseClientY={timelineMouseClientY}
             />
-            <StyledCard component='section'>
+            <StyledCard
+                className={styles.Event_cardText}
+                component='section'
+            >
                 <StyledCardHeader component='header'>
-                    <h2
-                        className='ifm_text__reset'
-                        style={{
-                            fontSize: 'var(--font-size--1)',
-                            fontWeight: 'var(--docupotamus-heading-font-weight)',
-                            letterSpacing: '2px',
-                            marginBottom: 'var(--space-2xs)',
-                        }}
-                    >
+                    <span className={`ifm_text__reset ${styles.Event_heading}`}>
                         {heading}
-                    </h2>
-                    <Box>{dayjs(timestampMilli).fromNow()}</Box>
+                    </span>
+                    <span className={styles.Event_timestamp}>
+                        {dayjs(timestampMilli).fromNow()}
+                    </span>
                 </StyledCardHeader>
                 <p
                     className='ifm_text__reset'

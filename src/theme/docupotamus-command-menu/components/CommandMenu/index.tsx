@@ -12,7 +12,7 @@ const Layout = styled(Box)({
     gridTemplate: 'auto 1fr auto / auto 1fr max(250px, 25%)',
     gridTemplateAreas:
         '"header header timeline" ' +
-        '"left-sidebar wheel timeline" ' +
+        '"wheel wheel timeline" ' +
         '"footer footer timeline"',
 });
 
@@ -32,7 +32,6 @@ export default function CommandMenu({ }: Props): JSX.Element {
         >
             <Layout>
                 <header style={{ gridArea: 'header' }}>Header</header>
-                <div style={{ gridArea: 'left-sidebar' }}>Left Sidebar</div>
                 <Wheel sx={{ gridArea: 'wheel' }} />
                 <Timeline sx={{ gridArea: 'timeline' }} />
                 <footer style={{ gridArea: 'footer' }}>Footer</footer>

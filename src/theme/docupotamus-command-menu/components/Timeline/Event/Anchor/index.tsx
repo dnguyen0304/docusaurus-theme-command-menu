@@ -19,12 +19,12 @@ const StyledBox = styled(Box)<StyledBoxProps>(({ size }) => ({
 const getPosition = (
     linePositionLeft: React.CSSProperties['left'],
     lineWidthPx: number,
-    parentPaddingTop: React.CSSProperties['paddingTop'],
+    eventPaddingTop: React.CSSProperties['paddingTop'],
 ): Pick<React.CSSProperties, 'position' | 'top' | 'left' | 'translate'> => {
     return {
         position: 'absolute',
         // TODO(dnguyen0304): Investigate if this can be done programmatically.
-        top: `calc(${parentPaddingTop} + 2px)`,
+        top: `calc(${eventPaddingTop} + 2px)`,
         left: linePositionLeft,
         translate: `calc(-50% + ${lineWidthPx / 2}px) 0`,
     };
@@ -34,7 +34,7 @@ interface Props {
     lineNotColoredBackgroundColor: React.CSSProperties['backgroundColor'];
     linePositionLeft: React.CSSProperties['left'];
     lineWidthPx: number;
-    parentPaddingTop: React.CSSProperties['paddingTop'];
+    eventPaddingTop: React.CSSProperties['paddingTop'];
     timelineMouseClientY: number;
 };
 
@@ -43,7 +43,7 @@ export default function Event(
         lineNotColoredBackgroundColor,
         linePositionLeft,
         lineWidthPx,
-        parentPaddingTop,
+        eventPaddingTop,
         timelineMouseClientY,
     }: Props,
 ): JSX.Element {
@@ -71,7 +71,7 @@ export default function Event(
             ref={ref}
             size='var(--font-size--1)'
             sx={{
-                ...getPosition(linePositionLeft, lineWidthPx, parentPaddingTop),
+                ...getPosition(linePositionLeft, lineWidthPx, eventPaddingTop),
                 backgroundColor,
             }}
         />

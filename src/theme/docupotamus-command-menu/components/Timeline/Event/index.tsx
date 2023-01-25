@@ -81,7 +81,7 @@ export default function Event(
                 lineNotColoredBackgroundColor={lineNotColoredBackgroundColor}
                 linePositionLeft={linePositionLeft}
                 lineWidthPx={lineWidthPx}
-                parentPaddingTop={PADDING_TOP}
+                eventPaddingTop={PADDING_TOP}
                 timelineMouseClientY={timelineMouseClientY}
             />
             <StyledCard component='section'>

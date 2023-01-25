@@ -136,6 +136,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
     return (
         <StyledContainer
             ref={timelineRef}
+            onMouseMove={handleMouseMove}
             sx={{ ...sx }}
         >
             <Line
@@ -147,10 +148,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
                     backgroundColor: LINE_NOT_COLORED_BACKGROUND_COLOR,
                 }}
             />
-            <EventsLayout
-                ref={eventsLayoutRef}
-                onMouseMove={handleMouseMove}
-            >
+            <EventsLayout ref={eventsLayoutRef}>
                 {events
                     .sort((x, y) => y.timestampMilli - x.timestampMilli)
                     .map(({ timestampMilli, type, heading, snippet }) =>

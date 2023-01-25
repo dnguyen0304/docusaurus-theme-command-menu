@@ -7,6 +7,8 @@ interface StyledBoxProps {
 };
 
 const StyledBox = styled(Box)<StyledBoxProps>(({ size }) => ({
+    zIndex: 40,
+
     width: size,
     height: size,
 

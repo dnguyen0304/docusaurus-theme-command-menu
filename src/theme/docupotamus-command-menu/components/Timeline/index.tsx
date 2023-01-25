@@ -11,6 +11,13 @@ const LINE_POSITION_LEFT: React.CSSProperties['left'] = 'var(--space-l)';
 const LINE_NOT_COLORED_BACKGROUND_COLOR: React.CSSProperties['backgroundColor'] =
     'var(--docupotamus-color-grey-300)';
 
+const Z_INDEX = {
+    heading: 10,
+    lineColored: 20,
+    lineNotColored: 30,
+    eventAnchor: 40,
+};
+
 const StyledContainer = styled(Box)({
     // TODO(dnguyen0304): Investigate why this or z-index: 0 is needed for the
     //   timeline to be visible.
@@ -22,12 +29,36 @@ const StyledContainer = styled(Box)({
     overflowY: 'auto',
 });
 
+const StyledHeading = (): JSX.Element => {
+    return (
+        <h2
+            // style overrides className overrides styled-components.
+            className='ifm_text__reset'
+            style={{
+                position: 'sticky',
+                top: 0,
+                zIndex: Z_INDEX['heading'],
+
+                backgroundColor: 'var(--docupotamus-color-grey-100)',
+                color: 'var(--docupotamus-color-grey-800)',
+                fontFamily: 'var(--docupotamus-font-family)',
+                fontSize: 'var(--font-size-0)',
+                fontWeight: 'var(--docupotamus-heading-font-weight)',
+                letterSpacing: '4px',
+                lineHeight: '1.2',
+                padding: 'var(--space-l) 0',
+                textAlign: 'center',
+                textTransform: 'uppercase',
+            }}
+        >
+            Timeline
+        </h2>
+    );
+};
+
 const EventsLayout = styled(Box)({
     // Use margin on the children instead of padding on the parent because we
     // programmatically get the size.
-    '& > .MuiBox-root:first-of-type': {
-        marginTop: 'var(--space-l)',
-    },
     '& > .MuiBox-root:last-of-type': {
         marginBottom: 'var(--space-l)',
     },
@@ -152,6 +183,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
                 }}
             />
             <EventsLayout ref={eventsLayoutRef}>
+                <StyledHeading />
                 {events
                     .sort((x, y) => y.timestampMilli - x.timestampMilli)
                     .map(({ timestampMilli, type, heading, snippet }) =>

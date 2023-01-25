@@ -17,6 +17,8 @@ const Colored = styled(Box)({
 });
 
 interface Props {
+    // TODO(dnguyen0304): Fix coloredHeightPx being greater than
+    //   notColoredHeightPx.
     readonly coloredHeightPx: number;
     readonly sx?: SxProps<Theme>;
 };

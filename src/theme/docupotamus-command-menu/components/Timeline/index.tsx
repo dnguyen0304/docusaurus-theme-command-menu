@@ -43,7 +43,7 @@ interface Props {
 
 export default function Timeline({ sx }: Props): JSX.Element {
     const [lineHeight, setLineHeight] = React.useState<number>(0);
-    const [lineHeightColoredPx, setLineHeightColoredPx] =
+    const [lineColoredHeightPx, setLineColoredHeightPx] =
         React.useState<number>(0);
 
     const timelineRef = React.useRef<HTMLDivElement>();
@@ -115,7 +115,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
     ];
 
     const handleMouseLeave = () => {
-        setLineHeightColoredPx(0);
+        setLineColoredHeightPx(0);
     };
 
     const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = (event) => {
@@ -126,7 +126,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
             timelineRef.current.scrollTop
             + event.clientY
             - timelineRef.current.getBoundingClientRect().top;
-        setLineHeightColoredPx((newHeight > 0) ? newHeight : 0);
+        setLineColoredHeightPx((newHeight > 0) ? newHeight : 0);
     };
 
     // TODO(dnguyen0304): Investigate if this can be done in CSS.
@@ -145,7 +145,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
             sx={{ ...sx }}
         >
             <Line
-                coloredHeightPx={lineHeightColoredPx}
+                coloredHeightPx={lineColoredHeightPx}
                 sx={{
                     width: `${LINE_WIDTH_PX}px`,
                     height: lineHeight,

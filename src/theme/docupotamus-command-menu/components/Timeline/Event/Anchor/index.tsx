@@ -33,6 +33,7 @@ interface Props {
     linePositionLeft: React.CSSProperties['left'];
     lineWidthPx: number;
     parentPaddingTop: React.CSSProperties['paddingTop'];
+    timelineMouseClientY: number;
 };
 
 export default function Event(
@@ -41,14 +42,35 @@ export default function Event(
         linePositionLeft,
         lineWidthPx,
         parentPaddingTop,
+        timelineMouseClientY,
     }: Props,
 ): JSX.Element {
+    const [backgroundColor, setBackgroundColor] = React.useState<
+        React.CSSProperties['backgroundColor']
+    >(lineNotColoredBackgroundColor);
+
+    const ref = React.useRef<HTMLDivElement>();
+
+    React.useEffect(() => {
+        if (!ref.current) {
+            return;
+        }
+        const newBackgroundColor =
+            (timelineMouseClientY >= ref.current.getBoundingClientRect().top)
+                // TODO(dnguyen0304): Extract to a centralized location to
+                //   facilitate maintenance.
+                ? 'rgb(98, 0, 234)'
+                : lineNotColoredBackgroundColor;
+        setBackgroundColor(newBackgroundColor);
+    }, [timelineMouseClientY]);
+
     return (
         <StyledBox
+            ref={ref}
             size='var(--font-size--1)'
             sx={{
                 ...getPosition(linePositionLeft, lineWidthPx, parentPaddingTop),
-                backgroundColor: lineNotColoredBackgroundColor,
+                backgroundColor,
             }}
         />
     );

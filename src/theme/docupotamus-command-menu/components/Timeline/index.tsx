@@ -45,6 +45,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
     const [lineHeight, setLineHeight] = React.useState<number>(0);
     const [lineColoredHeightPx, setLineColoredHeightPx] =
         React.useState<number>(0);
+    const [mouseClientY, setMouseClientY] = React.useState<number>(0);
 
     const timelineRef = React.useRef<HTMLDivElement>();
     const eventsLayoutRef = React.useRef<HTMLDivElement>();
@@ -127,6 +128,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
             + event.clientY
             - timelineRef.current.getBoundingClientRect().top;
         setLineColoredHeightPx((newHeight > 0) ? newHeight : 0);
+        setMouseClientY(event.clientY);
     };
 
     // TODO(dnguyen0304): Investigate if this can be done in CSS.
@@ -168,6 +170,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
                             }
                             linePositionLeft={LINE_POSITION_LEFT}
                             lineWidthPx={LINE_WIDTH_PX}
+                            timelineMouseClientY={mouseClientY}
                         />
                     )
                 }

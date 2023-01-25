@@ -41,6 +41,7 @@ interface Props extends TimelineEventData {
     readonly lineNotColoredBackgroundColor: React.CSSProperties['backgroundColor'];
     readonly linePositionLeft: React.CSSProperties['left'];
     readonly lineWidthPx: number;
+    readonly timelineMouseClientY: number;
 };
 
 export default function Event(
@@ -52,6 +53,7 @@ export default function Event(
         lineNotColoredBackgroundColor,
         linePositionLeft,
         lineWidthPx,
+        timelineMouseClientY,
     }: Props,
 ): JSX.Element {
     const rippleRef = React.useRef<TouchRippleActions>(null);
@@ -80,6 +82,7 @@ export default function Event(
                 linePositionLeft={linePositionLeft}
                 lineWidthPx={lineWidthPx}
                 parentPaddingTop={PADDING_TOP}
+                timelineMouseClientY={timelineMouseClientY}
             />
             <StyledCard component='section'>
                 <StyledCardHeader component='header'>

@@ -39,7 +39,6 @@ const StyledCardHeader = styled(Box)({
 });
 
 interface Props extends TimelineEventData {
-    readonly paddingTop: React.CSSProperties['paddingTop'];
     readonly lineNotColoredBackgroundColor: React.CSSProperties['backgroundColor'];
     readonly linePositionLeft: React.CSSProperties['left'];
     readonly lineWidthPx: number;

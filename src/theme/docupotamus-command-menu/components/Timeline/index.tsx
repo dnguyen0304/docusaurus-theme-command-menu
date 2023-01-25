@@ -23,10 +23,6 @@ const StyledContainer = styled(Box)({
 });
 
 const EventsLayout = styled(Box)({
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-end',
-
     // Use margin on the children instead of padding on the parent because we
     // programmatically get the size.
     '& > *:first-of-type': {

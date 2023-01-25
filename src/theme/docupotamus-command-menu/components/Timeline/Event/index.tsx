@@ -106,6 +106,7 @@ export default function Event(
                 >
                     {snippet}
                 </p>
+                {/* TODO(dnguyen0304): Fix onClick bubbling propagation. */}
                 <Tag label={type} />
             </StyledCard>
             <TouchRipple

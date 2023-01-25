@@ -1,7 +1,7 @@
-import { TimelineEventData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
+import { useTimeline } from '../../contexts/timeline';
 import useDomRect from '../../hooks/useDomRect';
 import Event from './Event';
 import Line from './Line';
@@ -68,6 +68,8 @@ interface Props {
 };
 
 export default function Timeline({ sx }: Props): JSX.Element {
+    const { events } = useTimeline();
+
     const [lineHeight, setLineHeight] = React.useState<number>(0);
     const [lineColoredHeightPx, setLineColoredHeightPx] =
         React.useState<number>(0);
@@ -76,70 +78,6 @@ export default function Timeline({ sx }: Props): JSX.Element {
     const timelineRef = React.useRef<HTMLDivElement>();
     const eventsLayoutRef = React.useRef<HTMLDivElement>();
     const domRect = useDomRect<HTMLDivElement>(eventsLayoutRef);
-
-    // Assume events are sorted by timestampMilli in ascending order.
-    const events: TimelineEventData[] = [
-        {
-            timestampMilli: 1596440393000,
-            type: 'Read',
-            heading: 'useReduce hook',
-            snippet: 'const [state, dispatch] = useReducer(reducer, initialState);',
-        },
-        {
-            timestampMilli: 1602460683000,
-            type: 'Read',
-            heading: 'Last Position Shortcut',
-            snippet: 'shift + ctrl + left',
-        },
-        {
-            timestampMilli: 1609940715000,
-            type: 'Read',
-            heading: 'Environment',
-            snippet: 'CLIENT_ID, CLIENT_SECRET, REFERER_ALLOWLIST',
-        },
-        {
-            timestampMilli: 1639568514000,
-            type: 'Read',
-            heading: 'Latin',
-            snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        },
-        {
-            timestampMilli: 1649236070000,
-            type: 'Read',
-            heading: 'Dimensions',
-            snippet: 'between 996px and 1440px',
-        },
-        {
-            timestampMilli: 1654770354000,
-            type: 'Read',
-            heading: 'useReduce hook',
-            snippet: 'const [state, dispatch] = useReducer(reducer, initialState);',
-        },
-        {
-            timestampMilli: 1655805254000,
-            type: 'Read',
-            heading: 'Last Position Shortcut',
-            snippet: 'shift + ctrl + left',
-        },
-        {
-            timestampMilli: 1674663945000,
-            type: 'Read',
-            heading: 'Environment',
-            snippet: 'CLIENT_ID, CLIENT_SECRET, REFERER_ALLOWLIST',
-        },
-        {
-            timestampMilli: 1674663965000,
-            type: 'Read',
-            heading: 'Latin',
-            snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        },
-        {
-            timestampMilli: Date.now(),
-            type: 'Read',
-            heading: 'Dimensions',
-            snippet: 'between 996px and 1440px',
-        },
-    ];
 
     const handleMouseLeave = () => {
         setLineColoredHeightPx(0);

@@ -20,6 +20,9 @@ const Layout = styled(Box)({
     '& .MuiTouchRipple-child': {
         backgroundColor: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.5)',
     },
+    '&:hover': {
+        backgroundColor: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.05)',
+    }
 });
 
 const StyledCard = styled(Box)({

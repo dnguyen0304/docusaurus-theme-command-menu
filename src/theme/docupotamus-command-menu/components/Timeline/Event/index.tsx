@@ -6,6 +6,8 @@ import * as React from 'react';
 import Anchor from './Anchor';
 import Tag from './Tag';
 
+const PADDING_TOP: React.CSSProperties['paddingTop'] = 'var(--space-m)';
+
 const Layout = styled(Box)({
     position: 'relative',
     width: '100%',
@@ -14,7 +16,7 @@ const Layout = styled(Box)({
     justifyContent: 'flex-end',
 
     cursor: 'pointer',
-    padding: 'var(--space-m) var(--space-s) var(--space-l) 0',
+    padding: `${PADDING_TOP} var(--space-s) var(--space-l) 0`,
     '& .MuiTouchRipple-child': {
         backgroundColor: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.5)',
     },
@@ -34,6 +36,7 @@ const StyledCardHeader = styled(Box)({
 });
 
 interface Props extends TimelineEventData {
+    readonly paddingTop: React.CSSProperties['paddingTop'];
     readonly lineNotColoredBackgroundColor: React.CSSProperties['backgroundColor'];
     readonly linePositionLeft: React.CSSProperties['left'];
     readonly lineWidthPx: number;
@@ -75,6 +78,7 @@ export default function Event(
                 lineNotColoredBackgroundColor={lineNotColoredBackgroundColor}
                 linePositionLeft={linePositionLeft}
                 lineWidthPx={lineWidthPx}
+                parentPaddingTop={PADDING_TOP}
             />
             <StyledCard component='section'>
                 <StyledCardHeader component='header'>

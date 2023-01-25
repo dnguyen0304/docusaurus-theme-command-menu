@@ -21,6 +21,8 @@ interface Props {
     readonly sx?: SxProps<Theme>;
 };
 
+// TODO(dnguyen0304): Fix NotColored height not being long enough to reach the
+//   bottom of the container and instead stopping at padding-bottom.
 export default function Line(
     {
         coloredHeightPx,

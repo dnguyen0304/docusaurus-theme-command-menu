@@ -4,8 +4,12 @@ import * as React from 'react';
 import { FOOTER_HEIGHT } from '../../constants';
 import AddressBar from './AddressBar';
 
-const StyledBox = styled(Box)({
+const Layout = styled(Box)({
+    width: '100%',
     height: FOOTER_HEIGHT,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
 
     // TODO(dnguyen0304): Investigate why this or z-index: 0 is needed for the
     //   timeline to be visible.
@@ -18,8 +22,8 @@ interface Props {
 
 export default function Footer({ sx }: Props): JSX.Element {
     return (
-        <StyledBox sx={{ ...sx }}>
+        <Layout sx={{ ...sx }}>
             <AddressBar />
-        </StyledBox>
+        </Layout>
     );
 };

@@ -55,11 +55,14 @@ const StyledInput = styled(InputBase)({
     fontWeight: 'var(--docupotamus-heading-font-weight)',
 });
 
-interface Props extends SlotData { };
+interface Props extends SlotData {
+    readonly index: number;
+};
 
 // TODO(dnguyen0304): Fix missing responsive design.
 export default function Slot(
     {
+        index,
         heading,
         snippet,
         sx,
@@ -97,6 +100,7 @@ export default function Slot(
             <ButtonGroup
                 copyText={snippet}
                 href={href}
+                slotIndex={index}
                 slotBorderWidth={BORDER_WIDTH}
             />
         </StyledCard>

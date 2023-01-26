@@ -28,6 +28,7 @@ export default function Wheel({ sx }: Props): JSX.Element {
             {slots.map((slot, index) => (
                 <Slot
                     key={`slot-${index}`}
+                    index={index}
                     heading={slot.heading}
                     snippet={slot.snippet}
                     sx={slot.sx}

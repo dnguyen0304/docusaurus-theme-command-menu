@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
+import { useWheel } from '../../../../contexts/wheel';
 import styles from './styles.module.css';
 
 interface StyledBox {
@@ -49,6 +50,7 @@ const StyledBox = styled(Box, {
 interface Props {
     readonly copyText: string;
     readonly href: string;
+    readonly slotIndex: number;
     readonly slotBorderWidth: React.CSSProperties['borderWidth'];
 };
 
@@ -56,9 +58,26 @@ export default function ButtonGroup(
     {
         copyText,
         href,
+        slotIndex,
         slotBorderWidth,
     }: Props
 ): JSX.Element {
+    const { setSlots } = useWheel();
+
+    const clearSlot = (index: number) => {
+        setSlots(prev => {
+            const newSlots = [...prev];
+            const clearedSlot = {
+                ...newSlots[index],
+                heading: '',
+                snippet: '',
+                href: '',
+            };
+            newSlots[index] = clearedSlot;
+            return newSlots;
+        });
+    };
+
     return (
         <StyledBox slotBorderWidth={slotBorderWidth}>
             <Tooltip
@@ -82,7 +101,7 @@ export default function ButtonGroup(
             >
                 <IconButton
                     aria-label='copy'
-                    onClick={() => { navigator.clipboard.writeText(copyText) }}
+                    onClick={() => navigator.clipboard.writeText(copyText)}
                 >
                     <ContentCopyOutlinedIcon />
                 </IconButton>
@@ -95,6 +114,7 @@ export default function ButtonGroup(
                 <IconButton
                     aria-label='clear'
                     className={styles.Button__last}
+                    onClick={() => clearSlot(slotIndex)}
                 >
                     <CloseIcon />
                 </IconButton>

@@ -97,7 +97,7 @@ export default function Slot(
                     autoComplete='off'
                     maxRows={Infinity}
                     onChange={handleDescriptionChange}
-                    value={heading}
+                    value={href ? heading : `EMPTY SLOT ${index}`}
                     multiline
                 />
             </h2>
@@ -106,14 +106,14 @@ export default function Slot(
                 `${stylesCommon.text} ` +
                 `${stylesCommon.textBody}`
             }>
-                {snippet}
+                {href ? snippet : 'Create a shortcut to your favorite content.'}
             </p>
-            <ButtonGroup
+            {href && <ButtonGroup
                 copyText={snippet}
                 href={href}
                 slotIndex={index}
                 slotBorderWidth={BORDER_WIDTH}
-            />
+            />}
         </StyledCard>
     );
 };

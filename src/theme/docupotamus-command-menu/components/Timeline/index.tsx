@@ -128,13 +128,14 @@ export default function Timeline({ sx }: Props): JSX.Element {
                 <StyledHeading />
                 {events
                     .sort((x, y) => y.timestampMilli - x.timestampMilli)
-                    .map(({ timestampMilli, type, heading, snippet }) =>
+                    .map((event) =>
                         <Event
-                            key={timestampMilli}
-                            timestampMilli={timestampMilli}
-                            type={type}
-                            heading={heading}
-                            snippet={snippet}
+                            key={event.timestampMilli}
+                            timestampMilli={event.timestampMilli}
+                            type={event.type}
+                            heading={event.heading}
+                            snippet={event.snippet}
+                            href={event.href}
                             anchorZIndex={Z_INDEX.eventAnchor}
                             lineNotColoredBackgroundColor={
                                 LINE_NOT_COLORED_BACKGROUND_COLOR

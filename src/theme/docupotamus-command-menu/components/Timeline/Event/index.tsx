@@ -53,6 +53,7 @@ export default function Event(
         type,
         heading,
         snippet,
+        href,
         anchorZIndex,
         lineNotColoredBackgroundColor,
         linePositionLeft,

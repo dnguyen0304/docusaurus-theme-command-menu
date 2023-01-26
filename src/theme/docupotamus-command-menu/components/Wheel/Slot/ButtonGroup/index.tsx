@@ -6,33 +6,58 @@ import { styled } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
 
-const StyledFooter = styled(Box)({
-    display: 'flex',
-    justifyContent: 'flex-end',
-    gap: 'var(--space-2xs)',
+interface StyledBox {
+    readonly slotBorderWidth: React.CSSProperties['borderWidth'];
+};
 
-    color: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.1)',
-    marginTop: 'auto',
+const StyledBox = styled(Box)<StyledBox>(({ slotBorderWidth }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+
+    position: 'absolute',
+    top: '50%',
+    right: '0',
+
+    backgroundColor: 'var(--docupotamus-color-grey-700)',
+    borderRadius: '41px',
+    opacity: 0,
+    transform: `translate(calc(50% + ${slotBorderWidth}), -50%)`,
+    transition: 'opacity 0.25s ease-in-out',
     '& .MuiIconButton-root': {
-        padding: 0,
+        padding: '24px 8px',
+        '&:hover': {
+            color: 'var(--docupotamus-color-grey-800)',
+        },
     },
-});
+    // first button
+    '& button.MuiIconButton-root': {
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0,
+    },
+    // last button
+    '& a.MuiIconButton-root': {
+        borderTopLeftRadius: 0,
+        borderTopRightRadius: 0,
+    },
+}));
 
 interface Props {
     readonly copyText: string;
     readonly href: string;
+    readonly slotBorderWidth: React.CSSProperties['borderWidth'];
 };
 
 export default function ButtonGroup(
     {
         copyText,
         href,
+        slotBorderWidth,
     }: Props
 ): JSX.Element {
     return (
-        <StyledFooter component='footer'>
+        <StyledBox slotBorderWidth={slotBorderWidth}>
             <Tooltip
-                placement='bottom'
+                placement='right'
                 title='Copy'
                 arrow
             >
@@ -44,7 +69,7 @@ export default function ButtonGroup(
                 </IconButton>
             </Tooltip>
             <Tooltip
-                placement='bottom'
+                placement='right'
                 title='Open in New Tab'
                 arrow
             >
@@ -56,6 +81,6 @@ export default function ButtonGroup(
                     <OpenInNewOutlinedIcon />
                 </IconButton>
             </Tooltip>
-        </StyledFooter>
+        </StyledBox>
     );
 };

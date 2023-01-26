@@ -7,13 +7,14 @@ import stylesCommandMenu from '../../styles.module.css';
 import ButtonGroup from './ButtonGroup';
 import styles from './styles.module.css';
 
+const BORDER_WIDTH: React.CSSProperties['borderWidth'] = '8px';
 const TRANSITION_DURATION: React.CSSProperties['transitionDuration'] = '0.3s';
 
 const GlassStyles: React.CSSProperties = {
     backgroundColor: 'rgba(var(--docupotamus-color-grey-100-rgb), 0.6)',
     backdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
     WebkitBackdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
-    border: '8px solid rgba(var(--docupotamus-color-grey-800-rgb), 0.9)',
+    border: `${BORDER_WIDTH} solid rgba(var(--docupotamus-color-grey-800-rgb), 0.9)`,
     boxShadow: `
         0px 0px 12px 0px rgba(136, 165, 191, 0.48),
         0px 0px 12px 0px rgba(var(--docupotamus-color-grey-800-rgb), 0.8)
@@ -42,11 +43,8 @@ const StyledCard = styled(Box)({
         transition: `all ${TRANSITION_DURATION} ease-in-out`,
         transitionProperty: 'backdrop-filter, box-shadow',
     },
-    '&:hover .MuiSvgIcon-root': {
-        color: 'rgba(var(--docupotamus-color-grey-800-rgb), 0.3)',
-    },
-    '& .MuiSvgIcon-root:hover': {
-        color: 'rgba(var(--docupotamus-color-grey-800-rgb), 1.0)',
+    '&:hover > .MuiBox-root': {
+        opacity: 1,
     },
 });
 
@@ -99,6 +97,7 @@ export default function Slot(
             <ButtonGroup
                 copyText={snippet}
                 href={href}
+                slotBorderWidth={BORDER_WIDTH}
             />
         </StyledCard>
     );

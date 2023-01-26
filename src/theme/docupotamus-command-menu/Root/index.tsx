@@ -1,6 +1,7 @@
 import * as React from 'react';
 import CommandMenu from '../components/CommandMenu';
 import { TimelineProvider } from '../contexts/timeline';
+import { WheelProvider } from '../contexts/wheel';
 import './styles.css';
 
 interface Props {
@@ -10,10 +11,12 @@ interface Props {
 export default function Root({ children }: Props): JSX.Element {
     return (
         <React.StrictMode>
-            <TimelineProvider>
-                <CommandMenu />
-                {children}
-            </TimelineProvider>
+            <WheelProvider>
+                <TimelineProvider>
+                    <CommandMenu />
+                    {children}
+                </TimelineProvider>
+            </WheelProvider>
         </React.StrictMode>
     );
 };

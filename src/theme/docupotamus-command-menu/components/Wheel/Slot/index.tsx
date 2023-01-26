@@ -59,6 +59,7 @@ const StyledInput = styled(InputBase)({
 
 interface Props extends SlotData { };
 
+// TODO(dnguyen0304): Fix missing responsive design.
 export default function Slot(
     {
         heading,

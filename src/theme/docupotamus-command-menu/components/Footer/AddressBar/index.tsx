@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { TILE_BORDER_WIDTH_PX } from '../../../constants';
+import stylesCommon from '../../styles.module.css';
 
 const StyledBox = styled(Box)({
     // Include a buffer by doubling the needed border-width. For example, we
@@ -9,6 +10,8 @@ const StyledBox = styled(Box)({
     // double that again (4X).
     width: `calc(100% - ${4 * TILE_BORDER_WIDTH_PX}px)`,
     height: `calc(100% - ${2 * TILE_BORDER_WIDTH_PX}px)`,
+    display: 'flex',
+    alignItems: 'center',
 
     backgroundColor: 'var(--docupotamus-color-grey-100)',
 });
@@ -17,6 +20,17 @@ interface Props { };
 
 export default function AddressBar({ }: Props): JSX.Element {
     return (
-        <StyledBox />
+        <StyledBox>
+            <span
+                className={stylesCommon.textBody}
+                style={{
+                    fontFamily: '"Overpass Mono", monospace',
+                    marginBottom: 0,
+                    paddingLeft: 'var(--space-xs)',
+                }}
+            >
+                <span style={{ color: 'rgba(var(--docupotamus-color-grey-700-rgb), 0.6)' }}>goto:</span> https://www.google.com
+            </span>
+        </StyledBox>
     );
 };

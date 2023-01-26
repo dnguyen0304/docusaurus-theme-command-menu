@@ -111,7 +111,7 @@ export default function Slot(
                     autoComplete='off'
                     maxRows={Infinity}
                     onChange={handleDescriptionChange}
-                    value={href ? heading : `EMPTY SLOT ${index}`}
+                    value={href ? heading : `EMPTY SLOT ${index + 1}`}
                     multiline
                 />
             </h2>

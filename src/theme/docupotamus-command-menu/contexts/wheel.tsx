@@ -33,13 +33,13 @@ const reducer = (prev: SlotData[], action: Action): SlotData[] => {
         if (!oldSlot) {
             throw new Error('index out of bounds');
         }
-        const clearedSlot = {
+        const newSlot = {
             ...oldSlot,
             heading: '',
             snippet: '',
             href: '',
         };
-        newSlots[action.index] = clearedSlot;
+        newSlots[action.index] = newSlot;
         return newSlots;
     }
     return prev;

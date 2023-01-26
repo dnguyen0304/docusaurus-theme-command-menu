@@ -88,8 +88,10 @@ export default function Slot(
                 />
             </h2>
             <p className={
-                `${stylesCommandMenu.text} ${stylesCommandMenu.textBody}`
-            } >
+                `${styles.text__multilineTruncate} ` +
+                `${stylesCommandMenu.text} ` +
+                `${stylesCommandMenu.textBody}`
+            }>
                 {snippet}
             </p>
             <ButtonGroup />

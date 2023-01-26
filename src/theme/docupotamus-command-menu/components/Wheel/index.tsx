@@ -32,7 +32,7 @@ export default function Wheel({ sx }: Props): JSX.Element {
         },
         {
             heading: 'Latin',
-            snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et nisl fermentum, interdum ex nec, dignissim ipsum. Suspendisse potenti. Vivamus tempus tincidunt elit nec efficitur. Ut accumsan sem vel ex pellentesque, id faucibus augue dignissim. Nulla facilisi. Cras dapibus orci sed pulvinar sollicitudin.',
             sx: { translate: '130% -30%' }
         },
         {

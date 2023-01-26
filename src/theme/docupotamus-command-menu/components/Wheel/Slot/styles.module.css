@@ -41,6 +41,17 @@
     margin-bottom: var(--space-3xs);
 }
 
+.text__multilineTruncate {
+    --max-line-count: 4;
+
+    display: -webkit-box;
+    -webkit-line-clamp: var(--max-line-count);
+            line-clamp: var(--max-line-count);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 @keyframes fade-in-from-top {
     0% {
         opacity: 0;

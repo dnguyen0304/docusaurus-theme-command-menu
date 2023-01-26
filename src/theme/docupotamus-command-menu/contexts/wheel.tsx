@@ -28,12 +28,13 @@ const reducer = (prev: SlotData[], action: Action): SlotData[] => {
         return newSlots;
     }
     if (action.type === 'clearSlot') {
-        if (action.index > prev.length) {
+        const newSlots = [...prev];
+        const oldSlot = newSlots[action.index];
+        if (!oldSlot) {
             throw new Error('index out of bounds');
         }
-        const newSlots = [...prev];
         const clearedSlot = {
-            ...newSlots[action.index],
+            ...oldSlot,
             heading: '',
             snippet: '',
             href: '',

@@ -57,6 +57,8 @@ const StyledHeading = (): JSX.Element => {
 };
 
 const EventsLayout = styled(Box)({
+    // TODO(dnguyen0304): Investigate adding a footer indicating the end of the
+    //   timeline or a way to load more events.
     // Use margin on the children instead of padding on the parent because we
     // programmatically get the size.
     '& > .MuiBox-root:last-of-type': {

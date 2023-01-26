@@ -15,7 +15,7 @@ const ClippingBox = styled(Box)({
 });
 
 const Circle = styled(Box)({
-    width: '90%',
+    width: '70%',
     aspectRatio: '1 / 1',
     display: 'flex',
     justifyContent: 'center',
@@ -27,7 +27,7 @@ const Circle = styled(Box)({
     translate: '-50% 50%',
 
     backgroundColor: 'var(--docupotamus-color-grey-100)',
-    borderRadius: '40%',
+    borderRadius: '50%',
 });
 
 export default function Entry(): JSX.Element {

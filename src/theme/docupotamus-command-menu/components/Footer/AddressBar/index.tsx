@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { TILE_BORDER_WIDTH_PX } from '../../../constants';
+import { useAddressBar } from '../../../contexts/addressBar';
 import stylesCommon from '../../styles.module.css';
 
 const StyledBox = styled(Box)({
@@ -19,6 +20,8 @@ const StyledBox = styled(Box)({
 interface Props { };
 
 export default function AddressBar({ }: Props): JSX.Element {
+    const { href } = useAddressBar();
+
     return (
         <StyledBox>
             <span
@@ -29,7 +32,7 @@ export default function AddressBar({ }: Props): JSX.Element {
                     paddingLeft: 'var(--space-xs)',
                 }}
             >
-                <span style={{ color: 'rgba(var(--docupotamus-color-grey-700-rgb), 0.6)' }}>goto:</span> https://www.google.com
+                <span style={{ color: 'rgba(var(--docupotamus-color-grey-700-rgb), 0.6)' }}>goto:</span> {href}
             </span>
         </StyledBox>
     );

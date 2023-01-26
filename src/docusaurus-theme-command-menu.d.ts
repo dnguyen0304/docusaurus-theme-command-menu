@@ -21,6 +21,7 @@ declare module '@docusaurus/theme-command-menu' {
 
         // TODO(dnguyen0304): Add snippetMaxLength.
         readonly snippet: string;
+        readonly href: string;
     }
 
     type TimelineEventType = 'Read';

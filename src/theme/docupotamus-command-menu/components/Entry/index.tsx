@@ -15,6 +15,7 @@ const ClippingBox = styled(Box)({
     bottom: 0,
 
     backgroundColor: 'red',
+    clipPath: 'circle(40% at 50% 100%)',
 });
 
 const Circle = styled(Box)({

@@ -2,7 +2,8 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import Gradient from '../common/Gradient';
-// import Logo from './Logo';
+import Logo from './Logo';
+import styles from './styles.module.css';
 
 const ClippingBox = styled(Box)({
     width: '100px',
@@ -17,9 +18,6 @@ const ClippingBox = styled(Box)({
 const Circle = styled(Box)({
     width: '70%',
     aspectRatio: '1 / 1',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'flex-start',
 
     position: 'absolute',
     bottom: '0',
@@ -35,11 +33,10 @@ export default function Entry(): JSX.Element {
         <ClippingBox>
             <Gradient />
             <Circle>
-                {/* <Logo
-                    fill='#fff'
+                <Logo
+                    className={styles.Logo}
                     viewBox='100 700 1600 600'
-                    width='80%'
-                /> */}
+                />
             </Circle>
         </ClippingBox>
     );

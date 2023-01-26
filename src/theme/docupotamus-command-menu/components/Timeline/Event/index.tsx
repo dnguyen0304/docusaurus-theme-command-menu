@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchRipple';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
+import { useAddressBar } from '../../../contexts/addressBar';
 import { dayjs } from '../../../services/datetime';
 import stylesCommon from '../../styles.module.css';
 import Anchor from './Anchor';
@@ -61,6 +62,8 @@ export default function Event(
         timelineMouseClientY,
     }: Props,
 ): JSX.Element {
+    const { setHref } = useAddressBar();
+
     const rippleRef = React.useRef<TouchRippleActions>(null);
 
     const startRipple = (event: React.SyntheticEvent) => {
@@ -79,6 +82,8 @@ export default function Event(
 
     return (
         <Layout
+            onMouseEnter={() => setHref(href)}
+            onMouseLeave={() => setHref('')}
             onMouseDown={startRipple}
             onMouseUp={stopRipple}
         >

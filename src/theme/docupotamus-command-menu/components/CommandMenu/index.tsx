@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
+import Footer from '../Footer';
 import Timeline from '../Timeline';
 import Wheel from '../Wheel';
 import Backdrop from './Backdrop';
@@ -34,7 +35,7 @@ export default function CommandMenu({ }: Props): JSX.Element {
                 <header style={{ gridArea: 'header' }}>Header</header>
                 <Wheel sx={{ gridArea: 'wheel' }} />
                 <Timeline sx={{ gridArea: 'timeline' }} />
-                <footer style={{ gridArea: 'footer' }}>Footer</footer>
+                <Footer sx={{ gridArea: 'footer' }} />
             </Layout>
         </Modal>
     );

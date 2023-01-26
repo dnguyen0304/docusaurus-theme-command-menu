@@ -27,7 +27,6 @@ const StyledBox = styled(Box, {
     borderRadius: '41px',
     opacity: 0,
     transform: `translate(calc(50% + ${slotBorderWidth}), -50%)`,
-    transition: 'opacity 0.25s ease-in-out',
     '& .MuiIconButton-root': {
         borderRadius: 0,
         padding: '12px',

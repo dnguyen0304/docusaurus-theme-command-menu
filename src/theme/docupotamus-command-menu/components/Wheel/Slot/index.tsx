@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
+import { useAddressBar } from '../../../contexts/addressBar';
 import { useWheel } from '../../../contexts/wheel';
 import stylesCommon from '../../styles.module.css';
 import ButtonGroup from './ButtonGroup';
@@ -70,6 +71,7 @@ export default function Slot(
         href,
     }: Props,
 ): JSX.Element {
+    const { setHref } = useAddressBar();
     const { dispatchSlots } = useWheel();
 
     const handleDescriptionChange = (
@@ -86,6 +88,8 @@ export default function Slot(
         <StyledCard
             className={styles.Slot_card}
             component='section'
+            onMouseEnter={() => setHref(href)}
+            onMouseLeave={() => setHref('')}
             sx={{ ...sx }}
         >
             <h2 className={styles.Slot_descriptionContainer}>

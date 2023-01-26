@@ -95,7 +95,7 @@ export default function Slot(
             }>
                 {snippet}
             </p>
-            <ButtonGroup />
+            <ButtonGroup copyText={snippet} />
         </StyledCard>
     );
 };

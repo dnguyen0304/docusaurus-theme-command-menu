@@ -18,7 +18,15 @@ const StyledFooter = styled(Box)({
     },
 });
 
-export default function ButtonGroup(): JSX.Element {
+interface Props {
+    readonly copyText: string;
+};
+
+export default function ButtonGroup(
+    {
+        copyText,
+    }: Props
+): JSX.Element {
     return (
         <StyledFooter component='footer'>
             <Tooltip
@@ -26,7 +34,10 @@ export default function ButtonGroup(): JSX.Element {
                 title='Copy'
                 arrow
             >
-                <IconButton aria-label='copy'>
+                <IconButton
+                    aria-label='copy'
+                    onClick={() => { navigator.clipboard.writeText(copyText) }}
+                >
                     <ContentCopyOutlinedIcon />
                 </IconButton>
             </Tooltip>

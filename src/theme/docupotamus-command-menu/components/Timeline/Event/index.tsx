@@ -4,7 +4,7 @@ import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchR
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { dayjs } from '../../../services/datetime';
-import stylesCommandMenu from '../../styles.module.css';
+import stylesCommon from '../../styles.module.css';
 import Anchor from './Anchor';
 import styles from './styles.module.css';
 import Tag from './Tag';
@@ -106,7 +106,7 @@ export default function Event(
                     </span>
                 </StyledCardHeader>
                 <p className={
-                    `${stylesCommandMenu.text} ${stylesCommandMenu.textBody}`
+                    `${stylesCommon.text} ${stylesCommon.textBody}`
                 } >
                     {snippet}
                 </p>

@@ -4,7 +4,7 @@ import InputBase from '@mui/material/InputBase';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { useWheel } from '../../../contexts/wheel';
-import stylesCommandMenu from '../../styles.module.css';
+import stylesCommon from '../../styles.module.css';
 import ButtonGroup from './ButtonGroup';
 import styles from './styles.module.css';
 
@@ -97,8 +97,8 @@ export default function Slot(
             </h2>
             <p className={
                 `${styles.text__multilineTruncate} ` +
-                `${stylesCommandMenu.text} ` +
-                `${stylesCommandMenu.textBody}`
+                `${stylesCommon.text} ` +
+                `${stylesCommon.textBody}`
             }>
                 {snippet}
             </p>

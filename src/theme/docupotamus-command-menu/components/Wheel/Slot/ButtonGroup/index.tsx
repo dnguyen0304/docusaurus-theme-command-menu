@@ -67,11 +67,12 @@ export default function ButtonGroup(
                 arrow
             >
                 <IconButton
-                    aria-label='copy'
+                    aria-label='open in a new tab'
                     className={styles.Button__first}
-                    onClick={() => { navigator.clipboard.writeText(copyText) }}
+                    href={href}
+                    target='_blank'
                 >
-                    <ContentCopyOutlinedIcon />
+                    <OpenInNewOutlinedIcon />
                 </IconButton>
             </Tooltip>
             <Tooltip
@@ -80,11 +81,10 @@ export default function ButtonGroup(
                 arrow
             >
                 <IconButton
-                    aria-label='open in a new tab'
-                    href={href}
-                    target='_blank'
+                    aria-label='copy'
+                    onClick={() => { navigator.clipboard.writeText(copyText) }}
                 >
-                    <OpenInNewOutlinedIcon />
+                    <ContentCopyOutlinedIcon />
                 </IconButton>
             </Tooltip>
             <Tooltip

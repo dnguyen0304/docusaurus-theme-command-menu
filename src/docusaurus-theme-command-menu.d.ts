@@ -9,6 +9,7 @@ declare module '@docusaurus/theme-command-menu' {
         readonly heading: string;
         readonly snippet: string;
         readonly sx?: SxProps<Theme>;
+        readonly href: string;
     }
 
     interface TimelineEventData {

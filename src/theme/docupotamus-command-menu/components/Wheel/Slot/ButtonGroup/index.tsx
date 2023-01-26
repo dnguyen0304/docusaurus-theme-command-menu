@@ -20,11 +20,13 @@ const StyledFooter = styled(Box)({
 
 interface Props {
     readonly copyText: string;
+    readonly href: string;
 };
 
 export default function ButtonGroup(
     {
         copyText,
+        href,
     }: Props
 ): JSX.Element {
     return (
@@ -46,7 +48,11 @@ export default function ButtonGroup(
                 title='Open in New Tab'
                 arrow
             >
-                <IconButton aria-label='open in a new tab'>
+                <IconButton
+                    aria-label='open in a new tab'
+                    href={href}
+                    target='_blank'
+                >
                     <OpenInNewOutlinedIcon />
                 </IconButton>
             </Tooltip>

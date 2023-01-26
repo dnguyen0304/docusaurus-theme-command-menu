@@ -65,6 +65,7 @@ export default function Slot(
         heading,
         snippet,
         sx,
+        href,
     }: Props,
 ): JSX.Element {
     const [value, setValue] = React.useState<string>(heading);
@@ -95,7 +96,10 @@ export default function Slot(
             }>
                 {snippet}
             </p>
-            <ButtonGroup copyText={snippet} />
+            <ButtonGroup
+                copyText={snippet}
+                href={href}
+            />
         </StyledCard>
     );
 };

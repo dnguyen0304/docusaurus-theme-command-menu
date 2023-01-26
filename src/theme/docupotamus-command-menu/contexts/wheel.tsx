@@ -17,27 +17,32 @@ const useContextValue = (): ContextValue => {
         {
             heading: 'Dimensions',
             snippet: 'between 996px and 1440px',
-            sx: { translate: '0 -80%' }
+            sx: { translate: '0 -80%' },
+            href: 'https://www.google.com',
         },
         {
             heading: 'Latin',
             snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et nisl fermentum, interdum ex nec, dignissim ipsum. Suspendisse potenti. Vivamus tempus tincidunt elit nec efficitur. Ut accumsan sem vel ex pellentesque, id faucibus augue dignissim. Nulla facilisi. Cras dapibus orci sed pulvinar sollicitudin.',
-            sx: { translate: '130% -30%' }
+            sx: { translate: '130% -30%' },
+            href: 'https://www.google.com',
         },
         {
             heading: 'useReduce hook',
             snippet: 'const [state, dispatch] = useReducer(reducer, initialState);',
-            sx: { translate: '70% 90%' }
+            sx: { translate: '70% 90%' },
+            href: 'https://www.google.com',
         },
         {
             heading: 'Environment',
             snippet: 'CLIENT_ID, CLIENT_SECRET, REFERER_ALLOWLIST',
-            sx: { translate: '-70% 90%' }
+            sx: { translate: '-70% 90%' },
+            href: 'https://www.google.com',
         },
         {
             heading: 'Last Position Shortcut',
             snippet: 'shift + ctrl + left',
-            sx: { translate: '-130% -30%' }
+            sx: { translate: '-130% -30%' },
+            href: 'https://www.google.com',
         },
     ]);
 

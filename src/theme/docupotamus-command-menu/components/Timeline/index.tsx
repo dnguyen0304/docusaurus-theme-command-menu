@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
+import { TILE_BORDER_WIDTH_PX } from '../../constants';
 import { useTimeline } from '../../contexts/timeline';
 import useDomRect from '../../hooks/useDomRect';
 import Event from './Event';
@@ -23,7 +24,7 @@ const StyledContainer = styled(Box)({
     position: 'relative',
 
     backgroundColor: 'var(--docupotamus-color-grey-100)',
-    margin: 'var(--space-s)',
+    margin: `${2 * TILE_BORDER_WIDTH_PX}px`,
     marginLeft: 0,
     overflowY: 'auto',
 });

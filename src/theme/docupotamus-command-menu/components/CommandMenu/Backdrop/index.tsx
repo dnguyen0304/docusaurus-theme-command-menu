@@ -4,10 +4,10 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import { keyframes } from '@mui/system';
 import * as React from 'react';
+import { TILE_BORDER_WIDTH_PX } from '../../../constants';
 import useDomRect from '../../../hooks/useDomRect';
 
 const TILE_SIZE_PX: number = 100;
-const TILE_BORDER_WIDTH_PX: number = 0.5;
 
 const getAnimation = (): Keyframes => {
     return keyframes({

@@ -14,25 +14,19 @@ type Action =
     };
 
 const reducer = (prev: SlotData[], action: Action): SlotData[] => {
+    const newSlots = [...prev];
+    const oldSlot = newSlots[action.index];
+    if (!oldSlot) {
+        throw new Error('index out of bounds');
+    }
     if (action.type === 'setSlotHeading') {
-        const newSlots = [...prev];
-        const oldSlot = newSlots[action.index];
-        if (!oldSlot) {
-            throw new Error('index out of bounds');
-        }
         const newSlot = {
             ...oldSlot,
             heading: action.newValue,
         };
         newSlots[action.index] = newSlot;
-        return newSlots;
     }
     if (action.type === 'clearSlot') {
-        const newSlots = [...prev];
-        const oldSlot = newSlots[action.index];
-        if (!oldSlot) {
-            throw new Error('index out of bounds');
-        }
         const newSlot = {
             ...oldSlot,
             heading: '',
@@ -40,9 +34,8 @@ const reducer = (prev: SlotData[], action: Action): SlotData[] => {
             href: '',
         };
         newSlots[action.index] = newSlot;
-        return newSlots;
     }
-    return prev;
+    return newSlots;
 };
 
 interface ContextValue {

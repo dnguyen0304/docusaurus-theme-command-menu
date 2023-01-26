@@ -56,14 +56,13 @@ const StyledHeading = (): JSX.Element => {
     );
 };
 
-const EventsLayout = styled(Box)({
-    // TODO(dnguyen0304): Investigate adding a footer indicating the end of the
-    //   timeline or a way to load more events.
-    // Use margin on the children instead of padding on the parent because we
-    // programmatically get the size.
-    '& > .MuiBox-root:last-of-type': {
-        marginBottom: 'var(--space-l)',
-    },
+const StickyFooter = styled(Box)({
+    height: 'var(--space-l)',
+
+    position: 'sticky',
+    bottom: 0,
+
+    backgroundColor: 'rgba(var(--docupotamus-color-grey-100-rgb), 0.9)',
 });
 
 interface Props {
@@ -123,7 +122,9 @@ export default function Timeline({ sx }: Props): JSX.Element {
                     backgroundColor: LINE_NOT_COLORED_BACKGROUND_COLOR,
                 }}
             />
-            <EventsLayout ref={eventsLayoutRef}>
+            {/* TODO(dnguyen0304): Investigate adding a footer indicating the
+                end of the timeline or a way to load more events. */}
+            <Box ref={eventsLayoutRef}>
                 <StyledHeading />
                 {events
                     .sort((x, y) => y.timestampMilli - x.timestampMilli)
@@ -144,7 +145,8 @@ export default function Timeline({ sx }: Props): JSX.Element {
                         />
                     )
                 }
-            </ EventsLayout>
+            </ Box>
+            <StickyFooter />
         </StyledContainer>
     );
 };

@@ -33,6 +33,7 @@ const Gradient = styled(Box)({
     backgroundSize: '200%',
     overflow: 'hidden',
 
+    // TODO(dnguyen0304): Investigate performance issues.
     animationDuration: '3s',
     animationIterationCount: 'infinite',
     animationName: getAnimation(),

@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
 import { useWheel } from '../../contexts/wheel';
+import Instructions from './Instructions';
 import Slot from './Slot';
 
 const StyledBox = styled(Box)({
@@ -9,6 +10,9 @@ const StyledBox = styled(Box)({
     width: '25%',
     minWidth: '100px',
     aspectRatio: '3 / 2.5',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
 
     position: 'relative',
     placeSelf: 'center',
@@ -25,6 +29,7 @@ export default function Wheel({ sx }: Props): JSX.Element {
 
     return (
         <StyledBox sx={{ ...sx }}>
+            <Instructions />
             {slots.map((slot, index) => (
                 <Slot
                     key={`slot-${index}`}

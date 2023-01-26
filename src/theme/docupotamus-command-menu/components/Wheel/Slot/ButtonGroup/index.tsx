@@ -12,7 +12,9 @@ interface StyledBox {
     readonly slotBorderWidth: React.CSSProperties['borderWidth'];
 };
 
-const StyledBox = styled(Box)<StyledBox>(({ slotBorderWidth }) => ({
+const StyledBox = styled(Box, {
+    shouldForwardProp: (prop) => prop !== 'slotBorderWidth',
+})<StyledBox>(({ slotBorderWidth }) => ({
     display: 'flex',
     flexDirection: 'column',
 

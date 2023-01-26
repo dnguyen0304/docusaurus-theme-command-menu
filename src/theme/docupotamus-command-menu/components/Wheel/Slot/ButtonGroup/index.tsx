@@ -1,3 +1,4 @@
+import CloseIcon from '@mui/icons-material/Close';
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import Box from '@mui/material/Box';
@@ -24,18 +25,19 @@ const StyledBox = styled(Box)<StyledBox>(({ slotBorderWidth }) => ({
     transform: `translate(calc(50% + ${slotBorderWidth}), -50%)`,
     transition: 'opacity 0.25s ease-in-out',
     '& .MuiIconButton-root': {
+        borderRadius: 0,
         padding: '24px 8px',
         '&:hover': {
             color: 'var(--docupotamus-color-grey-800)',
         },
     },
     // first button
-    '& button.MuiIconButton-root': {
+    '& .MuiIconButton-root:first-of-type': {
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
     },
     // last button
-    '& a.MuiIconButton-root': {
+    '& .MuiIconButton-root:last-of-type': {
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
     },
@@ -79,6 +81,15 @@ export default function ButtonGroup(
                     target='_blank'
                 >
                     <OpenInNewOutlinedIcon />
+                </IconButton>
+            </Tooltip>
+            <Tooltip
+                placement='right'
+                title='Clear'
+                arrow
+            >
+                <IconButton aria-label='clear'>
+                    <CloseIcon />
                 </IconButton>
             </Tooltip>
         </StyledBox>

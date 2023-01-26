@@ -1,44 +1,12 @@
-import { Keyframes } from '@emotion/serialize';
 import MuiBackdrop, { BackdropProps as MuiBackdropProps } from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
-import { keyframes } from '@mui/system';
 import * as React from 'react';
 import { TILE_BORDER_WIDTH_PX } from '../../../constants';
 import useDomRect from '../../../hooks/useDomRect';
+import Gradient from '../../common/Gradient';
 
 const TILE_SIZE_PX: number = 100;
-
-const getAnimation = (): Keyframes => {
-    return keyframes({
-        from: {
-            backgroundPosition: '0% center',
-        },
-        to: {
-            backgroundPosition: '-200% center',
-        },
-    });
-};
-
-const Gradient = styled(Box)({
-    width: '100%',
-    height: '100%',
-
-    background: `linear-gradient(
-        to right,
-        rgb(98, 0, 234),
-        rgb(236, 64, 122),
-        rgb(98, 0, 234)
-    )`,
-    backgroundSize: '200%',
-    overflow: 'hidden',
-
-    // TODO(dnguyen0304): Investigate performance issues.
-    animationDuration: '3s',
-    animationIterationCount: 'infinite',
-    animationName: getAnimation(),
-    animationTimingFunction: 'linear',
-});
 
 const TilesLayout = styled(Box)({
     position: 'absolute',

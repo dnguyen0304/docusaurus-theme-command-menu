@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchRipple';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import Gradient from '../common/Gradient';
@@ -29,15 +30,41 @@ const Circle = styled(Box)({
 });
 
 export default function Entry(): JSX.Element {
+    const rippleRef = React.useRef<TouchRippleActions>(null);
+
+    const startRipple = (event: React.SyntheticEvent) => {
+        if (!rippleRef.current) {
+            return;
+        }
+        rippleRef.current.start(event);
+    };
+
+    const stopRipple = (event: React.SyntheticEvent) => {
+        if (!rippleRef.current) {
+            return;
+        }
+        rippleRef.current?.stop(event);
+    };
+
     return (
         <ClippingBox>
             <Gradient />
-            <Circle>
+            <Circle
+                onMouseDown={startRipple}
+                onMouseUp={stopRipple}
+            >
                 <Logo
                     className={styles.Logo}
                     viewBox='100 700 1600 600'
                 />
             </Circle>
+            <TouchRipple
+                ref={rippleRef}
+                center={false}
+                classes={{
+                    child: styles.MuiTouchRipple_childOverride,
+                }}
+            />
         </ClippingBox>
     );
 };

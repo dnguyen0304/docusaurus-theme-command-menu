@@ -74,6 +74,8 @@ export default function Event(
     };
 
     const stopRipple = (event: React.SyntheticEvent) => {
+        // TODO(dnguyen0304): Fix missing SSR defensive coding.
+        window.open(href, '_blank');
         if (!rippleRef.current) {
             return;
         }

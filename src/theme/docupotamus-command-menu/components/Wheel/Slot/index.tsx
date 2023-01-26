@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
+import { useWheel } from '../../../contexts/wheel';
 import stylesCommandMenu from '../../styles.module.css';
 import ButtonGroup from './ButtonGroup';
 import styles from './styles.module.css';
@@ -69,10 +70,14 @@ export default function Slot(
         href,
     }: Props,
 ): JSX.Element {
-    const [value, setValue] = React.useState<string>(heading);
+    const { dispatchSlots } = useWheel();
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(event.target.value);
+        dispatchSlots({
+            type: 'setSlotHeading',
+            index,
+            newValue: event.target.value,
+        });
     };
 
     return (
@@ -86,7 +91,7 @@ export default function Slot(
                     autoComplete='off'
                     maxRows={Infinity}
                     onChange={handleChange}
-                    value={value}
+                    value={heading}
                     multiline
                 />
             </h2>

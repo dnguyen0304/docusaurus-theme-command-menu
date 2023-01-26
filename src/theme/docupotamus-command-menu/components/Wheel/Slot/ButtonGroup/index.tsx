@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
+import styles from './styles.module.css';
 
 interface StyledBox {
     readonly slotBorderWidth: React.CSSProperties['borderWidth'];
@@ -26,20 +27,20 @@ const StyledBox = styled(Box)<StyledBox>(({ slotBorderWidth }) => ({
     transition: 'opacity 0.25s ease-in-out',
     '& .MuiIconButton-root': {
         borderRadius: 0,
-        padding: '24px 8px',
+        padding: '12px',
         '&:hover': {
             color: 'var(--docupotamus-color-grey-800)',
         },
     },
-    // first button
-    '& .MuiIconButton-root:first-of-type': {
+    [`& .MuiIconButton-root.${styles.Button__first}`]: {
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
+        paddingTop: '24px',
     },
-    // last button
-    '& .MuiIconButton-root:last-of-type': {
+    [`& .MuiIconButton-root.${styles.Button__last}`]: {
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
+        paddingBottom: '24px',
     },
 }));
 
@@ -65,6 +66,7 @@ export default function ButtonGroup(
             >
                 <IconButton
                     aria-label='copy'
+                    className={styles.Button__first}
                     onClick={() => { navigator.clipboard.writeText(copyText) }}
                 >
                     <ContentCopyOutlinedIcon />
@@ -88,7 +90,10 @@ export default function ButtonGroup(
                 title='Clear'
                 arrow
             >
-                <IconButton aria-label='clear'>
+                <IconButton
+                    aria-label='clear'
+                    className={styles.Button__last}
+                >
                     <CloseIcon />
                 </IconButton>
             </Tooltip>

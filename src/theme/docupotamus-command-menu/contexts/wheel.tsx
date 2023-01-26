@@ -2,9 +2,33 @@ import { SlotData } from '@docusaurus/theme-command-menu';
 import * as React from 'react';
 import { ReactContextError } from './errors';
 
+type Action =
+    | {
+        type: 'clearSlot';
+        index: number;
+    };
+
+const reducer = (prev: SlotData[], action: Action): SlotData[] => {
+    if (action.type === 'clearSlot') {
+        if (action.index > prev.length) {
+            throw new Error('index out of bounds');
+        }
+        const newSlots = [...prev];
+        const clearedSlot = {
+            ...newSlots[action.index],
+            heading: '',
+            snippet: '',
+            href: '',
+        };
+        newSlots[action.index] = clearedSlot;
+        return newSlots;
+    }
+    return prev;
+};
+
 interface ContextValue {
     readonly slots: SlotData[];
-    readonly setSlots: React.Dispatch<React.SetStateAction<SlotData[]>>;
+    readonly dispatchSlots: React.Dispatch<Action>;
 };
 
 const Context = React.createContext<ContextValue | undefined>(undefined);
@@ -13,7 +37,7 @@ const useContextValue = (): ContextValue => {
     // TODO(dnguyen0304): Remove fake data.
     // TODO(dnguyen0304): Investigate changing to use vmax or vmin so width and
     //   height are relative to the same unit.
-    const [slots, setSlots] = React.useState<SlotData[]>([
+    const [slots, dispatchSlots] = React.useReducer(reducer, [
         {
             heading: 'Dimensions',
             snippet: 'between 996px and 1440px',
@@ -49,11 +73,11 @@ const useContextValue = (): ContextValue => {
     return React.useMemo(
         () => ({
             slots,
-            setSlots,
+            dispatchSlots,
         }),
         [
             slots,
-            setSlots,
+            dispatchSlots,
         ],
     );
 };

@@ -62,21 +62,7 @@ export default function ButtonGroup(
         slotBorderWidth,
     }: Props
 ): JSX.Element {
-    const { setSlots } = useWheel();
-
-    const clearSlot = (index: number) => {
-        setSlots(prev => {
-            const newSlots = [...prev];
-            const clearedSlot = {
-                ...newSlots[index],
-                heading: '',
-                snippet: '',
-                href: '',
-            };
-            newSlots[index] = clearedSlot;
-            return newSlots;
-        });
-    };
+    const { dispatchSlots } = useWheel();
 
     return (
         <StyledBox slotBorderWidth={slotBorderWidth}>
@@ -114,7 +100,10 @@ export default function ButtonGroup(
                 <IconButton
                     aria-label='clear'
                     className={styles.Button__last}
-                    onClick={() => clearSlot(slotIndex)}
+                    onClick={() => dispatchSlots({
+                        type: 'clearSlot',
+                        index: slotIndex,
+                    })}
                 >
                     <CloseIcon />
                 </IconButton>

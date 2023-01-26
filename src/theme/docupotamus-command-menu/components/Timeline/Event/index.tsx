@@ -97,6 +97,7 @@ export default function Event(
                     <span className={`ifm_text__reset ${styles.Event_heading}`}>
                         {heading}
                     </span>
+                    {/* TODO(dnguyen0304): Add tooltip. */}
                     {/* TODO(dnguyen0304): Remove time ago formatting for
                           certain ranges such as greater than 1 day and less
                           than 1 week. */}

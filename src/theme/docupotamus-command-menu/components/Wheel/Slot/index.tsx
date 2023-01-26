@@ -16,14 +16,19 @@ const GlassStyles: React.CSSProperties = {
     backgroundColor: 'rgba(var(--docupotamus-color-grey-100-rgb), 0.6)',
     backdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
     WebkitBackdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
-    border: `${BORDER_WIDTH} solid rgba(var(--docupotamus-color-grey-800-rgb), 0.9)`,
     boxShadow: `
         0px 0px 12px 0px rgba(136, 165, 191, 0.48),
         0px 0px 12px 0px rgba(var(--docupotamus-color-grey-800-rgb), 0.8)
     `,
 };
 
-const StyledCard = styled(Box)({
+interface StyledCardProps {
+    readonly hasContent: boolean;
+};
+
+const StyledCard = styled(Box, {
+    shouldForwardProp: (prop) => prop !== 'hasContent',
+})<StyledCardProps>(({ hasContent }) => ({
     ...GlassStyles,
     position: 'absolute',
     width: '100%',
@@ -33,6 +38,14 @@ const StyledCard = styled(Box)({
     flexDirection: 'column',
     justifyContent: 'flex-start',
 
+    border: `
+        ${BORDER_WIDTH}
+        solid
+        ${hasContent
+            ? 'rgba(var(--docupotamus-color-grey-800-rgb), 0.9)'
+            : 'transparent'
+        }
+    `,
     borderRadius: 'var(--docupotamus-border-radius-m)',
     padding: 'var(--space-m)',
     // TODO(dnguyen0304): Investigate improving performance.
@@ -48,7 +61,7 @@ const StyledCard = styled(Box)({
     '&:hover > .MuiBox-root': {
         opacity: 1,
     },
-});
+}));
 
 const StyledInput = styled(InputBase)({
     color: 'inherit',
@@ -88,6 +101,7 @@ export default function Slot(
         <StyledCard
             className={styles.Slot_card}
             component='section'
+            hasContent={!!href}
             onMouseEnter={() => setHref(href)}
             onMouseLeave={() => setHref('')}
             sx={{ ...sx }}

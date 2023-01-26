@@ -72,7 +72,9 @@ export default function Slot(
 ): JSX.Element {
     const { dispatchSlots } = useWheel();
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleDescriptionChange = (
+        event: React.ChangeEvent<HTMLInputElement>,
+    ) => {
         dispatchSlots({
             type: 'setSlotHeading',
             index,
@@ -90,7 +92,7 @@ export default function Slot(
                 <StyledInput
                     autoComplete='off'
                     maxRows={Infinity}
-                    onChange={handleChange}
+                    onChange={handleDescriptionChange}
                     value={heading}
                     multiline
                 />

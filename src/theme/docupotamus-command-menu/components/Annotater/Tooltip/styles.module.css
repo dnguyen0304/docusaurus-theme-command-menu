@@ -1,12 +1,4 @@
-.Button {
-    display: flex;
-
-    color: white;
-    cursor: pointer;
-    padding: 0;
-}
-
-/* .h-popover {
+.Tooltip {
     padding: 6px 10px;
     background: #333;
     border-radius: 3px;
@@ -18,9 +10,9 @@
     transition: 0.2s all;
     display: flex;
     align-items: center;
-  }
-  
-  .h-popover:after {
+}
+
+.Tooltip:after {
     content: '';
     position: absolute;
     left: 50%;
@@ -31,4 +23,12 @@
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     border-top: 6px solid #333;
-  } */
+}
+
+.Button {
+    display: flex;
+
+    color: white;
+    cursor: pointer;
+    padding: 0;
+}

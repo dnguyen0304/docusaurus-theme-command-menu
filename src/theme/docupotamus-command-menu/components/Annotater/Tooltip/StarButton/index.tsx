@@ -22,7 +22,7 @@ export default function StarButton(
 
     return (
         <Tooltip
-            title='Star'
+            title={isClicked ? 'Unstar' : 'Star'}
             placement='top'
             arrow
         >

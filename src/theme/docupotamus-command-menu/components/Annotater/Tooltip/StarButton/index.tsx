@@ -3,7 +3,6 @@ import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
-import tooltipStyles from '../styles.module.css';
 
 interface Props {
     readonly onClick: () => void;
@@ -28,8 +27,8 @@ export default function StarButton(
             arrow
         >
             <IconButton
-                className={tooltipStyles.Tooltip_button}
                 onClick={handleClick}
+                sx={{ color: 'white' }}
             >
                 {isClicked ? <StarIcon /> : <StarOutlineIcon />}
             </IconButton>

@@ -24,11 +24,3 @@
     border-right: 6px solid transparent;
     border-top: 6px solid #333;
 }
-
-.Tooltip_button {
-    display: flex;
-
-    color: white;
-    cursor: pointer;
-    padding: 0;
-}

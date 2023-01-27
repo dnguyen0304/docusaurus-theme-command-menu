@@ -17,9 +17,7 @@ const StyledBox = styled(Box)({
     backgroundColor: 'var(--docupotamus-color-grey-100)',
 });
 
-interface Props { };
-
-export default function AddressBar({ }: Props): JSX.Element {
+export default function AddressBar(): JSX.Element {
     const { href } = useAddressBar();
 
     return (

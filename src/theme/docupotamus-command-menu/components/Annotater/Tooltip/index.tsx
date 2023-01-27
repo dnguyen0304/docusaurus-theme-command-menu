@@ -1,7 +1,35 @@
 import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import StarButton from './StarButton';
-import styles from './styles.module.css';
+
+const StyledBox = styled(Box)({
+    position: 'absolute',
+    transform: 'translate(-50%, -100%)',
+    zIndex: 'calc(var(--ifm-z-index-fixed) + 1)',
+
+    display: 'flex',
+    alignItems: 'center',
+
+    backgroundColor: 'var(--docupotamus-color-grey-100)',
+    borderRadius: '8px',
+    padding: '6px 10px',
+    transition: '0.2s all',
+    '&::after': {
+        content: '""',
+        width: 0,
+        height: 0,
+
+        position: 'absolute',
+        bottom: '-5px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+
+        borderTop: '6px solid var(--docupotamus-color-grey-100)',
+        borderRight: '6px solid transparent',
+        borderLeft: '6px solid transparent',
+    },
+});
 
 interface Props {
     readonly isVisible: boolean;
@@ -21,8 +49,7 @@ export default function Tooltip(
     }: Props,
 ): JSX.Element {
     return (
-        <Box
-            className={styles.Tooltip}
+        <StyledBox
             sx={{
                 top: `${positionTopPx}px`,
                 left: `${positionLeftPx}px`,
@@ -35,6 +62,6 @@ export default function Tooltip(
                 isClicked={starIsClicked}
                 onClick={starOnClick}
             />
-        </Box>
+        </StyledBox>
     );
 };

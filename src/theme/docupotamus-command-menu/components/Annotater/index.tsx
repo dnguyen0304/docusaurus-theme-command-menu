@@ -2,7 +2,7 @@ import * as React from 'react';
 import { SelectionObserver } from '../../services/annotate/selection-observer';
 import { SelectionTopCenterPositioner } from '../../services/annotate/tooltip/positioner';
 import * as rangeUtils from '../../services/annotate/utils/range';
-import Tooltip from './Tooltip';
+import ButtonGroup from './ButtonGroup';
 
 export default function Annotater(): JSX.Element {
     const [isVisible, setIsVisible] = React.useState<boolean>(false);
@@ -60,7 +60,7 @@ export default function Annotater(): JSX.Element {
     }, []);
 
     return (
-        <Tooltip
+        <ButtonGroup
             isVisible={isVisible}
             positionTopPx={positionTopPx}
             positionLeftPx={positionLeftPx}

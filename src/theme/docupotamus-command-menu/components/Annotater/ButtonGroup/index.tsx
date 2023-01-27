@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import StarButton from './StarButton';
 
-const StyledBox = styled(Box)({
+const StyledTooltip = styled(Box)({
     position: 'absolute',
     transform: 'translate(-50%, -100%)',
     zIndex: 'calc(var(--ifm-z-index-fixed) + 1)',
@@ -39,7 +39,7 @@ interface Props {
     readonly starOnClick: () => void;
 };
 
-export default function Tooltip(
+export default function ButtonGroup(
     {
         isVisible,
         positionTopPx,
@@ -49,7 +49,7 @@ export default function Tooltip(
     }: Props,
 ): JSX.Element {
     return (
-        <StyledBox
+        <StyledTooltip
             sx={{
                 top: `${positionTopPx}px`,
                 left: `${positionLeftPx}px`,
@@ -62,6 +62,6 @@ export default function Tooltip(
                 isClicked={starIsClicked}
                 onClick={starOnClick}
             />
-        </StyledBox>
+        </StyledTooltip>
     );
 };

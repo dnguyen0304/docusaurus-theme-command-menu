@@ -25,7 +25,9 @@ declare module '@docusaurus/theme-command-menu' {
 
     type TimelineEventType = 'Read';
 
-    type KeyBindings = 'COMMAND_MENU_OPEN';
+    type KeyBindings =
+        | 'COMMAND_MENU_CLOSE'
+        | 'COMMAND_MENU_OPEN';
 
     type KeyMap = {
         [key in KeyBindings]: KeySequence;

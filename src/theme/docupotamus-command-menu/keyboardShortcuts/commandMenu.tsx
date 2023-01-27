@@ -7,6 +7,7 @@ import { HotKeys } from 'react-hotkeys';
 import { useCommandMenu } from '../contexts/commandMenu';
 
 const keyMap: KeyMapType = {
+    COMMAND_MENU_CLOSE: 'esc',
     COMMAND_MENU_OPEN: 'shift shift',
 };
 
@@ -26,6 +27,7 @@ export const KeyHandlers = ({ children }: Props): JSX.Element => {
     const { setIsOpen } = useCommandMenu();
 
     const handlers: KeyHandlersType = {
+        COMMAND_MENU_CLOSE: () => setIsOpen(false),
         COMMAND_MENU_OPEN: () => setIsOpen(true),
     };
 

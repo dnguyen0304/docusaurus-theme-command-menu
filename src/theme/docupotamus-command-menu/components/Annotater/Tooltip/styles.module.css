@@ -25,7 +25,7 @@
     border-top: 6px solid #333;
 }
 
-.Button {
+.Tooltip_button {
     display: flex;
 
     color: white;

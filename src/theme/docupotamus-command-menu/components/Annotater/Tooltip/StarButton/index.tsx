@@ -28,7 +28,7 @@ export default function StarButton(
             arrow
         >
             <IconButton
-                className={tooltipStyles.Button}
+                className={tooltipStyles.Tooltip_button}
                 onClick={handleClick}
             >
                 {isStarred ? <StarIcon /> : <StarOutlineIcon />}

@@ -9,7 +9,7 @@
     align-items: center;
 
     background-color: var(--docupotamus-color-grey-100);
-    border-radius: 3px;
+    border-radius: 8px;
     padding: 6px 10px;
     transition: 0.2s all;
 }

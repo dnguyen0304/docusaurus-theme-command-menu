@@ -1,15 +1,10 @@
 import * as React from 'react';
-import { useAnnotater } from '../../contexts/annotater';
-import { useWheel } from '../../contexts/wheel';
 import { SelectionObserver } from '../../services/annotate/selection-observer';
 import { SelectionTopCenterPositioner } from '../../services/annotate/tooltip/positioner';
 import * as rangeUtils from '../../services/annotate/utils/range';
 import Tooltip from './Tooltip';
 
 export default function Annotater(): JSX.Element {
-    const { setRange } = useAnnotater();
-    const { } = useWheel();
-
     const [isVisible, setIsVisible] = React.useState<boolean>(false);
     const [positionTopPx, setPositionTopPx] = React.useState<number>(0);
     const [positionLeftPx, setPositionLeftPx] = React.useState<number>(0);
@@ -43,14 +38,12 @@ export default function Annotater(): JSX.Element {
             focusRect,
             isBackwards,
         );
-        setRange(range);
         setIsVisible(true);
         setPositionTopPx(top);
         setPositionLeftPx(left);
     };
 
     const handleNoSelection = () => {
-        setRange(null);
         setIsVisible(false);
     };
 

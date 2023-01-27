@@ -4,32 +4,37 @@
     line-height: 1.2;
 
     opacity: 0;
-    transform: translateY(-10px);
+    transform: scale(0.5);
     animation-delay: calc(0.09s * var(--animation-order));
-    animation-duration: 0.2s;
+    animation-duration: 0.8s;
     animation-fill-mode: forwards;
-    animation-name: fade-in-from-top;
-    animation-timing-function: cubic-bezier(0.15, 0.54, 0.51, 0.37);
+    animation-name: slide-in-from-center;
+    animation-timing-function: cubic-bezier(.6, -0.3, .2, 1.7);
 }
 
 .Slot_card:nth-of-type(1) {
     --animation-order: 0;
+    --translate: 0 -85%;
 }
 
 .Slot_card:nth-of-type(2) {
     --animation-order: 1;
+    --translate: 130% -35%;
 }
 
 .Slot_card:nth-of-type(3) {
     --animation-order: 2;
+    --translate: 70% 85%;
 }
 
 .Slot_card:nth-of-type(4) {
     --animation-order: 3;
+    --translate: -70% 85%;
 }
 
 .Slot_card:nth-of-type(5) {
     --animation-order: 4;
+    --translate: -130% -35%;
 }
 
 .Slot_descriptionContainer {
@@ -52,13 +57,10 @@
     text-overflow: ellipsis;
 }
 
-@keyframes fade-in-from-top {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
+@keyframes slide-in-from-center {
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1.0);
+        translate: var(--translate);
     }
 }

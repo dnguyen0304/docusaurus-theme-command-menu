@@ -80,7 +80,6 @@ export default function Slot(
         index,
         heading,
         snippet,
-        sx,
         href,
     }: Props,
 ): JSX.Element {
@@ -104,7 +103,6 @@ export default function Slot(
             hasContent={!!href}
             onMouseEnter={() => setHref(href)}
             onMouseLeave={() => setHref('')}
-            sx={{ ...sx }}
         >
             <h2 className={styles.Slot_descriptionContainer}>
                 <StyledInput

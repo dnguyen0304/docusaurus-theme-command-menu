@@ -31,7 +31,6 @@ export default function Wheel({ sx }: Props): JSX.Element {
                     index={index}
                     heading={slot.heading}
                     snippet={slot.snippet}
-                    sx={slot.sx}
                     href={slot.href}
                 />
             ))}

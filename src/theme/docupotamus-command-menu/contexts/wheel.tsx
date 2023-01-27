@@ -4,6 +4,11 @@ import { ReactContextError } from './errors';
 
 type Action =
     | {
+        type: 'setSlot';
+        index: number;
+        newValue: SlotData;
+    }
+    | {
         type: 'setSlotHeading';
         index: number;
         newValue: SlotData['heading'];
@@ -18,6 +23,9 @@ const reducer = (prev: SlotData[], action: Action): SlotData[] => {
     const oldSlot = newSlots[action.index];
     if (!oldSlot) {
         throw new Error('index out of bounds');
+    }
+    if (action.type === 'setSlot') {
+        newSlots[action.index] = action.newValue;
     }
     if (action.type === 'setSlotHeading') {
         const newSlot = {

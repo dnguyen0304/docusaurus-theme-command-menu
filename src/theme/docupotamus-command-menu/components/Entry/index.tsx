@@ -62,7 +62,7 @@ export default function Entry(): JSX.Element {
             >
                 <Logo
                     className={styles.Logo}
-                    viewBox='100 700 1600 600'
+                    viewBox='140 700 1600 600'
                 />
             </Circle>
             <TouchRipple

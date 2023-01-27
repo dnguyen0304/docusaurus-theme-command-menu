@@ -29,7 +29,7 @@ export default function Tooltip(
         // onMouseDown={e => e.preventDefault()}
         // role='presentation'
         >
-            <StarButton onClick={() => console.log('clicked star button')} />
+            <StarButton onClick={onClick} />
         </Box>
     );
 };

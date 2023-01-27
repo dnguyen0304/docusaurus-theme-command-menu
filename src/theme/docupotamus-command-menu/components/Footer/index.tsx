@@ -21,8 +21,19 @@ interface Props {
 };
 
 export default function Footer({ sx }: Props): JSX.Element {
+    const ref = React.useRef<HTMLDivElement>(null);
+
+    React.useEffect(() => {
+        // On rendering the command menu, set the focus here (or any child
+        // element) so global keyboard shortcuts work.
+        ref.current?.focus();
+    }, []);
+
     return (
-        <Layout sx={{ ...sx }}>
+        <Layout
+            ref={ref}
+            sx={{ ...sx }}
+        >
             <AddressBar />
         </Layout>
     );

@@ -14,7 +14,11 @@ const StyledBox = styled(Box)({
     display: 'flex',
     alignItems: 'center',
 
-    backgroundColor: 'var(--docupotamus-color-grey-100)',
+    background: `linear-gradient(
+        to bottom,
+        rgba(var(--docupotamus-color-grey-100-rgb), 0.1),
+        var(--docupotamus-color-grey-100)
+    )`,
 });
 
 export default function AddressBar(): JSX.Element {

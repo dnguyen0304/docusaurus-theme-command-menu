@@ -5,21 +5,16 @@ import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
 
 interface Props {
+    readonly isClicked: boolean;
     readonly onClick: () => void;
 };
 
 export default function StarButton(
     {
+        isClicked,
         onClick
     }: Props
 ): JSX.Element {
-    const [isClicked, setIsClicked] = React.useState<boolean>(false);
-
-    const handleClick = () => {
-        onClick();
-        setIsClicked(prev => !prev);
-    };
-
     return (
         <Tooltip
             title={isClicked ? 'Unstar' : 'Star'}
@@ -27,7 +22,7 @@ export default function StarButton(
             arrow
         >
             <IconButton
-                onClick={handleClick}
+                onClick={onClick}
                 sx={{ color: 'white' }}
             >
                 {isClicked ? <StarIcon /> : <StarOutlineIcon />}

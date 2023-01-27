@@ -8,6 +8,7 @@ interface Props {
     readonly onClick: () => void;
     readonly positionTopPx: number;
     readonly positionLeftPx: number;
+    readonly starIsClicked: boolean;
 };
 
 export default function Tooltip(
@@ -16,6 +17,7 @@ export default function Tooltip(
         onClick,
         positionTopPx,
         positionLeftPx,
+        starIsClicked,
     }: Props,
 ): JSX.Element {
     return (
@@ -29,7 +31,10 @@ export default function Tooltip(
         // onMouseDown={e => e.preventDefault()}
         // role='presentation'
         >
-            <StarButton onClick={onClick} />
+            <StarButton
+                isClicked={starIsClicked}
+                onClick={onClick}
+            />
         </Box>
     );
 };

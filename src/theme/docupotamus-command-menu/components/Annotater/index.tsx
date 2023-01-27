@@ -14,6 +14,7 @@ export default function Annotater(): JSX.Element {
     const [isVisible, setIsVisible] = React.useState<boolean>(false);
     const [positionTopPx, setPositionTopPx] = React.useState<number>(0);
     const [positionLeftPx, setPositionLeftPx] = React.useState<number>(0);
+    const [starIsClicked, setStarIsClicked] = React.useState<boolean>(false);
 
     const selectionObserverRef = React.useRef<SelectionObserver>();
 
@@ -29,6 +30,7 @@ export default function Annotater(): JSX.Element {
         range.insertNode(spanElement);
 
         selection.removeAllRanges();
+        setStarIsClicked(prev => !prev);
     };
 
     const handleSelection = (range: Range) => {
@@ -72,6 +74,7 @@ export default function Annotater(): JSX.Element {
             onClick={handleClick}
             positionTopPx={positionTopPx}
             positionLeftPx={positionLeftPx}
+            starIsClicked={starIsClicked}
         />
     );
 };

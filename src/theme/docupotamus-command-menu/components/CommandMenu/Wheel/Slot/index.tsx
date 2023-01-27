@@ -3,9 +3,9 @@ import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
-import { useAddressBar } from '../../../contexts/addressBar';
-import { useWheel } from '../../../contexts/wheel';
-import stylesCommon from '../../styles.module.css';
+import { useAddressBar } from '../../../../contexts/addressBar';
+import { useWheel } from '../../../../contexts/wheel';
+import stylesCommon from '../../../styles.module.css';
 import ButtonGroup from './ButtonGroup';
 import styles from './styles.module.css';
 

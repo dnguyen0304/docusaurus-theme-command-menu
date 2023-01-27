@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
-import { useWheel } from '../../contexts/wheel';
+import { useWheel } from '../../../contexts/wheel';
 import Slot from './Slot';
 
 const StyledBox = styled(Box)({

@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
-import { useWheel } from '../../../../contexts/wheel';
+import { useWheel } from '../../../../../contexts/wheel';
 import styles from './styles.module.css';
 
 interface StyledBox {

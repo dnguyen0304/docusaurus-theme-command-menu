@@ -44,9 +44,9 @@ export default function Annotater(): JSX.Element {
             isBackwards,
         );
         setRange(range);
+        setIsVisible(true);
         setPositionTopPx(top);
         setPositionLeftPx(left);
-        setIsVisible(true);
     };
 
     const handleNoSelection = () => {

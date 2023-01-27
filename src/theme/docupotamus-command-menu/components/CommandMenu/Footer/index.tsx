@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
-import { FOOTER_HEIGHT } from '../../constants';
+import { FOOTER_HEIGHT } from '../../../constants';
 import AddressBar from './AddressBar';
 
 const Layout = styled(Box)({

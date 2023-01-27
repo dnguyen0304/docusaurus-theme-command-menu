@@ -12,7 +12,8 @@
         "@mui/material": "^5.9.2",
         "@react-hook/resize-observer": "^1.2.6",
         "approx-string-match": "^2.0.0",
-        "dayjs": "^1.11.7"
+        "dayjs": "^1.11.7",
+        "react-hotkeys": "^2.0.0"
     },
     "devDependencies": {
         "@docusaurus/module-type-aliases": "^2.2.x",

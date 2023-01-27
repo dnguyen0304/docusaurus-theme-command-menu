@@ -1,4 +1,5 @@
 declare module '@docusaurus/theme-command-menu' {
+    import type { KeySequence } from 'react-hotkeys';
 
     interface CommandMenuThemeConfig {
         readonly swizzleIsEnabled: boolean;
@@ -23,4 +24,16 @@ declare module '@docusaurus/theme-command-menu' {
     }
 
     type TimelineEventType = 'Read';
+
+    type KeyBindings = 'COMMAND_MENU_OPEN';
+
+    type KeyMap = {
+        [key in KeyBindings]: KeySequence;
+    };
+
+    type KeyHandlers = {
+        [key in KeyBindings]: (
+            keyboardEvent?: KeyboardEvent | undefined,
+        ) => void;
+    };
 }

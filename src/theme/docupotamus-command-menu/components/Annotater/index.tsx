@@ -18,7 +18,7 @@ export default function Annotater(): JSX.Element {
 
     const selectionObserverRef = React.useRef<SelectionObserver>();
 
-    const handleClick = () => {
+    const starHandleClick = () => {
         const selection = window.getSelection();
         if (!selection || !selection.rangeCount) {
             return;
@@ -71,10 +71,10 @@ export default function Annotater(): JSX.Element {
     return (
         <Tooltip
             isVisible={isVisible}
-            onClick={handleClick}
             positionTopPx={positionTopPx}
             positionLeftPx={positionLeftPx}
             starIsClicked={starIsClicked}
+            starOnClick={starHandleClick}
         />
     );
 };

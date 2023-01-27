@@ -5,19 +5,19 @@ import styles from './styles.module.css';
 
 interface Props {
     readonly isVisible: boolean;
-    readonly onClick: () => void;
     readonly positionTopPx: number;
     readonly positionLeftPx: number;
     readonly starIsClicked: boolean;
+    readonly starOnClick: () => void;
 };
 
 export default function Tooltip(
     {
         isVisible,
-        onClick,
         positionTopPx,
         positionLeftPx,
         starIsClicked,
+        starOnClick,
     }: Props,
 ): JSX.Element {
     return (
@@ -33,7 +33,7 @@ export default function Tooltip(
         >
             <StarButton
                 isClicked={starIsClicked}
-                onClick={onClick}
+                onClick={starOnClick}
             />
         </Box>
     );

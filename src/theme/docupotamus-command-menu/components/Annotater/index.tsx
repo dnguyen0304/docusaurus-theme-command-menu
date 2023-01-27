@@ -4,7 +4,6 @@ import { useWheel } from '../../contexts/wheel';
 import { SelectionObserver } from '../../services/annotate/selection-observer';
 import { SelectionTopCenterPositioner } from '../../services/annotate/tooltip/positioner';
 import * as rangeUtils from '../../services/annotate/utils/range';
-import styles from './styles.module.css';
 import Tooltip from './Tooltip';
 
 export default function Annotater(): JSX.Element {
@@ -25,11 +24,10 @@ export default function Annotater(): JSX.Element {
         }
         const range = selection.getRangeAt(0);
         let spanElement = document.createElement('span');
-        spanElement.className = styles.Range__highlight;
         spanElement.appendChild(range.extractContents());
         range.insertNode(spanElement);
-
         selection.removeAllRanges();
+
         setStarIsClicked(prev => !prev);
     };
 

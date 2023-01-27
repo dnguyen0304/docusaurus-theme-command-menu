@@ -5,6 +5,7 @@ import styles from './styles.module.css';
 
 interface Props {
     readonly isVisible: boolean;
+    readonly onClick: () => void;
     readonly positionTopPx: number;
     readonly positionLeftPx: number;
 };
@@ -12,6 +13,7 @@ interface Props {
 export default function Tooltip(
     {
         isVisible,
+        onClick,
         positionTopPx,
         positionLeftPx,
     }: Props,

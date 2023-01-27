@@ -68,6 +68,7 @@
     --docupotamus-body-font-weight: 200;
 }
 
+/* Warning: This is deprecated. */
 h1.ifm_text__reset,
 h2.ifm_text__reset,
 h3.ifm_text__reset,

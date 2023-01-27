@@ -4,10 +4,7 @@ import { AddressBarProvider } from '../contexts/addressBar';
 import { CommandMenuProvider } from '../contexts/commandMenu';
 import { TimelineProvider } from '../contexts/timeline';
 import { WheelProvider } from '../contexts/wheel';
-import {
-    KeyHandlers as CommandMenuKeyHandlers,
-    KeyMap as CommandMenuKeyMap
-} from '../keyboardShortcuts/commandMenu';
+import CommandMenuKeyboardShortcuts from '../keyboardShortcuts/commandMenu';
 import './styles.css';
 
 interface Props {
@@ -17,20 +14,18 @@ interface Props {
 export default function Root({ children }: Props): JSX.Element {
     return (
         <React.StrictMode>
-            <CommandMenuKeyMap>
-                <CommandMenuProvider>
-                    <CommandMenuKeyHandlers>
-                        <AddressBarProvider>
-                            <WheelProvider>
-                                <TimelineProvider>
-                                    <CommandMenu />
-                                    {children}
-                                </TimelineProvider>
-                            </WheelProvider>
-                        </AddressBarProvider>
-                    </CommandMenuKeyHandlers>
-                </CommandMenuProvider>
-            </CommandMenuKeyMap>
+            <CommandMenuProvider>
+                <CommandMenuKeyboardShortcuts>
+                    <AddressBarProvider>
+                        <WheelProvider>
+                            <TimelineProvider>
+                                <CommandMenu />
+                                {children}
+                            </TimelineProvider>
+                        </WheelProvider>
+                    </AddressBarProvider>
+                </CommandMenuKeyboardShortcuts>
+            </CommandMenuProvider>
         </React.StrictMode>
     );
 };

@@ -3,7 +3,7 @@ import type {
     KeyMap as KeyMapType
 } from '@docusaurus/theme-command-menu';
 import * as React from 'react';
-import { HotKeys } from 'react-hotkeys';
+import { GlobalHotKeys } from 'react-hotkeys';
 import { useCommandMenu } from '../contexts/commandMenu';
 
 const keyMap: KeyMapType = {
@@ -15,15 +15,7 @@ interface Props {
     readonly children: React.ReactNode;
 };
 
-export const KeyMap = ({ children }: Props): JSX.Element => {
-    return (
-        <HotKeys keyMap={keyMap}>
-            {children}
-        </HotKeys>
-    );
-};
-
-export const KeyHandlers = ({ children }: Props): JSX.Element => {
+export default function KeyboardShortcuts({ children }: Props): JSX.Element {
     const { setIsOpen } = useCommandMenu();
 
     const handlers: KeyHandlersType = {
@@ -32,8 +24,8 @@ export const KeyHandlers = ({ children }: Props): JSX.Element => {
     };
 
     return (
-        <HotKeys handlers={handlers}>
+        <GlobalHotKeys keyMap={keyMap} handlers={handlers}>
             {children}
-        </HotKeys>
+        </GlobalHotKeys>
     );
 };

@@ -14,11 +14,11 @@ export default function StarButton(
         onClick
     }: Props
 ): JSX.Element {
-    const [isStarred, setIsStarred] = React.useState<boolean>(false);
+    const [isClicked, setIsClicked] = React.useState<boolean>(false);
 
     const handleClick = () => {
         onClick();
-        setIsStarred(prev => !prev);
+        setIsClicked(prev => !prev);
     };
 
     return (
@@ -31,7 +31,7 @@ export default function StarButton(
                 className={tooltipStyles.Tooltip_button}
                 onClick={handleClick}
             >
-                {isStarred ? <StarIcon /> : <StarOutlineIcon />}
+                {isClicked ? <StarIcon /> : <StarOutlineIcon />}
             </IconButton>
         </Tooltip>
     );

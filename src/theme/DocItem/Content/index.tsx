@@ -2,8 +2,8 @@ import type { WrapperProps } from '@docusaurus/types';
 import ContentInit from '@theme-init/DocItem/Content';
 import type ContentType from '@theme/DocItem/Content';
 import * as React from 'react';
-import ContentSwizzle from '../../docupotamus-command-menu/DocItem/Content';
 import useCommandMenuThemeConfig from '../../docupotamus-command-menu/hooks/useCommandMenuThemeConfig';
+import ContentSwizzle from '../../docupotamus-command-menu/theme/DocItem/Content';
 
 type Props = Readonly<WrapperProps<typeof ContentType>>;
 

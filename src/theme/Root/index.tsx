@@ -3,7 +3,7 @@ import RootInit from '@theme-init/Root';
 import type RootType from '@theme/Root';
 import * as React from 'react';
 import useCommandMenuThemeConfig from '../docupotamus-command-menu/hooks/useCommandMenuThemeConfig';
-import RootSwizzle from '../docupotamus-command-menu/Root';
+import RootSwizzle from '../docupotamus-command-menu/theme/Root';
 
 type Props = Readonly<WrapperProps<typeof RootType>>;
 

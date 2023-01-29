@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { TILE_BORDER_WIDTH_PX } from '../../../../constants';
-import { useAddressBar } from '../../../../contexts/addressBar';
+import { useAddressBar } from '../../../../contexts/address-bar';
 import stylesCommon from '../../../styles.module.css';
 
 const StyledBox = styled(Box)({

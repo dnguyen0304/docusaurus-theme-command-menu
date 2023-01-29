@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchRipple';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
-import { useAddressBar } from '../../../../contexts/addressBar';
+import { useAddressBar } from '../../../../contexts/address-bar';
 import { dayjs } from '../../../../services/datetime';
 import stylesCommon from '../../../styles.module.css';
 import Anchor from './Anchor';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import CommandMenu from '../../components/CommandMenu';
-import { AddressBarProvider } from '../../contexts/addressBar';
+import { AddressBarProvider } from '../../contexts/address-bar';
 import { CommandMenuProvider } from '../../contexts/commandMenu';
 import { TimelineProvider } from '../../contexts/timeline';
 import { WheelProvider } from '../../contexts/wheel';

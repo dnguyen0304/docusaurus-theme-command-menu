@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
-import { useCommandMenu } from '../../contexts/commandMenu';
+import { useCommandMenu } from '../../contexts/command-menu';
 import Backdrop from './Backdrop';
 import Footer from './Footer';
 import Timeline from './Timeline';

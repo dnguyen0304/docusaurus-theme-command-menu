@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchRipple';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
-import { useCommandMenu } from '../../contexts/commandMenu';
+import { useCommandMenu } from '../../contexts/command-menu';
 import Gradient from '../common/Gradient';
 import Logo from './Logo';
 import styles from './styles.module.css';

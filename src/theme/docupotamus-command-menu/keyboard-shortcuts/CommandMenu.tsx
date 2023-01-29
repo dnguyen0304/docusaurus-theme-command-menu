@@ -4,7 +4,7 @@ import type {
 } from '@docusaurus/theme-command-menu';
 import * as React from 'react';
 import { GlobalHotKeys } from 'react-hotkeys';
-import { useCommandMenu } from '../contexts/commandMenu';
+import { useCommandMenu } from '../contexts/command-menu';
 
 const keyMap: KeyMapType = {
     COMMAND_MENU_CLOSE: 'esc',

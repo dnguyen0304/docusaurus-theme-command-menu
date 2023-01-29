@@ -4,7 +4,7 @@ import { AddressBarProvider } from '../../contexts/addressBar';
 import { CommandMenuProvider } from '../../contexts/commandMenu';
 import { TimelineProvider } from '../../contexts/timeline';
 import { WheelProvider } from '../../contexts/wheel';
-import CommandMenuKeyboardShortcuts from '../../keyboardShortcuts/commandMenu';
+import CommandMenuKeyboardShortcuts from '../../keyboard-shortcuts/CommandMenu';
 import '../../styles.css';
 
 interface Props {

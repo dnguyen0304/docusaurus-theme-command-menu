@@ -15,7 +15,7 @@ interface Props {
     readonly children: React.ReactNode;
 };
 
-export default function KeyboardShortcuts({ children }: Props): JSX.Element {
+export default function CommandMenu({ children }: Props): JSX.Element {
     const { setIsOpen } = useCommandMenu();
 
     const handlers: KeyHandlersType = {

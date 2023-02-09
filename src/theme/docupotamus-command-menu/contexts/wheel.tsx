@@ -1,4 +1,4 @@
-import { SlotData } from '@docusaurus/theme-command-menu';
+import type { SlotData } from '@docusaurus/theme-command-menu';
 import * as React from 'react';
 import { ReactContextError } from './errors';
 

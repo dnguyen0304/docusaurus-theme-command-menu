@@ -1,4 +1,4 @@
-declare module '@docusaurus/theme-command-menu' {
+declare module '@docupotamus/docusaurus-theme-command-menu' {
     import type { KeySequence } from 'react-hotkeys';
 
     interface PluginOptions {
@@ -40,4 +40,8 @@ declare module '@docusaurus/theme-command-menu' {
             keyboardEvent?: KeyboardEvent | undefined,
         ) => void;
     };
+}
+
+declare module '@docusaurus/theme-command-menu' {
+    export * from '@docupotamus/docusaurus-theme-command-menu';
 }

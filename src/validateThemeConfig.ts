@@ -5,6 +5,12 @@ import type {
 } from '@docusaurus/types';
 import { Joi } from '@docusaurus/utils-validation';
 
+declare module '@docusaurus/types' {
+    interface ThemeConfig {
+        docupotamusCommandMenu: CommandMenuThemeConfig;
+    }
+};
+
 const DEFAULT_THEME_CONFIG: CommandMenuThemeConfig = {
     swizzleIsEnabled: true,
 };

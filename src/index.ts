@@ -10,7 +10,7 @@ export default function themeCommandMenu(
     const { swizzleIsEnabled } = options;
 
     return {
-        name: `docusaurus-theme-${name}`,
+        name: `docupotamus-theme-${name}`,
 
         getThemePath() {
             if (swizzleIsEnabled) {

@@ -14,14 +14,14 @@ export default function themeCommandMenu(
 
         getThemePath() {
             if (swizzleIsEnabled) {
-                return `../lib/theme/docupotamus-${name}/theme`;
+                return `../lib/theme/docupotamus-${name}/swizzle`;
             }
             return '../lib/theme';
         },
 
         getTypeScriptThemePath() {
             if (swizzleIsEnabled) {
-                return `../src/theme/docupotamus-${name}/theme`;
+                return `../src/theme/docupotamus-${name}/swizzle`;
             }
             return '../src/theme';
         },

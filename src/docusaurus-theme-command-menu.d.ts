@@ -1,9 +1,11 @@
 declare module '@docusaurus/theme-command-menu' {
     import type { KeySequence } from 'react-hotkeys';
 
-    interface CommandMenuThemeConfig {
+    interface PluginOptions {
         readonly swizzleIsEnabled: boolean;
     }
+
+    interface CommandMenuThemeConfig { }
 
     interface SlotData {
         readonly heading: string;

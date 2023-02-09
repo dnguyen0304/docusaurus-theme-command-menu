@@ -11,17 +11,11 @@ declare module '@docusaurus/types' {
     }
 };
 
-const DEFAULT_THEME_CONFIG: CommandMenuThemeConfig = {
-    swizzleIsEnabled: true,
-};
+const DEFAULT_THEME_CONFIG: CommandMenuThemeConfig = {};
 
 // TODO(dnguyen0304): Investigate missing labels.
-// TODO(dnguyen0304): Fix incorrect ThemeConfig type.
 export const ThemeConfigSchema = Joi.object<ThemeConfig>({
     docupotamusCommandMenu: Joi.object({
-        swizzleIsEnabled: Joi
-            .boolean()
-            .default(DEFAULT_THEME_CONFIG.swizzleIsEnabled),
     })
         .label('themeConfig.docupotamusCommandMenu')
         .default(DEFAULT_THEME_CONFIG),

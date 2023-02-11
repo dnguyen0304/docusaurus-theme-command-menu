@@ -5,7 +5,7 @@ export default function themeCommandMenu(
     _context: LoadContext,
     options: PluginOptions,
 ): Plugin<undefined> {
-    const { swizzleIsEnabled } = options;
+    const { swizzleIsEnabled = true } = options;
 
     return {
         name: `docupotamus-theme-command-menu`,

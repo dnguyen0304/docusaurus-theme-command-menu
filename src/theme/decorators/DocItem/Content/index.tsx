@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Annotater from '../../../../package/components/Annotater';
+import Annotater from '../../../package/components/Annotater';
 
 interface Props {
     readonly children: React.ReactNode;

@@ -14,14 +14,14 @@ export default function themeCommandMenu(
             if (swizzleIsEnabled) {
                 return `../lib/theme/swizzle`;
             }
-            return '../lib/theme';
+            return '../lib/public';
         },
 
         getTypeScriptThemePath() {
             if (swizzleIsEnabled) {
                 return `../src/theme/swizzle`;
             }
-            return '../src/theme';
+            return '../src/public';
         },
     };
 };

@@ -1,11 +1,11 @@
 import * as React from 'react';
-import CommandMenu from '../../components/CommandMenu';
-import { AddressBarProvider } from '../../contexts/address-bar';
-import { CommandMenuProvider } from '../../contexts/command-menu';
-import { TimelineProvider } from '../../contexts/timeline';
-import { WheelProvider } from '../../contexts/wheel';
-import CommandMenuKeyboardShortcuts from '../../keyboard-shortcuts/CommandMenu';
-import '../../styles.css';
+import CommandMenu from '../../docupotamus-command-menu/components/CommandMenu';
+import { AddressBarProvider } from '../../docupotamus-command-menu/contexts/address-bar';
+import { CommandMenuProvider } from '../../docupotamus-command-menu/contexts/command-menu';
+import { TimelineProvider } from '../../docupotamus-command-menu/contexts/timeline';
+import { WheelProvider } from '../../docupotamus-command-menu/contexts/wheel';
+import CommandMenuKeyboardShortcuts from '../../docupotamus-command-menu/keyboard-shortcuts/CommandMenu';
+import '../../docupotamus-command-menu/styles.css';
 
 interface Props {
     readonly children: React.ReactNode;

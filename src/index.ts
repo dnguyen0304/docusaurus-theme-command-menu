@@ -5,23 +5,21 @@ export default function themeCommandMenu(
     _context: LoadContext,
     options: PluginOptions,
 ): Plugin<undefined> {
-    const name = 'command-menu';
-
     const { swizzleIsEnabled } = options;
 
     return {
-        name: `docupotamus-theme-${name}`,
+        name: `docupotamus-theme-command-menu`,
 
         getThemePath() {
             if (swizzleIsEnabled) {
-                return `../lib/theme/docupotamus-${name}/swizzle`;
+                return `../lib/theme/swizzle`;
             }
             return '../lib/theme';
         },
 
         getTypeScriptThemePath() {
             if (swizzleIsEnabled) {
-                return `../src/theme/docupotamus-${name}/swizzle`;
+                return `../src/theme/swizzle`;
             }
             return '../src/theme';
         },

@@ -8,18 +8,18 @@ export default function themeCommandMenu(
     const { swizzleIsEnabled = true } = options;
 
     return {
-        name: `docupotamus-theme-command-menu`,
+        name: 'docupotamus-theme-command-menu',
 
         getThemePath() {
             if (swizzleIsEnabled) {
-                return `../lib/theme/swizzle`;
+                return '../lib/theme/swizzle';
             }
             return '../lib/theme/public';
         },
 
         getTypeScriptThemePath() {
             if (swizzleIsEnabled) {
-                return `../src/theme/swizzle`;
+                return '../src/theme/swizzle';
             }
             return '../src/theme/public';
         },

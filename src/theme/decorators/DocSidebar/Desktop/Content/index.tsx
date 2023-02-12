@@ -5,7 +5,7 @@ interface Props {
     readonly children: React.ReactNode;
 };
 
-export default function ContentWrapper({ children }: Props): JSX.Element {
+export default function ContentDecorator({ children }: Props): JSX.Element {
     return (
         <>
             {children}

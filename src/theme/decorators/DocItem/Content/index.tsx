@@ -8,8 +8,8 @@ interface Props {
 export default function Decorator({ children }: Props): JSX.Element {
     return (
         <>
-            <Annotater />
             {children}
+            <Annotater />
         </>
     );
 };

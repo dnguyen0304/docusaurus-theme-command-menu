@@ -19,8 +19,8 @@ export default function Root({ children }: Props): JSX.Element {
                     <AddressBarProvider>
                         <WheelProvider>
                             <TimelineProvider>
-                                <CommandMenu />
                                 {children}
+                                <CommandMenu />
                             </TimelineProvider>
                         </WheelProvider>
                     </AddressBarProvider>

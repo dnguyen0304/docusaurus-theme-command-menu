@@ -3,12 +3,6 @@
     background-color: rgba(var(--docupotamus-color-grey-800-rgb), 0.5) !important;
 }
 
-.Event_cardText {
-    color: var(--docupotamus-color-grey-800);
-    font-family: var(--docupotamus-font-family);
-    line-height: 1.2;
-}
-
 .Event_heading {
     color: var(--ifm-color-gray-100);
     letter-spacing: 2px;

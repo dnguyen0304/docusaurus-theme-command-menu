@@ -24,7 +24,7 @@ export default function Tag(
         label,
     }: Props,
 ): JSX.Element {
-    const handleClick: React.MouseEventHandler<HTMLDivElement> = (event) => { };
+    const handleClick: React.MouseEventHandler<HTMLDivElement> = (_event) => { };
 
     return (
         <StyledChip

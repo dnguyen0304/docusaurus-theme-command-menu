@@ -39,8 +39,6 @@ const StyledCardHeader = styled(Box)({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'baseline',
-
-    marginBottom: 'var(--space-2xs)',
 });
 
 interface Props extends TimelineEventData {

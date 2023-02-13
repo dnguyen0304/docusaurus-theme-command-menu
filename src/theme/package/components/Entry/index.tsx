@@ -44,6 +44,7 @@ export default function Entry(): JSX.Element {
                 onClick={() => setIsOpen(true)}
                 onMouseDown={(event) => rippleRef.current?.start(event)}
                 onMouseUp={(event) => rippleRef.current?.stop(event)}
+                onMouseOut={(event) => rippleRef.current?.stop(event)}
             >
                 <Logo
                     className={styles.Logo}

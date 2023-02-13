@@ -3,15 +3,12 @@ import { styled } from '@mui/material/styles';
 import * as React from 'react';
 
 const StyledChip = styled(Chip)({
-    // TODO(dnguyen0304): Extract to a centralized location to facilitate
-    //   maintenance.
-    backgroundColor: 'rgb(98, 0, 234)',
+    backgroundColor: 'var(--ifm-color-gray-500)',
     borderRadius: 'var(--docupotamus-border-radius-s)',
-    color: 'var(--docupotamus-color-grey-800)',
-    fontFamily: 'var(--docupotamus-font-family)',
-    fontWeight: 400,
+    color: 'var(--ifm-color-white)',
+    fontFamily: 'var(--ifm-font-family-base)',
     '&&:hover': {
-        backgroundColor: 'var(--docupotamus-color-grey-300)',
+        backgroundColor: 'var(--ifm-color-gray-400)',
     },
 });
 

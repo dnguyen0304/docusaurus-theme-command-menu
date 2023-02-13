@@ -27,9 +27,8 @@ export default styled(Box)({
     backgroundSize: '200%',
     overflow: 'hidden',
 
-    // TODO(dnguyen0304): Investigate performance issues.
+    // TODO(dnguyen0304): Investigate infinite animation-iteration-count.
     animationDuration: '3s',
-    animationIterationCount: 'infinite',
     animationName: getAnimation(),
     animationTimingFunction: 'linear',
 });

@@ -77,8 +77,8 @@ export default function Timeline({ sx }: Props): JSX.Element {
         React.useState<number>(0);
     const [mouseClientY, setMouseClientY] = React.useState<number>(0);
 
-    const timelineRef = React.useRef<HTMLDivElement>();
-    const eventsLayoutRef = React.useRef<HTMLDivElement>();
+    const timelineRef = React.useRef<HTMLDivElement>(null);
+    const eventsLayoutRef = React.useRef<HTMLDivElement>(null);
     const domRect = useDomRect<HTMLDivElement>(eventsLayoutRef);
 
     const handleMouseLeave = () => {

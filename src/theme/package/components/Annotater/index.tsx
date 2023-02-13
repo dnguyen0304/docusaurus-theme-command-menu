@@ -10,7 +10,7 @@ export default function Annotater(): JSX.Element {
     const [positionLeftPx, setPositionLeftPx] = React.useState<number>(0);
     const [starIsClicked, setStarIsClicked] = React.useState<boolean>(false);
 
-    const selectionObserverRef = React.useRef<SelectionObserver>();
+    const selectionObserverRef = React.useRef<SelectionObserver>(null);
 
     const starHandleClick = () => {
         const selection = window.getSelection();

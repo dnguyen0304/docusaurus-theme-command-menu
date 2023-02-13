@@ -36,7 +36,7 @@ interface Props extends MuiBackdropProps { };
 export default function Backdrop(props: Props): JSX.Element {
     const [tileCount, setTileCount] = React.useState<number>(0);
 
-    const tilesRef = React.useRef<HTMLDivElement>();
+    const tilesRef = React.useRef<HTMLDivElement>(null);
     const domRect = useDomRect<HTMLDivElement>(tilesRef);
 
     React.useEffect(() => {

@@ -51,7 +51,7 @@ export default function Event(
         React.CSSProperties['backgroundColor']
     >(lineNotColoredBackgroundColor);
 
-    const ref = React.useRef<HTMLDivElement>();
+    const ref = React.useRef<HTMLDivElement>(null);
 
     React.useEffect(() => {
         if (!ref.current) {

@@ -42,7 +42,7 @@ const StyledHeading = (): JSX.Element => {
                 backgroundColor: 'var(--docupotamus-color-grey-100)',
                 color: 'var(--docupotamus-color-grey-800)',
                 fontFamily: 'var(--docupotamus-font-family)',
-                fontSize: 'var(--font-size-0)',
+                fontSize: 'var(--font-size-1)',
                 fontWeight: 'var(--docupotamus-heading-font-weight)',
                 letterSpacing: '4px',
                 lineHeight: '1.2',

@@ -4,7 +4,7 @@
 
 .textBody {
     color: var(--docupotamus-color-grey-800);
-    font-size: var(--docupotamus-font-size);
+    font-size: var(--font-size-0);
     font-weight: var(--docupotamus-body-font-weight);
     line-height: 1.2;
     margin-bottom: var(--space-xs);

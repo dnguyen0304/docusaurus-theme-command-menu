@@ -69,7 +69,7 @@ export default function Event(
     return (
         <StyledBox
             ref={ref}
-            size='var(--font-size--1)'
+            size='var(--font-size-0)'
             sx={{
                 ...getPosition(linePositionLeft, lineWidthPx, eventPaddingTop),
                 backgroundColor,

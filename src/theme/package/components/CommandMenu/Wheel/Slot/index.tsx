@@ -66,7 +66,7 @@ const StyledCard = styled(Box, {
 const StyledInput = styled(InputBase)({
     color: 'inherit',
     fontFamily: 'inherit',
-    fontSize: 'var(--docupotamus-font-size)',
+    fontSize: 'var(--font-size-0)',
     fontWeight: 'var(--docupotamus-heading-font-weight)',
 });
 

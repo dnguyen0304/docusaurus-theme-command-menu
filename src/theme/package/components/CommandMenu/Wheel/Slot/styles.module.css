@@ -1,6 +1,6 @@
 .Slot_card {
     font-family: var(--docupotamus-font-family);
-    font-size: var(--docupotamus-font-size);
+    font-size: var(--font-size-0);
     line-height: 1.2;
 
     opacity: 0;

@@ -10,14 +10,14 @@
 }
 
 .Event_heading {
-    font-size: var(--font-size--1);
+    font-size: var(--font-size-0);
     font-weight: var(--docupotamus-heading-font-weight);
     letter-spacing: 2px;
 }
 
 .Event_timestamp {
     color: rgba(var(--docupotamus-color-grey-800-rgb), 0.8);
-    font-size: var(--font-size--2);
+    font-size: var(--font-size--1);
     font-style: italic;
     white-space: nowrap;
 }

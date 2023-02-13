@@ -9,7 +9,7 @@ import Anchor from './Anchor';
 import styles from './styles.module.css';
 import Tag from './Tag';
 
-const PADDING_TOP: React.CSSProperties['paddingTop'] = 'var(--space-m)';
+const PADDING_TOP: React.CSSProperties['paddingTop'] = 'var(--space-s)';
 
 const Layout = styled(Box)({
     position: 'relative',
@@ -19,7 +19,7 @@ const Layout = styled(Box)({
     justifyContent: 'flex-end',
 
     cursor: 'pointer',
-    padding: `${PADDING_TOP} var(--space-s) var(--space-l) 0`,
+    padding: `${PADDING_TOP} var(--space-s) var(--space-m) 0`,
     '&:hover': {
         backgroundColor: 'hsla(var(--ifm-color-white-hsl), 0.05)',
         transition: `

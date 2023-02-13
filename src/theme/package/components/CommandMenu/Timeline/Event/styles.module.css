@@ -16,3 +16,7 @@
     margin: 0;
     white-space: nowrap;
 }
+
+.Event_body {
+    color: var(--ifm-color-gray-200);
+}

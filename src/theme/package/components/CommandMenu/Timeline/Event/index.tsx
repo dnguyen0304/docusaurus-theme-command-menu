@@ -5,7 +5,6 @@ import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { useAddressBar } from '../../../../contexts/address-bar';
 import { dayjs } from '../../../../services/datetime';
-import stylesCommon from '../../../styles.module.css';
 import Anchor from './Anchor';
 import styles from './styles.module.css';
 import Tag from './Tag';
@@ -112,9 +111,7 @@ export default function Event(
                         </p>
                     </span>
                 </StyledCardHeader>
-                <p className={
-                    `${stylesCommon.textBody}`
-                } >
+                <p className={styles.Event_body}>
                     {snippet}
                 </p>
                 {/* TODO(dnguyen0304): Fix onClick bubbling propagation. */}

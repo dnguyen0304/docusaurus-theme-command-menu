@@ -15,7 +15,7 @@ const getAnimation = (): Keyframes => {
 };
 
 interface StyledBoxProps {
-    readonly stopColor: React.CSSProperties['color'];
+    readonly stopColor?: React.CSSProperties['color'];
 };
 
 export default styled(Box, {

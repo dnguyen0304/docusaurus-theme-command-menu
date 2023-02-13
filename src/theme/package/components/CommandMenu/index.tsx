@@ -18,9 +18,7 @@ const Layout = styled(Box)({
         '"footer footer timeline"',
 });
 
-interface Props { };
-
-export default function CommandMenu({ }: Props): JSX.Element {
+export default function CommandMenu(): JSX.Element {
     const { isOpen, setIsOpen } = useCommandMenu();
 
     return (

@@ -47,7 +47,11 @@ export default function Entry(): JSX.Element {
 
     return (
         <ClippingBox>
-            <Gradient />
+            <Gradient
+                color='var(--ifm-color-primary-darkest)'
+                animationDuration='6s'
+                animationIterationCount='infinite'
+            />
             <Circle
                 onClick={() => setIsOpen(true)}
                 onMouseDown={startRipple}

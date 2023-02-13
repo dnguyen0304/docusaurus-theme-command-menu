@@ -106,8 +106,10 @@ export default function Event(
                     {/* TODO(dnguyen0304): Remove time ago formatting for
                           certain ranges such as greater than 1 day and less
                           than 1 week. */}
-                    <span className={styles.Event_timestamp}>
-                        {dayjs(timestampMilli).fromNow()}
+                    <span>
+                        <p className={`${styles.Event_timestamp}`}>
+                            {dayjs(timestampMilli).fromNow()}
+                        </p>
                     </span>
                 </StyledCardHeader>
                 <p className={

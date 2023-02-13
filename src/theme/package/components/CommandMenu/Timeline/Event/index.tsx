@@ -67,18 +67,12 @@ export default function Event(
     const rippleRef = React.useRef<TouchRippleActions>(null);
 
     const startRipple = (event: React.SyntheticEvent) => {
-        if (!rippleRef.current) {
-            return;
-        }
-        rippleRef.current.start(event);
+        rippleRef.current?.start(event);
     };
 
     const stopRipple = (event: React.SyntheticEvent) => {
         // TODO(dnguyen0304): Fix missing SSR defensive coding.
         window.open(href, '_blank');
-        if (!rippleRef.current) {
-            return;
-        }
         rippleRef.current?.stop(event);
     };
 

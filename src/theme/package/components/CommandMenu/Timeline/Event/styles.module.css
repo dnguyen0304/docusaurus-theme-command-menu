@@ -10,9 +10,9 @@
 }
 
 .Event_heading {
-    font-size: var(--font-size-0);
-    font-weight: var(--docupotamus-heading-font-weight);
+    color: var(--ifm-color-gray-100);
     letter-spacing: 2px;
+    margin: 0;
 }
 
 .Event_timestamp {

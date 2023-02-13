@@ -100,8 +100,10 @@ export default function Event(
                 component='section'
             >
                 <StyledCardHeader component='header'>
-                    <span className={`ifm_text__reset ${styles.Event_heading}`}>
-                        {heading}
+                    <span>
+                        <h4 className={`${styles.Event_heading}`}>
+                            {heading}
+                        </h4>
                     </span>
                     {/* TODO(dnguyen0304): Add tooltip. */}
                     {/* TODO(dnguyen0304): Remove time ago formatting for

@@ -95,10 +95,7 @@ export default function Event(
                 eventPaddingTop={PADDING_TOP}
                 timelineMouseClientY={timelineMouseClientY}
             />
-            <StyledCard
-                className={styles.Event_cardText}
-                component='section'
-            >
+            <StyledCard component='section'>
                 <StyledCardHeader component='header'>
                     <span>
                         <h4 className={`${styles.Event_heading}`}>

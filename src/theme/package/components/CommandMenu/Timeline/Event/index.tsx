@@ -26,8 +26,8 @@ const Layout = styled(Box)({
         transition: `
             background-color
             0.1s
+            var(--ifm-transition-timing-default)
         `,
-        // var(--ifm-transition-timing-default)
     }
 });
 

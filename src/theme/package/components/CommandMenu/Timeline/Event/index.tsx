@@ -98,7 +98,7 @@ export default function Event(
             <StyledCard component='section'>
                 <StyledCardHeader component='header'>
                     <span>
-                        <h3 className={`${styles.Event_heading}`}>
+                        <h3 className={styles.Event_heading}>
                             {heading}
                         </h3>
                     </span>

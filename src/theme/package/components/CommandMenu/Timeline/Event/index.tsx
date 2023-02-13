@@ -98,9 +98,9 @@ export default function Event(
             <StyledCard component='section'>
                 <StyledCardHeader component='header'>
                     <span>
-                        <h4 className={`${styles.Event_heading}`}>
+                        <h3 className={`${styles.Event_heading}`}>
                             {heading}
-                        </h4>
+                        </h3>
                     </span>
                     {/* TODO(dnguyen0304): Add tooltip. */}
                     {/* TODO(dnguyen0304): Remove time ago formatting for
@@ -113,7 +113,7 @@ export default function Event(
                     </span>
                 </StyledCardHeader>
                 <p className={
-                    `${stylesCommon.text} ${stylesCommon.textBody}`
+                    `${stylesCommon.textBody}`
                 } >
                     {snippet}
                 </p>

@@ -1,6 +1,6 @@
 .MuiTouchRipple_childOverride {
     /* TODO(dnguyen0304): Investigate if this can be done without !important. */
-    background-color: rgba(var(--docupotamus-color-grey-800-rgb), 0.5) !important;
+    background-color: hsla(var(--ifm-color-white-hsl), 0.5) !important;
 }
 
 .Event_heading {

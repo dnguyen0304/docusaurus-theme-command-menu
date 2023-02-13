@@ -27,7 +27,7 @@ const Tile = styled(Box)({
         inset: `${TILE_BORDER_WIDTH_PX}px`,
     },
     '&:hover:before': {
-        backgroundColor: 'rgb(34, 50, 80)',
+        backgroundColor: 'var(--docupotamus-color-gray-contrast)',
     },
 });
 

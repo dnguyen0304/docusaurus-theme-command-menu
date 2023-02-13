@@ -35,8 +35,7 @@ export default styled(Box, {
     backgroundSize: '200%',
     overflow: 'hidden',
 
-    // TODO(dnguyen0304): Investigate infinite animation-iteration-count.
-    animationDuration: '3s',
+    animationDuration: '2s',
     animationName: getAnimation(),
     animationTimingFunction: 'linear',
 }));

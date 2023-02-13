@@ -20,9 +20,9 @@ export default styled(Box)({
 
     background: `linear-gradient(
         to right,
-        rgb(98, 0, 234),
-        rgb(236, 64, 122),
-        rgb(98, 0, 234)
+        var(--ifm-color-primary-lightest),
+        var(--ifm-color-white),
+        var(--ifm-color-primary-lightest)
     )`,
     backgroundSize: '200%',
     overflow: 'hidden',

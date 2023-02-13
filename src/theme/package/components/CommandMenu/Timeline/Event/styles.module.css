@@ -10,8 +10,9 @@
 }
 
 .Event_timestamp {
-    color: rgba(var(--docupotamus-color-grey-800-rgb), 0.8);
+    color: hsla(var(--ifm-color-white-hsl), 0.8);
     font-size: var(--font-size--1);
     font-style: italic;
+    margin: 0;
     white-space: nowrap;
 }

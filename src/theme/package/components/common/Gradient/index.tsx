@@ -16,12 +16,16 @@ const getAnimation = (): Keyframes => {
 
 interface StyledBoxProps extends Pick<React.CSSProperties,
     | 'color'
+    | 'animationIterationCount'
 > { };
 
 export default styled(Box, {
-    shouldForwardProp: (prop) => prop !== 'color',
+    shouldForwardProp: (prop) =>
+        prop !== 'color'
+        && prop !== 'animationIterationCount',
 })<StyledBoxProps>(({
     color = 'var(--ifm-color-primary-lightest)',
+    animationIterationCount = 1,
 }) => ({
     width: '100%',
     height: '100%',
@@ -36,6 +40,7 @@ export default styled(Box, {
     overflow: 'hidden',
 
     animationDuration: '2s',
+    animationIterationCount,
     animationName: getAnimation(),
     animationTimingFunction: 'linear',
 }));

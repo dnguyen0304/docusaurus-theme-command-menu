@@ -6,7 +6,9 @@ interface StyledBoxProps {
     readonly size: React.CSSProperties['width' | 'height'];
 };
 
-const StyledBox = styled(Box)<StyledBoxProps>(({ size }) => ({
+const StyledBox = styled(Box, {
+    shouldForwardProp: (prop) => prop !== 'size'
+})<StyledBoxProps>(({ size }) => ({
     width: size,
     height: size,
 

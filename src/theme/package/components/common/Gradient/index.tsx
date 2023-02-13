@@ -14,15 +14,21 @@ const getAnimation = (): Keyframes => {
     });
 };
 
-export default styled(Box)({
+interface StyledBoxProps {
+    readonly stopColor: React.CSSProperties['color'];
+};
+
+export default styled(Box, {
+    shouldForwardProp: (prop) => prop !== 'stopColor',
+})<StyledBoxProps>(({ stopColor = 'var(--ifm-color-primary-lightest)' }) => ({
     width: '100%',
     height: '100%',
 
     background: `linear-gradient(
         to right,
-        var(--ifm-color-primary-lightest),
+        ${stopColor},
         var(--ifm-color-white),
-        var(--ifm-color-primary-lightest)
+        ${stopColor}
     )`,
     backgroundSize: '200%',
     overflow: 'hidden',
@@ -31,4 +37,4 @@ export default styled(Box)({
     animationDuration: '3s',
     animationName: getAnimation(),
     animationTimingFunction: 'linear',
-});
+}));

@@ -37,27 +37,13 @@ export default function Entry(): JSX.Element {
 
     const rippleRef = React.useRef<TouchRippleActions>(null);
 
-    const startRipple = (event: React.SyntheticEvent) => {
-        if (!rippleRef.current) {
-            return;
-        }
-        rippleRef.current.start(event);
-    };
-
-    const stopRipple = (event: React.SyntheticEvent) => {
-        if (!rippleRef.current) {
-            return;
-        }
-        rippleRef.current?.stop(event);
-    };
-
     return (
         <ClippingBox>
             <Gradient />
             <Circle
                 onClick={() => setIsOpen(true)}
-                onMouseDown={startRipple}
-                onMouseUp={stopRipple}
+                onMouseDown={(event) => rippleRef.current?.start(event)}
+                onMouseUp={(event) => rippleRef.current?.stop(event)}
             >
                 <Logo
                     className={styles.Logo}

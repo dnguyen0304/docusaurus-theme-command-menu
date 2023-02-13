@@ -106,7 +106,7 @@ export default function Event(
                           certain ranges such as greater than 1 day and less
                           than 1 week. */}
                     <span>
-                        <p className={`${styles.Event_timestamp}`}>
+                        <p className={styles.Event_timestamp}>
                             {dayjs(timestampMilli).fromNow()}
                         </p>
                     </span>

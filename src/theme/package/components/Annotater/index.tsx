@@ -26,7 +26,7 @@ export default function Annotater(): JSX.Element {
         setStarIsClicked(prev => !prev);
     };
 
-    const handleSelection = (range: Range) => {
+    const handleSelection = (_range: Range) => {
         const selection = document.getSelection()!;
         const focusRect = rangeUtils.selectionFocusRect(selection);
         if (!focusRect) {

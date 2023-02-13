@@ -61,9 +61,7 @@ export default function Event(
         }
         const newBackgroundColor =
             (timelineMouseClientY >= ref.current.getBoundingClientRect().top)
-                // TODO(dnguyen0304): Extract to a centralized location to
-                //   facilitate maintenance.
-                ? 'rgb(98, 0, 234)'
+                ? 'var(--ifm-color-primary-darkest)'
                 : lineNotColoredBackgroundColor;
         setBackgroundColor(newBackgroundColor);
     }, [timelineMouseClientY]);

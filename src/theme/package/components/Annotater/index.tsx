@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { SelectionObserver } from '../../services/annotate/selection-observer';
+import { SelectionObserver } from '../../services/annotate/selection-observer'; /* TODO(dnguyen0304): Fix missing type declaration. */
 import { SelectionTopCenterPositioner } from '../../services/annotate/tooltip/positioner';
-import * as rangeUtils from '../../services/annotate/utils/range';
+import * as rangeUtils from '../../services/annotate/utils/range'; /* TODO(dnguyen0304): Fix missing type declaration. */
 import ButtonGroup from './ButtonGroup';
 
 export default function Annotater(): JSX.Element {

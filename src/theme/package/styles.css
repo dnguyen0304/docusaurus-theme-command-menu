@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;600&display=swap');
 
 :root {
+    --command-menu-entry-gradient-color-background:
+        hsla(var(--ifm-color-primary-light-hsl), 0.7);
+
     /* Material UI (MUI) */
     --command-menu-ripple-color-background:
         hsla(var(--ifm-color-white-hsl), 0.5);

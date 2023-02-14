@@ -40,7 +40,7 @@ export default function Entry(): JSX.Element {
     return (
         <ClippingBox>
             <Gradient
-                color='var(--ifm-color-primary-darkest)'
+                color='var(--command-menu-entry-gradient-color-background)'
                 animationDuration='6s'
                 animationIterationCount='infinite'
             />

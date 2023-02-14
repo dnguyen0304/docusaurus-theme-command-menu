@@ -3,6 +3,11 @@
 :root {
     --command-menu-annotater-color: var(--ifm-background-color);
     --command-menu-annotater-color-background: var(--ifm-heading-color);
+    /* --command-menu-entry-color-background: var(--ifm-color-emphasis-700); */
+
+    /* Material UI (MUI) */
+    --command-menu-ripple-color-background:
+        hsla(var(--ifm-color-white-hsl), 0.5);
 
     /* var(--ifm-color-emphasis-700) */
     --docupotamus-color-grey-100-rgb: 17, 25, 40;

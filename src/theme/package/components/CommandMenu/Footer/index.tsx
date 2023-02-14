@@ -7,6 +7,7 @@ import AddressBar from './AddressBar';
 const Layout = styled(Box)({
     width: '100%',
     height: FOOTER_HEIGHT,
+
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'flex-start',

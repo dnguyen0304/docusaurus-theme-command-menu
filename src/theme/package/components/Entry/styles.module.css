@@ -3,6 +3,29 @@
     background-color: var(--command-menu-ripple-color-background) !important;
 }
 
+.circle {
+    width: 70%;
+    aspect-ratio: 1 / 1;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 50%;
+
+    background-color: var(--command-menu-entry-color-background);
+    border-radius: 50%;
+}
+
+.circle::before {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    position: absolute;
+
+    content: '';
+    border-radius: 50%;
+}
+
 .Logo {
     width: 80%;
 

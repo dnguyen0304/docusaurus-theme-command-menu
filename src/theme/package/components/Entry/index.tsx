@@ -17,19 +17,11 @@ const ClippingBox = styled(Box)({
     translate: '-50%',
 
     clipPath: 'circle(40% at 50% 100%)',
-});
 
-const Circle = styled(Box)({
-    width: '70%',
-    aspectRatio: '1 / 1',
-
-    position: 'absolute',
-    bottom: '0',
-    left: '50%',
-    translate: '-50% 50%',
-
-    backgroundColor: 'var(--command-menu-entry-color-background)',
-    borderRadius: '50%',
+    [`&:hover .${styles.circle}::before`]: {
+        backgroundColor: 'var(--d9s-color-content-inverse-hover)',
+        transition: 'var(--d9s-color-content-inverse-hover-transition)',
+    },
 });
 
 export default function Entry(): JSX.Element {
@@ -52,7 +44,8 @@ export default function Entry(): JSX.Element {
                 animationDuration='6s'
                 animationIterationCount='infinite'
             />
-            <Circle
+            <Box
+                className={styles.circle}
                 onClick={() => setIsOpen(true)}
                 onMouseDown={startRipple}
                 onMouseUp={stopRipple}
@@ -62,7 +55,7 @@ export default function Entry(): JSX.Element {
                     className={styles.Logo}
                     viewBox='140 700 1600 600'
                 />
-            </Circle>
+            </Box>
             <TouchRipple
                 ref={rippleRef}
                 center={false}

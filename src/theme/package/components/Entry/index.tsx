@@ -28,7 +28,7 @@ const Circle = styled(Box)({
     left: '50%',
     translate: '-50% 50%',
 
-    backgroundColor: 'var(--docupotamus-color-grey-100)',
+    backgroundColor: 'var(--command-menu-entry-color-background)',
     borderRadius: '50%',
 });
 

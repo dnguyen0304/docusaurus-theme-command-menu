@@ -11,5 +11,5 @@
     left: 50%;
     translate: -50% -20%;
 
-    fill: white;
+    fill: var(--command-menu-entry-color);
 }

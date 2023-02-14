@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { TILE_BORDER_WIDTH_PX } from '../../../../constants';
 import { useAddressBar } from '../../../../contexts/address-bar';
-import stylesCommon from '../../../styles.module.css';
 
 const StyledBox = styled(Box)({
     // Include a buffer by doubling the needed border-width. For example, we
@@ -27,8 +26,8 @@ export default function AddressBar(): JSX.Element {
     return (
         <StyledBox>
             <span
-                className={stylesCommon.textBody}
                 style={{
+                    color: 'var(--ifm-color-content-inverse)',
                     fontFamily: '"Overpass Mono", monospace',
                     marginBottom: 0,
                     paddingLeft: 'var(--d9s-space-xs)',

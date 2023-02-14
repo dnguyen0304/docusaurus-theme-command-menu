@@ -30,6 +30,7 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "baseUrl": ".",
+        "moduleResolution": "node16",
         "types": [
             "node",
             "@docusaurus/module-type-aliases",

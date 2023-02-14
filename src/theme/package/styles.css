@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;600&display=swap');
 
 :root {
-    --command-menu-annotater-color: var(--ifm-background-color);
-    --command-menu-annotater-color-background: var(--ifm-heading-color);
-    /* --command-menu-entry-color-background: var(--ifm-color-emphasis-700); */
+    /* --command-menu-entry-color: var(--ifm-heading-color);
+    --command-menu-entry-color-background: var(--ifm-background-color); */
 
     /* Material UI (MUI) */
     --command-menu-ripple-color-background:
@@ -26,6 +25,12 @@
 
     --docupotamus-heading-font-weight: 600;
     --docupotamus-body-font-weight: 200;
+}
+
+html[data-theme='light'],
+html[data-theme='dark'] {
+    --command-menu-annotater-color: var(--ifm-color-content-inverse);
+    --command-menu-annotater-color-background: var(--ifm-color-content);
 }
 
 /* Warning: This is deprecated. */

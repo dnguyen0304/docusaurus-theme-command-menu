@@ -16,8 +16,8 @@ const StyledBox = styled(Box)({
 
     background: `linear-gradient(
         to bottom,
-        rgba(var(--docupotamus-color-grey-100-rgb), 0.1),
-        var(--docupotamus-color-grey-100)
+        hsla(var(--command-menu-color-background-hsl), 0.1),
+        var(--command-menu-color-background)
     )`,
 });
 

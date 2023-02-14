@@ -31,7 +31,7 @@ export default function AddressBar(): JSX.Element {
                 style={{
                     fontFamily: '"Overpass Mono", monospace',
                     marginBottom: 0,
-                    paddingLeft: 'var(--space-xs)',
+                    paddingLeft: 'var(--d9s-space-xs)',
                 }}
             >
                 <span style={{ color: 'var(--ifm-color-gray-300)' }}>goto:</span> {href}

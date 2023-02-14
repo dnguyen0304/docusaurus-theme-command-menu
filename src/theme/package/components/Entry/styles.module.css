@@ -1,3 +1,8 @@
+.MuiTouchRipple_childOverride {
+    /* TODO(dnguyen0304): Investigate if this can be done without !important. */
+    background-color: rgba(var(--docupotamus-color-grey-800-rgb), 0.5) !important;
+}
+
 .Logo {
     width: 80%;
 
@@ -7,9 +12,4 @@
     translate: -50% -20%;
 
     fill: white;
-}
-
-.MuiTouchRipple_childOverride {
-    /* TODO(dnguyen0304): Investigate if this can be done without !important. */
-    background-color: rgba(var(--docupotamus-color-grey-800-rgb), 0.5) !important;
 }

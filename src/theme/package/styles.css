@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;600&display=swap');
 
 :root {
+    --command-menu-annotater-color: var(--ifm-background-color);
+    --command-menu-annotater-color-background: var(--ifm-heading-color);
+
     /* var(--ifm-color-emphasis-700) */
     --docupotamus-color-grey-100-rgb: 17, 25, 40;
     --docupotamus-color-grey-100: rgb(var(--docupotamus-color-grey-100-rgb));

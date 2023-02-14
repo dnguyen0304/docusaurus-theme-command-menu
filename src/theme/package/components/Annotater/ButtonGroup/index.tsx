@@ -11,7 +11,7 @@ const StyledTooltip = styled(Box)({
     display: 'flex',
     alignItems: 'center',
 
-    backgroundColor: 'var(--docupotamus-color-grey-100)',
+    backgroundColor: 'var(--command-menu-annotater-color-background)',
     borderRadius: '8px',
     padding: '6px 10px',
     transition: '0.2s all',
@@ -25,7 +25,7 @@ const StyledTooltip = styled(Box)({
         left: '50%',
         transform: 'translateX(-50%)',
 
-        borderTop: '6px solid var(--docupotamus-color-grey-100)',
+        borderTop: '6px solid var(--command-menu-annotater-color-background)',
         borderRight: '6px solid transparent',
         borderLeft: '6px solid transparent',
     },

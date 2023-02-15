@@ -9,9 +9,10 @@ import Gradient from '../../common/Gradient';
 const TILE_SIZE_PX: number = 100;
 
 const TilesLayout = styled(Box)({
-    position: 'absolute',
     width: `calc(100% - ${TILE_BORDER_WIDTH_PX}px)`,
     height: `calc(100% - ${TILE_BORDER_WIDTH_PX}px)`,
+
+    position: 'absolute',
 
     display: 'grid',
     gridTemplateColumns: `repeat(auto-fit, minmax(${TILE_SIZE_PX}px, 1fr))`,

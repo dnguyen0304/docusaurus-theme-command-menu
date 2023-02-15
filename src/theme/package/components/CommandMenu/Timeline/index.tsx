@@ -110,7 +110,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
             ref={timelineRef}
             onMouseLeave={handleMouseLeave}
             onMouseMove={handleMouseMove}
-            sx={{ ...sx }}
+            sx={sx}
         >
             <Line
                 coloredHeightPx={lineColoredHeightPx}

@@ -46,7 +46,7 @@ const StyledCard = styled(Box, {
             : 'transparent'
         }
     `,
-    borderRadius: 'var(--docupotamus-border-radius-m)',
+    borderRadius: 'var(--cm-border-radius-roundest)',
     padding: 'var(--space-m)',
     // TODO(dnguyen0304): Investigate improving performance.
     '&:hover': {

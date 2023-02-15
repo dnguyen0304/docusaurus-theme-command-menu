@@ -31,7 +31,7 @@ const StyledBox = styled(Box, {
         borderRadius: 0,
         padding: '12px',
         '&:hover': {
-            color: 'var(--docupotamus-color-grey-800)',
+            color: 'var(--cm-color-base)',
         },
     },
     [`& .MuiIconButton-root.${styles.Button__first}`]: {

@@ -2,10 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;500;600;700&display=swap');
 
 :root {
-    /* --ifm-color-white */
-    --docupotamus-color-grey-800-rgb: 255, 255, 255;
-    --docupotamus-color-grey-800: rgb(var(--docupotamus-color-grey-800-rgb));
-
     --docupotamus-font-family: 'Karla', sans-serif;
     --docupotamus-font-size: var(--font-size--1);
 
@@ -16,6 +12,9 @@
 html[data-theme='light'],
 html[data-theme='dark'] {
     /* Color */
+    --cm-color-base-hsl: var(--ifm-color-white-hsl);
+    --cm-color-base-darker-hsl: var(--ifm-color-gray-300-hsl);
+
     --cm-color-base: var(--ifm-color-white);
     --cm-color-base-darker: var(--ifm-color-gray-300);
 

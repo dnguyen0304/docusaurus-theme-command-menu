@@ -3,7 +3,7 @@
 }
 
 .textBody {
-    color: var(--docupotamus-color-grey-800);
+    color: var(--cm-color-base);
     font-size: var(--font-size-0);
     font-weight: var(--docupotamus-body-font-weight);
     line-height: 1.2;

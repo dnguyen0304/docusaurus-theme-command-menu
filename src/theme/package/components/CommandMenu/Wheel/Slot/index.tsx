@@ -18,7 +18,7 @@ const GlassStyles: React.CSSProperties = {
     WebkitBackdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
     boxShadow: `
         0px 0px 12px 0px rgba(136, 165, 191, 0.48),
-        0px 0px 12px 0px rgba(var(--docupotamus-color-grey-800-rgb), 0.8)
+        0px 0px 12px 0px hsla(var(--cm-color-base-hsl), 0.8)
     `,
 };
 
@@ -42,7 +42,7 @@ const StyledCard = styled(Box, {
         ${BORDER_WIDTH}
         solid
         ${hasContent
-            ? 'rgba(var(--docupotamus-color-grey-800-rgb), 0.9)'
+            ? 'hsla(var(--cm-color-base-hsl), 0.9)'
             : 'transparent'
         }
     `,
@@ -53,7 +53,7 @@ const StyledCard = styled(Box, {
         backdropFilter: 'blur(6px) saturate(100%) brightness(200%)',
         boxShadow: `
             0px 0px 24px 0px rgba(136, 165, 191, 0.7),
-            0px 0px 24px 0px rgba(var(--docupotamus-color-grey-800-rgb), 0.9)
+            0px 0px 24px 0px hsla(var(--cm-color-base-hsl), 0.9)
         `,
         transition: `all ${TRANSITION_DURATION} ease-in-out`,
         transitionProperty: 'backdrop-filter, box-shadow',

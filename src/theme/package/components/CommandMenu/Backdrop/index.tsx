@@ -6,7 +6,7 @@ import { TILE_BORDER_WIDTH_PX } from '../../../constants';
 import useDomRect from '../../../hooks/useDomRect';
 import Gradient from '../../common/Gradient';
 
-const TILE_SIZE_PX: number = 100;
+const TILE_SIZE_PX: number = 150;
 
 const TilesLayout = styled(Box)({
     width: `calc(100% - ${TILE_BORDER_WIDTH_PX}px)`,

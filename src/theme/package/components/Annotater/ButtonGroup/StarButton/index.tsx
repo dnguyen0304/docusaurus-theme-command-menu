@@ -23,7 +23,7 @@ export default function StarButton(
         >
             <IconButton
                 onClick={onClick}
-                sx={{ color: 'var(--command-menu-annotater-color)' }}
+                sx={{ color: 'var(--cm-annotater-color)' }}
             >
                 {isClicked ? <StarIcon /> : <StarOutlineIcon />}
             </IconButton>

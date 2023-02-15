@@ -23,24 +23,24 @@
 html[data-theme='light'],
 html[data-theme='dark'] {
     /* Base */
-    --command-menu-color-background-hsl: 219, 40%, 11%;
-    --command-menu-color-background-hover-hsl: 219, 40%, 22%;
+    --cm-color-background-hsl: 219, 40%, 11%;
+    --cm-color-background-hover-hsl: 219, 40%, 22%;
 
-    --command-menu-color-background:
-        hsl(var(--command-menu-color-background-hsl));
-    --command-menu-color-background-hover:
-        hsl(var(--command-menu-color-background-hover-hsl));
+    --cm-color-background:
+        hsl(var(--cm-color-background-hsl));
+    --cm-color-background-hover:
+        hsl(var(--cm-color-background-hover-hsl));
 
     /* Components */
-    --command-menu-annotater-color: var(--ifm-color-content-inverse);
-    --command-menu-annotater-color-background: var(--ifm-color-content);
-    --command-menu-entry-color: var(--ifm-color-content);
-    --command-menu-entry-color-background: var(--ifm-color-content-inverse);
-    --command-menu-entry-gradient-color-background:
+    --cm-annotater-color: var(--ifm-color-content-inverse);
+    --cm-annotater-color-background: var(--ifm-color-content);
+    --cm-entry-color: var(--ifm-color-content);
+    --cm-entry-color-background: var(--ifm-color-content-inverse);
+    --cm-entry-gradient-color-background:
         hsla(var(--ifm-color-primary-light-hsl), 0.7);
 
     /* Material UI (MUI) */
-    --command-menu-ripple-color-background:
+    --cm-ripple-color-background:
         hsla(var(--ifm-color-white-hsl), 0.5);
 }
 

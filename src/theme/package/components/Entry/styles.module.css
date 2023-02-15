@@ -1,6 +1,6 @@
 .MuiTouchRipple_childOverride {
     /* TODO(dnguyen0304): Investigate if this can be done without !important. */
-    background-color: var(--command-menu-ripple-color-background) !important;
+    background-color: var(--cm-ripple-color-background) !important;
 }
 
 .circle {
@@ -12,7 +12,7 @@
     left: 50%;
     translate: -50% 50%;
 
-    background-color: var(--command-menu-entry-color-background);
+    background-color: var(--cm-entry-color-background);
     border-radius: 50%;
 }
 
@@ -34,5 +34,5 @@
     left: 50%;
     translate: -50% -20%;
 
-    fill: var(--command-menu-entry-color);
+    fill: var(--cm-entry-color);
 }

@@ -1,6 +1,6 @@
 .MuiTouchRipple_childOverride {
     /* TODO(dnguyen0304): Investigate if this can be done without !important. */
-    background-color: var(--command-menu-ripple-color-background) !important;
+    background-color: var(--cm-ripple-color-background) !important;
 }
 
 .Event_heading {

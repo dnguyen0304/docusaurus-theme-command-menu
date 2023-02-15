@@ -23,11 +23,11 @@ const Tile = styled(Box)({
     '&:before': {
         content: '""',
         position: 'absolute',
-        backgroundColor: 'var(--command-menu-color-background)',
+        backgroundColor: 'var(--cm-color-background)',
         inset: `${TILE_BORDER_WIDTH_PX}px`,
     },
     '&:hover:before': {
-        backgroundColor: 'var(--command-menu-color-background-hover)',
+        backgroundColor: 'var(--cm-color-background-hover)',
     },
 });
 

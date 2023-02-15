@@ -15,8 +15,8 @@ const StyledBox = styled(Box)({
 
     background: `linear-gradient(
         to bottom,
-        hsla(var(--command-menu-color-background-hsl), 0.1),
-        var(--command-menu-color-background)
+        hsla(var(--cm-color-background-hsl), 0.1),
+        var(--cm-color-background)
     )`,
 });
 

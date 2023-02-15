@@ -32,18 +32,12 @@ const StyledContainer = styled(Box)({
 const StyledHeading = (): JSX.Element => {
     return (
         <h2
-            // style overrides className overrides styled-components.
-            className='ifm_text__reset'
             style={{
                 position: 'sticky',
                 top: 0,
                 zIndex: Z_INDEX.heading,
 
                 backgroundColor: 'var(--cm-color-background)',
-                color: 'var(--cm-color-base)',
-                fontFamily: 'var(--docupotamus-font-family)',
-                fontSize: 'var(--font-size-1)',
-                fontWeight: 'var(--docupotamus-heading-font-weight)',
                 letterSpacing: '4px',
                 lineHeight: '1.2',
                 padding: 'var(--d9s-space-l) 0 var(--d9s-space-m)',

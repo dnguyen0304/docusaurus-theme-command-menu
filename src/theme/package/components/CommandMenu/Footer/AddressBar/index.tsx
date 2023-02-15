@@ -10,6 +10,7 @@ const StyledBox = styled(Box)({
     // double that again (4X).
     width: `calc(100% - ${4 * TILE_BORDER_WIDTH_PX}px)`,
     height: `calc(100% - ${2 * TILE_BORDER_WIDTH_PX}px)`,
+
     display: 'flex',
     alignItems: 'center',
 
@@ -28,7 +29,7 @@ export default function AddressBar(): JSX.Element {
             <span
                 style={{
                     color: 'var(--ifm-color-content-inverse)',
-                    fontFamily: '"Overpass Mono", monospace',
+                    fontFamily: 'var(--cm-font-family-monospace)',
                     marginBottom: 0,
                     paddingLeft: 'var(--d9s-space-xs)',
                 }}

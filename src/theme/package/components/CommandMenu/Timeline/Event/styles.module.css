@@ -9,7 +9,7 @@
 }
 
 .Event_timestamp {
-    color: hsla(var(--ifm-color-white-hsl), 0.8);
+    color: var(--color-dimmer);
     font-size: var(--d9s-font-size--1);
     font-style: italic;
     margin: 0;
@@ -17,5 +17,5 @@
 }
 
 .Event_body {
-    color: var(--ifm-color-gray-200);
+    color: var(--color-darker);
 }

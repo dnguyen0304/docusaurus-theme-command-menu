@@ -12,7 +12,7 @@ const StyledBox = styled(Box, {
     width: size,
     height: size,
 
-    border: '3px solid var(--ifm-color-white)',
+    border: '3px solid var(--cm-color-base)',
     borderRadius: '50%',
 }));
 

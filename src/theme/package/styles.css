@@ -45,6 +45,7 @@ html[data-theme='dark'] {
     --cm-entry-color-background: var(--ifm-color-content-inverse);
     --cm-entry-gradient-color-background:
         hsla(var(--ifm-color-primary-light-hsl), 0.7);
+    --cm-line-color-background: var(--ifm-color-primary-darkest);
 
     /* Material UI (MUI) */
     --cm-ripple-color-background: hsla(var(--ifm-color-white-hsl), 0.5);

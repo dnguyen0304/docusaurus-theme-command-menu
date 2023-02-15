@@ -61,7 +61,7 @@ export default function Event(
         }
         const newBackgroundColor =
             (timelineMouseClientY >= ref.current.getBoundingClientRect().top)
-                ? 'var(--ifm-color-primary-darkest)'
+                ? 'var(--cm-line-color-background)'
                 : lineNotColoredBackgroundColor;
         setBackgroundColor(newBackgroundColor);
     }, [timelineMouseClientY]);

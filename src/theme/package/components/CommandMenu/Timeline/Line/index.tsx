@@ -12,7 +12,7 @@ const Colored = styled(Box)({
     background: `linear-gradient(
         to bottom,
         var(--cm-color-base),
-        var(--ifm-color-primary-darkest)
+        var(--cm-line-color-background)
     )`,
 });
 

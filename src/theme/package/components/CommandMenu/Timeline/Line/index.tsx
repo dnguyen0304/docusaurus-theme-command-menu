@@ -11,8 +11,8 @@ const Colored = styled(Box)({
 
     background: `linear-gradient(
         to bottom,
-        rgb(98, 0, 234),
-        rgb(236, 64, 122)
+        var(--cm-color-base),
+        var(--ifm-color-primary-darkest)
     )`,
 });
 

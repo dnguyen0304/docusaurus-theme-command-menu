@@ -22,11 +22,7 @@ const Layout = styled(Box)({
     padding: `${PADDING_TOP} var(--space-s) var(--space-m) 0`,
     '&:hover': {
         backgroundColor: 'hsla(var(--ifm-color-white-hsl), 0.05)',
-        transition: `
-            background-color
-            0.1s
-            var(--ifm-transition-timing-default)
-        `,
+        transition: 'var(--ifm-hover-overlay-transition)',
     }
 });
 

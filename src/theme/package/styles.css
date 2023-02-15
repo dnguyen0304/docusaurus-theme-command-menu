@@ -24,7 +24,7 @@
 html[data-theme='light'],
 html[data-theme='dark'] {
     /* Color */
-    --cm-color-white: var(--ifm-color-white);
+    --cm-color-base: var(--ifm-color-white);
 
     --cm-color-background-hsl: 219, 40%, 11%;
     --cm-color-background-hover-hsl: 219, 40%, 22%;

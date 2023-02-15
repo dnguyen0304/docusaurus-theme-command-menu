@@ -11,7 +11,7 @@
 
 .Event_timestamp {
     color: hsla(var(--ifm-color-white-hsl), 0.8);
-    font-size: var(--font-size--1);
+    font-size: var(--d9s-font-size--1);
     font-style: italic;
     margin: 0;
     white-space: nowrap;

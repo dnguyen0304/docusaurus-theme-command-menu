@@ -23,7 +23,7 @@ const StyledBox = styled(Box, {
     top: '50%',
     right: '0',
 
-    backgroundColor: 'var(--docupotamus-color-grey-700)',
+    backgroundColor: 'var(--cm-color-background-lightest-hsl)',
     borderRadius: '41px',
     opacity: 0,
     transform: `translate(calc(50% + ${slotBorderWidth}), -50%)`,

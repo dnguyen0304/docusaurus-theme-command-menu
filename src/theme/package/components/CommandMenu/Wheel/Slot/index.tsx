@@ -29,9 +29,10 @@ const StyledCard = styled(Box, {
     shouldForwardProp: (prop) => prop !== 'hasContent',
 })<StyledCardProps>(({ hasContent }) => ({
     ...GlassStyles,
-    position: 'absolute',
     width: '100%',
     height: '100%',
+
+    position: 'absolute',
 
     display: 'flex',
     flexDirection: 'column',
@@ -46,7 +47,7 @@ const StyledCard = styled(Box, {
         }
     `,
     borderRadius: 'var(--cm-border-radius-roundest)',
-    padding: 'var(--space-m)',
+    padding: 'var(--d9s-space-m)',
     // TODO(dnguyen0304): Investigate improving performance.
     '&:hover': {
         backdropFilter: 'blur(6px) saturate(100%) brightness(200%)',

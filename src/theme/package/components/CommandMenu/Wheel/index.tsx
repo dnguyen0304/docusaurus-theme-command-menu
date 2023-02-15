@@ -13,7 +13,7 @@ const StyledBox = styled(Box)({
     position: 'relative',
     placeSelf: 'center',
 
-    color: 'white',
+    color: 'var(--cm-color-base)',
 });
 
 interface Props {

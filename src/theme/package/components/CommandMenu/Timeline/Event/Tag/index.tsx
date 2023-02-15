@@ -4,7 +4,7 @@ import * as React from 'react';
 
 const StyledChip = styled(Chip)({
     backgroundColor: 'var(--ifm-color-gray-500)',
-    borderRadius: 'var(--docupotamus-border-radius-s)',
+    borderRadius: 'var(--cm-border-radius-rounder)',
     color: 'inherit',
     font: 'inherit',
     fontSize: 'var(--d9s-font-size--1)',

@@ -17,7 +17,6 @@ html[data-theme='dark'] {
 
     --cm-color-base: var(--ifm-color-white);
     --cm-color-base-darker: var(--ifm-color-gray-300);
-    --cm-color-base-darkest: var(--ifm-color-gray-500);
 
     --cm-color-background-lightest-hsl: 0, 0%, 86%; /* rgb(220, 220, 220) */
     --cm-color-background-lighter-hsl: 220, 20%, 20%; /* rgb(41, 48, 62) */

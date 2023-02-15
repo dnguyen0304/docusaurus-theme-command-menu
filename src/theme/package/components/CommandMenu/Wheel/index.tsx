@@ -24,7 +24,7 @@ export default function Wheel({ sx }: Props): JSX.Element {
     const { slots } = useWheel();
 
     return (
-        <StyledBox sx={{ ...sx }}>
+        <StyledBox sx={sx}>
             {slots.map((slot, index) => (
                 <Slot
                     key={`slot-${index}`}

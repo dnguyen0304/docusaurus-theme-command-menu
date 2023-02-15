@@ -32,7 +32,7 @@ export default function Line(
     }: Props
 ): JSX.Element {
     return (
-        <NotColored sx={{ ...sx }}>
+        <NotColored sx={sx}>
             <Colored sx={{ height: `${coloredHeightPx}px` }} />
         </NotColored>
     );

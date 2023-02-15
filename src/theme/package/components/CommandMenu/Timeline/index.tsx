@@ -8,7 +8,7 @@ import Event from './Event';
 import Line from './Line';
 
 const LINE_WIDTH_PX: number = 4;
-const LINE_POSITION_LEFT: React.CSSProperties['left'] = 'var(--space-l)';
+const LINE_POSITION_LEFT: React.CSSProperties['left'] = 'var(--d9s-space-l)';
 const LINE_NOT_COLORED_BACKGROUND_COLOR: React.CSSProperties['backgroundColor'] =
     'var(--docupotamus-color-grey-300)';
 
@@ -23,7 +23,7 @@ const StyledContainer = styled(Box)({
     //   timeline to be visible.
     position: 'relative',
 
-    backgroundColor: 'var(--docupotamus-color-grey-100)',
+    backgroundColor: 'var(--cm-color-background)',
     margin: `${2 * TILE_BORDER_WIDTH_PX}px`,
     marginLeft: 0,
     overflowY: 'auto',
@@ -62,7 +62,7 @@ const StickyFooter = styled(Box)({
     position: 'sticky',
     bottom: 0,
 
-    backgroundColor: 'rgba(var(--docupotamus-color-grey-100-rgb), 0.9)',
+    backgroundColor: 'hsla(var(--cm-color-background-hsl), 0.9)',
 });
 
 interface Props {

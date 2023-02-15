@@ -28,7 +28,6 @@ export default function AddressBar(): JSX.Element {
         <StyledBox>
             <span
                 style={{
-                    color: 'var(--ifm-color-content-inverse)',
                     fontFamily: 'var(--cm-font-family-monospace)',
                     marginBottom: 0,
                     paddingLeft: 'var(--d9s-space-xs)',

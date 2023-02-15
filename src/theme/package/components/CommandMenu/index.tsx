@@ -26,6 +26,7 @@ export default function CommandMenu(): JSX.Element {
             onClose={() => setIsOpen(false)}
             open={isOpen}
             slots={{ backdrop: Backdrop }}
+            sx={{ color: 'var(--cm-color-white)' }}
             // Override the default Chrome outline behavior.
             // See: https://github.com/mui/material-ui/issues/11504#issuecomment-390506409
             disableAutoFocus

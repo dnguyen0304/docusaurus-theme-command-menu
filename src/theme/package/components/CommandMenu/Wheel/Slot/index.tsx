@@ -5,7 +5,6 @@ import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { useAddressBar } from '../../../../contexts/address-bar';
 import { useWheel } from '../../../../contexts/wheel';
-import stylesCommon from '../../../styles.module.css';
 import ButtonGroup from './ButtonGroup';
 import styles from './styles.module.css';
 
@@ -113,11 +112,7 @@ export default function Slot(
                     multiline
                 />
             </h2>
-            <p className={
-                `${styles.text__multilineTruncate} ` +
-                `${stylesCommon.text} ` +
-                `${stylesCommon.textBody}`
-            }>
+            <p className={styles.text__multilineTruncate}>
                 {href ? snippet : 'Create a shortcut to your favorite content.'}
             </p>
             {href && <ButtonGroup

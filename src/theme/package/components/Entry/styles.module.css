@@ -17,12 +17,12 @@
 }
 
 .circle::before {
+    content: '';
     width: 100%;
     aspect-ratio: 1 / 1;
 
     position: absolute;
 
-    content: '';
     border-radius: 50%;
 }
 

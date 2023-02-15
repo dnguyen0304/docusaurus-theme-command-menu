@@ -26,10 +26,8 @@ html[data-theme='dark'] {
     --cm-color-background-hsl: 219, 40%, 11%;
     --cm-color-background-hover-hsl: 219, 40%, 22%;
 
-    --cm-color-background:
-        hsl(var(--cm-color-background-hsl));
-    --cm-color-background-hover:
-        hsl(var(--cm-color-background-hover-hsl));
+    --cm-color-background: hsl(var(--cm-color-background-hsl));
+    --cm-color-background-hover: hsl(var(--cm-color-background-hover-hsl));
 
     /* Components */
     --cm-annotater-color: var(--ifm-color-content-inverse);
@@ -40,8 +38,7 @@ html[data-theme='dark'] {
         hsla(var(--ifm-color-primary-light-hsl), 0.7);
 
     /* Material UI (MUI) */
-    --cm-ripple-color-background:
-        hsla(var(--ifm-color-white-hsl), 0.5);
+    --cm-ripple-color-background: hsla(var(--ifm-color-white-hsl), 0.5);
 }
 
 /* Warning: This is deprecated. */

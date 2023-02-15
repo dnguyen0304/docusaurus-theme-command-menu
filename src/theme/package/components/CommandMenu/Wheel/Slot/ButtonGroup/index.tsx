@@ -7,7 +7,6 @@ import { styled } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
 import { useWheel } from '../../../../../contexts/wheel';
-import styles from './styles.module.css';
 
 interface StyledBox {
     readonly slotBorderWidth: React.CSSProperties['borderWidth'];
@@ -34,12 +33,12 @@ const StyledBox = styled(Box, {
             color: 'var(--cm-color-base)',
         },
     },
-    [`& .MuiIconButton-root.${styles.Button__first}`]: {
+    ['& a.MuiIconButton-root:first-of-type']: {
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         paddingTop: '24px',
     },
-    [`& .MuiIconButton-root.${styles.Button__last}`]: {
+    [`& button.MuiIconButton-root:last-of-type`]: {
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
         paddingBottom: '24px',
@@ -72,7 +71,6 @@ export default function ButtonGroup(
             >
                 <IconButton
                     aria-label='open in a new tab'
-                    className={styles.Button__first}
                     href={href}
                     target='_blank'
                 >
@@ -98,7 +96,6 @@ export default function ButtonGroup(
             >
                 <IconButton
                     aria-label='clear'
-                    className={styles.Button__last}
                     onClick={() => dispatchSlots({
                         type: 'clearSlot',
                         index: slotIndex,

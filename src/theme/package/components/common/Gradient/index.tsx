@@ -36,7 +36,7 @@ export default styled(Box, {
     background: `linear-gradient(
         to right,
         ${color},
-        var(--ifm-color-white),
+        var(--cm-color-base),
         ${color}
     )`,
     backgroundSize: '200%',

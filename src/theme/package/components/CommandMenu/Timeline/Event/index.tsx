@@ -21,7 +21,7 @@ const Layout = styled(Box)({
     cursor: 'pointer',
     padding: `${PADDING_TOP} var(--d9s-space-s) var(--d9s-space-m) 0`,
     '&:hover': {
-        backgroundColor: 'hsla(var(--ifm-color-white-hsl), 0.05)',
+        backgroundColor: 'hsla(var(--cm-color-base-hsl), 0.05)',
         transition: 'var(--ifm-hover-overlay-transition)',
     }
 });

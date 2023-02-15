@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import * as React from 'react';
 
 const StyledChip = styled(Chip)({
-    backgroundColor: 'var(--ifm-color-gray-500)',
+    backgroundColor: 'var(--cm-color-base-darkest)',
     borderRadius: 'var(--cm-border-radius-rounder)',
     color: 'inherit',
     font: 'inherit',

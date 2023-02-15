@@ -33,7 +33,7 @@ export default function AddressBar(): JSX.Element {
                     paddingLeft: 'var(--d9s-space-xs)',
                 }}
             >
-                <span style={{ color: 'var(--cm-color-base-darker))' }}>goto:</span> {href}
+                <span style={{ color: 'var(--cm-color-base-darker)' }}>goto:</span> {href}
             </span>
         </StyledBox>
     );

@@ -13,7 +13,7 @@ const BORDER_WIDTH: React.CSSProperties['borderWidth'] = '8px';
 const TRANSITION_DURATION: React.CSSProperties['transitionDuration'] = '0.3s';
 
 const GlassStyles: React.CSSProperties = {
-    backgroundColor: 'rgba(var(--docupotamus-color-grey-100-rgb), 0.6)',
+    backgroundColor: 'hsla(var(--cm-color-background-hsl), 0.6)',
     backdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
     WebkitBackdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
     boxShadow: `

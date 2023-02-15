@@ -39,7 +39,7 @@ const StyledHeading = (): JSX.Element => {
                 top: 0,
                 zIndex: Z_INDEX.heading,
 
-                backgroundColor: 'var(--docupotamus-color-grey-100)',
+                backgroundColor: 'var(--cm-color-background)',
                 color: 'var(--docupotamus-color-grey-800)',
                 fontFamily: 'var(--docupotamus-font-family)',
                 fontSize: 'var(--font-size-1)',

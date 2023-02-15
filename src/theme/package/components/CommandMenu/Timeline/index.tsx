@@ -10,7 +10,7 @@ import Line from './Line';
 const LINE_WIDTH_PX: number = 4;
 const LINE_POSITION_LEFT: React.CSSProperties['left'] = 'var(--d9s-space-l)';
 const LINE_NOT_COLORED_BACKGROUND_COLOR: React.CSSProperties['backgroundColor'] =
-    'var(--docupotamus-color-grey-300)';
+    'var(--cm-color-background-lighter)';
 
 const Z_INDEX = {
     heading: 10,

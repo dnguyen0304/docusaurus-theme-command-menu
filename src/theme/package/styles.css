@@ -27,10 +27,13 @@ html[data-theme='dark'] {
     --cm-color-base: var(--ifm-color-white);
     --cm-color-base-darker: var(--ifm-color-gray-300);
 
+    --cm-color-background-lighter-hsl: 220, 20%, 20%;
     --cm-color-background-hsl: 219, 40%, 11%;
-    --cm-color-background-hover-hsl: 219, 40%, 22%;
 
+    --cm-color-background-lighter: hsl(var(--cm-color-background-lighter-hsl));
     --cm-color-background: hsl(var(--cm-color-background-hsl));
+
+    --cm-color-background-hover-hsl: 219, 40%, 22%;
     --cm-color-background-hover: hsl(var(--cm-color-background-hover-hsl));
 
     /* Typography */

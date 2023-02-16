@@ -1,4 +1,9 @@
 .Shortcut__wheel {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
     translate: var(--translate);
 }
 

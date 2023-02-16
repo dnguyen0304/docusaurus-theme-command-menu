@@ -29,10 +29,6 @@ const StyledCard = styled(Box, {
     shouldForwardProp: (prop) => prop !== 'hasContent',
 })<StyledCardProps>(({ hasContent }) => ({
     ...GlassStyles,
-    width: '100%',
-    height: '100%',
-
-    position: 'absolute',
 
     display: 'flex',
     flexDirection: 'column',

@@ -1,54 +1,54 @@
-import type { SlotData } from '@docusaurus/theme-command-menu';
+import type { ShortcutData } from '@docusaurus/theme-command-menu';
 import * as React from 'react';
 import { ReactContextError } from './errors';
 
 type Action =
     | {
-        type: 'setSlot';
+        type: 'setShortcut';
         index: number;
-        newValue: SlotData;
+        newValue: ShortcutData;
     }
     | {
-        type: 'setSlotHeading';
+        type: 'setShortcutHeading';
         index: number;
-        newValue: SlotData['heading'];
+        newValue: ShortcutData['heading'];
     }
     | {
-        type: 'clearSlot';
+        type: 'clearShortcut';
         index: number;
     };
 
-const reducer = (prev: SlotData[], action: Action): SlotData[] => {
-    const newSlots = [...prev];
-    const oldSlot = newSlots[action.index];
-    if (!oldSlot) {
+const reducer = (prev: ShortcutData[], action: Action): ShortcutData[] => {
+    const newShortcuts = [...prev];
+    const oldShortcut = newShortcuts[action.index];
+    if (!oldShortcut) {
         throw new Error('index out of bounds');
     }
-    if (action.type === 'setSlot') {
-        newSlots[action.index] = action.newValue;
+    if (action.type === 'setShortcut') {
+        newShortcuts[action.index] = action.newValue;
     }
-    if (action.type === 'setSlotHeading') {
-        const newSlot = {
-            ...oldSlot,
+    if (action.type === 'setShortcutHeading') {
+        const newShortcut = {
+            ...oldShortcut,
             heading: action.newValue,
         };
-        newSlots[action.index] = newSlot;
+        newShortcuts[action.index] = newShortcut;
     }
-    if (action.type === 'clearSlot') {
-        const newSlot = {
-            ...oldSlot,
+    if (action.type === 'clearShortcut') {
+        const newShortcut = {
+            ...oldShortcut,
             heading: '',
             snippet: '',
             href: '',
         };
-        newSlots[action.index] = newSlot;
+        newShortcuts[action.index] = newShortcut;
     }
-    return newSlots;
+    return newShortcuts;
 };
 
 interface ContextValue {
-    readonly slots: SlotData[];
-    readonly dispatchSlots: React.Dispatch<Action>;
+    readonly shortcuts: ShortcutData[];
+    readonly dispatchShortcuts: React.Dispatch<Action>;
 };
 
 const Context = React.createContext<ContextValue | undefined>(undefined);
@@ -57,7 +57,7 @@ const useContextValue = (): ContextValue => {
     // TODO(dnguyen0304): Remove fake data.
     // TODO(dnguyen0304): Investigate changing to use vmax or vmin so width and
     //   height are relative to the same unit.
-    const [slots, dispatchSlots] = React.useReducer(reducer, [
+    const [shortcuts, dispatchShortcuts] = React.useReducer(reducer, [
         {
             heading: 'Dimensions',
             snippet: 'between 996px and 1440px',
@@ -87,12 +87,12 @@ const useContextValue = (): ContextValue => {
 
     return React.useMemo(
         () => ({
-            slots,
-            dispatchSlots,
+            shortcuts,
+            dispatchShortcuts,
         }),
         [
-            slots,
-            dispatchSlots,
+            shortcuts,
+            dispatchShortcuts,
         ],
     );
 };

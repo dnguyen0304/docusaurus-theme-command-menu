@@ -7,7 +7,7 @@ declare module '@docupotamus/docusaurus-theme-command-menu' {
 
     interface CommandMenuThemeConfig { }
 
-    interface SlotData {
+    interface ShortcutData {
         readonly heading: string;
         readonly snippet: string;
         readonly href: string;

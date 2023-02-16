@@ -1,4 +1,4 @@
-import { SlotData } from '@docusaurus/theme-command-menu';
+import { ShortcutData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import { styled } from '@mui/material/styles';
@@ -75,12 +75,12 @@ const StyledInput = styled(InputBase)({
     padding: 0,
 });
 
-interface Props extends SlotData {
+interface Props extends ShortcutData {
     readonly index: number;
 };
 
 // TODO(dnguyen0304): Fix missing responsive design.
-export default function Slot(
+export default function Shortcut(
     {
         index,
         heading,
@@ -89,13 +89,13 @@ export default function Slot(
     }: Props,
 ): JSX.Element {
     const { setHref } = useAddressBar();
-    const { dispatchSlots } = useShortcuts();
+    const { dispatchShortcuts } = useShortcuts();
 
     const handleDescriptionChange = (
         event: React.ChangeEvent<HTMLInputElement>,
     ) => {
-        dispatchSlots({
-            type: 'setSlotHeading',
+        dispatchShortcuts({
+            type: 'setShortcutHeading',
             index,
             newValue: event.target.value,
         });
@@ -103,7 +103,7 @@ export default function Slot(
 
     return (
         <StyledCard
-            className={`${styles.Slot_card} ${styles.Shortcuts_entry__wheel}`}
+            className={`${styles.Shortcut_card} ${styles.Shortcuts_entry__wheel}`}
             component='section'
             hasContent={!!href}
             onMouseEnter={() => setHref(href)}
@@ -114,7 +114,7 @@ export default function Slot(
                     autoComplete='off'
                     maxRows={Infinity}
                     onChange={handleDescriptionChange}
-                    value={href ? heading : `EMPTY SLOT ${index + 1}`}
+                    value={href ? heading : `EMPTY SHORTCUT ${index + 1}`}
                     multiline
                 />
             </h3>
@@ -124,8 +124,8 @@ export default function Slot(
             {href && <ButtonGroup
                 copyText={snippet}
                 href={href}
-                slotIndex={index}
-                slotBorderWidth={BORDER_WIDTH}
+                shortcutIndex={index}
+                shortcutBorderWidth={BORDER_WIDTH}
             />}
         </StyledCard>
     );

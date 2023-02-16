@@ -9,12 +9,12 @@ import * as React from 'react';
 import { useShortcuts } from '../../../../../contexts/shortcuts';
 
 interface StyledBox {
-    readonly slotBorderWidth: React.CSSProperties['borderWidth'];
+    readonly shortcutBorderWidth: React.CSSProperties['borderWidth'];
 };
 
 const StyledBox = styled(Box, {
-    shouldForwardProp: (prop) => prop !== 'slotBorderWidth',
-})<StyledBox>(({ slotBorderWidth }) => ({
+    shouldForwardProp: (prop) => prop !== 'shortcutBorderWidth',
+})<StyledBox>(({ shortcutBorderWidth }) => ({
     display: 'flex',
     flexDirection: 'column',
 
@@ -25,7 +25,7 @@ const StyledBox = styled(Box, {
     backgroundColor: 'var(--cm-color-background-lightest)',
     borderRadius: '41px',
     opacity: 0,
-    transform: `translate(calc(50% + ${slotBorderWidth}), -50%)`,
+    transform: `translate(calc(50% + ${shortcutBorderWidth}), -50%)`,
     '& .MuiIconButton-root': {
         borderRadius: 0,
         padding: '12px',
@@ -48,22 +48,22 @@ const StyledBox = styled(Box, {
 interface Props {
     readonly copyText: string;
     readonly href: string;
-    readonly slotIndex: number;
-    readonly slotBorderWidth: React.CSSProperties['borderWidth'];
+    readonly shortcutIndex: number;
+    readonly shortcutBorderWidth: React.CSSProperties['borderWidth'];
 };
 
 export default function ButtonGroup(
     {
         copyText,
         href,
-        slotIndex,
-        slotBorderWidth,
+        shortcutIndex,
+        shortcutBorderWidth,
     }: Props
 ): JSX.Element {
-    const { dispatchSlots } = useShortcuts();
+    const { dispatchShortcuts } = useShortcuts();
 
     return (
-        <StyledBox slotBorderWidth={slotBorderWidth}>
+        <StyledBox shortcutBorderWidth={shortcutBorderWidth}>
             <Tooltip
                 placement='right'
                 title='Copy'
@@ -96,9 +96,9 @@ export default function ButtonGroup(
             >
                 <IconButton
                     aria-label='clear'
-                    onClick={() => dispatchSlots({
-                        type: 'clearSlot',
-                        index: slotIndex,
+                    onClick={() => dispatchShortcuts({
+                        type: 'clearShortcut',
+                        index: shortcutIndex,
                     })}
                 >
                     <CloseIcon />

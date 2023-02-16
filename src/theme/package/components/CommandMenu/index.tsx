@@ -14,7 +14,7 @@ const Layout = styled(Box)({
     gridTemplate: 'auto 1fr auto / auto 1fr max(250px, 25%)',
     gridTemplateAreas:
         '"header header timeline" ' +
-        '"wheel wheel timeline" ' +
+        '"shortcuts shortcuts timeline" ' +
         '"footer footer timeline"',
 });
 
@@ -33,7 +33,7 @@ export default function CommandMenu(): JSX.Element {
         >
             <Layout>
                 <header style={{ gridArea: 'header' }}>Header</header>
-                <Shortcuts sx={{ gridArea: 'wheel' }} />
+                <Shortcuts sx={{ gridArea: 'shortcuts' }} />
                 <Timeline sx={{ gridArea: 'timeline' }} />
                 <Footer sx={{ gridArea: 'footer' }} />
             </Layout>

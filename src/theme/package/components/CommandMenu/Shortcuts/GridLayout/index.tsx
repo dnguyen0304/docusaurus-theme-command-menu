@@ -8,6 +8,7 @@ export default styled(Box)({
     gridGap: 'var(--spacing)',
     gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 30%))',
     justifyContent: 'center',
+    alignContent: 'center',
 
     padding: 'var(--spacing)',
 });

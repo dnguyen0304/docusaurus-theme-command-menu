@@ -111,7 +111,7 @@ export default function Shortcut(
                     autoComplete='off'
                     maxRows={Infinity}
                     onChange={handleDescriptionChange}
-                    value={href ? heading : `EMPTY SHORTCUT ${index + 1}`}
+                    value={href ? heading : 'EMPTY SHORTCUT'}
                     multiline
                 />
             </h3>

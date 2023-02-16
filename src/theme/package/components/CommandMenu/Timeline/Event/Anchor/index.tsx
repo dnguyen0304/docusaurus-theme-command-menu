@@ -23,7 +23,7 @@ const getPosition = (
     return {
         position: 'absolute',
         // TODO(dnguyen0304): Investigate if this can be done programmatically.
-        top: `calc(${eventPaddingTop} + 2px)`,
+        top: `calc(${eventPaddingTop} + 3.5px)`,
         left: linePositionLeft,
         translate: 'calc(-50% + var(--cm-line-width) / 2) 0',
     };

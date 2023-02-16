@@ -6,7 +6,7 @@ export default styled(Box)({
 
     display: 'grid',
     gridGap: 'var(--spacing)',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 30%))',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 30%))',
     justifyContent: 'center',
 
     padding: 'var(--spacing)',

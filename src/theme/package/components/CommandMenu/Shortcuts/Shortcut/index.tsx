@@ -30,6 +30,8 @@ const StyledCard = styled(Box, {
 })<StyledCardProps>(({ hasContent }) => ({
     ...GlassStyles,
 
+    position: 'relative',
+
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',

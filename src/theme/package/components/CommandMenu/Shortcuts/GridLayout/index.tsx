@@ -10,5 +10,6 @@ export default styled(Box)({
     justifyContent: 'center',
     alignContent: 'center',
 
+    overflowY: 'auto',
     padding: 'var(--spacing)',
 });

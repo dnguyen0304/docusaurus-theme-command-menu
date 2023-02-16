@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
 import { useShortcuts } from '../../../contexts/shortcuts';
-import Shortcut from './Slot';
+import Shortcut from './Shortcut';
 
 const StyledBox = styled(Box)({
     // TODO(dnguyen0304): Fix missing responsive design.

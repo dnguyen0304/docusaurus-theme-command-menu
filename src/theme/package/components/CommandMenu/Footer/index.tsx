@@ -35,7 +35,7 @@ export default function Footer({ sx }: Props): JSX.Element {
     return (
         <Layout
             ref={ref}
-            sx={{ ...sx }}
+            sx={sx}
         >
             <AddressBar />
         </Layout>

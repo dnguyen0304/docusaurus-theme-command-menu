@@ -1,12 +1,11 @@
 import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
-import { FOOTER_HEIGHT } from '../../../constants';
 import AddressBar from './AddressBar';
 
 const Layout = styled(Box)({
     width: '100%',
-    height: FOOTER_HEIGHT,
+    height: 'var(--cm-footer-height)',
 
     // TODO(dnguyen0304): Investigate why this or z-index: 0 is needed for the
     //   timeline to be visible.

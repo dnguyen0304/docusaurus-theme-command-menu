@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
-import { FOOTER_HEIGHT, TILE_BORDER_WIDTH_PX } from '../../../constants';
+import { TILE_BORDER_WIDTH_PX } from '../../../constants';
 import { useTimeline } from '../../../contexts/timeline';
 import useDomRect from '../../../hooks/useDomRect';
 import Event from './Event';
@@ -50,7 +50,7 @@ const StyledHeading = (): JSX.Element => {
 };
 
 const StickyFooter = styled(Box)({
-    height: FOOTER_HEIGHT,
+    height: 'var(--cm-footer-height)',
 
     position: 'sticky',
     bottom: 0,

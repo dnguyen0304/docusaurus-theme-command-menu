@@ -12,6 +12,4 @@ export default styled(Box)({
 
     position: 'relative',
     placeSelf: 'center',
-
-    color: 'var(--cm-color-base)',
 });

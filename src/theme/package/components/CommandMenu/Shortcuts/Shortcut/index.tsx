@@ -9,8 +9,9 @@ import ButtonGroup from './ButtonGroup';
 import styles from './styles.module.css';
 
 const BORDER_WIDTH: React.CSSProperties['borderWidth'] = '8px';
-const TRANSITION_DURATION: React.CSSProperties['transitionDuration'] = '0.3s';
+const TRANSITION_DURATION: React.CSSProperties['transitionDuration'] = '100ms';
 
+// TODO(dnguyen0304): Remove unused properties.
 const GlassStyles: React.CSSProperties = {
     backgroundColor: 'hsla(var(--cm-color-background-hsl), 0.6)',
     backdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
@@ -51,7 +52,7 @@ const StyledCard = styled(Box, {
             0px 0px 24px 0px rgba(136, 165, 191, 0.7),
             0px 0px 24px 0px hsla(var(--cm-color-base-hsl), 0.9)
         `,
-        transition: `all ${TRANSITION_DURATION} ease-in-out`,
+        transition: `all ${TRANSITION_DURATION} ease-in`,
         transitionProperty: 'backdrop-filter, box-shadow',
     },
     '&:hover > .MuiBox-root': {

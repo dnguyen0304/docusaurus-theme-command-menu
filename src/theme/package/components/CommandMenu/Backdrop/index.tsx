@@ -2,7 +2,7 @@ import MuiBackdrop, { BackdropProps as MuiBackdropProps } from '@mui/material/Ba
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
-import Gradient from '../../common/Gradient';
+import Gradient from '../../Gradient';
 
 const Tile = styled(Box)({
     width: '100%',

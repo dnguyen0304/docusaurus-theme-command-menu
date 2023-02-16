@@ -3,7 +3,7 @@ import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchR
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { useCommandMenu } from '../../contexts/command-menu';
-import Gradient from '../common/Gradient';
+import Gradient from '../Gradient';
 import Logo from './Logo';
 import styles from './styles.module.css';
 

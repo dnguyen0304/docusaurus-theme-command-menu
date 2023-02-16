@@ -72,14 +72,12 @@ const StyledInput = styled(InputBase)({
 });
 
 interface Props extends ShortcutData {
-    readonly className?: string;
     readonly index: number;
 };
 
 // TODO(dnguyen0304): Fix missing responsive design.
 export default function Shortcut(
     {
-        className,
         index,
         heading,
         snippet,
@@ -101,7 +99,7 @@ export default function Shortcut(
 
     return (
         <StyledCard
-            className={`${styles.Shortcut_card} ${className ?? ''}`}
+            className={styles.Shortcut_card}
             component='section'
             hasContent={!!href}
             onMouseEnter={() => setHref(href)}

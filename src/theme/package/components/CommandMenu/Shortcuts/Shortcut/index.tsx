@@ -103,7 +103,7 @@ export default function Shortcut(
 
     return (
         <StyledCard
-            className={`${styles.Shortcut_card} ${styles.Shortcuts_entry__wheel}`}
+            className={`${styles.Shortcut_card} ${styles.Shortcut__wheel}`}
             component='section'
             hasContent={!!href}
             onMouseEnter={() => setHref(href)}

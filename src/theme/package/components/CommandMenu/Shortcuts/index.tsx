@@ -20,7 +20,7 @@ interface Props {
     readonly sx?: SxProps<Theme>;
 };
 
-export default function Wheel({ sx }: Props): JSX.Element {
+export default function Shortcuts({ sx }: Props): JSX.Element {
     const { slots } = useWheel();
 
     return (

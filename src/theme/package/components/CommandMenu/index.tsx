@@ -5,8 +5,8 @@ import * as React from 'react';
 import { useCommandMenu } from '../../contexts/command-menu';
 import Backdrop from './Backdrop';
 import Footer from './Footer';
+import Shortcuts from './Shortcuts';
 import Timeline from './Timeline';
-import Wheel from './Wheel';
 
 const Layout = styled(Box)({
     height: '100vh',
@@ -33,7 +33,7 @@ export default function CommandMenu(): JSX.Element {
         >
             <Layout>
                 <header style={{ gridArea: 'header' }}>Header</header>
-                <Wheel sx={{ gridArea: 'wheel' }} />
+                <Shortcuts sx={{ gridArea: 'wheel' }} />
                 <Timeline sx={{ gridArea: 'timeline' }} />
                 <Footer sx={{ gridArea: 'footer' }} />
             </Layout>

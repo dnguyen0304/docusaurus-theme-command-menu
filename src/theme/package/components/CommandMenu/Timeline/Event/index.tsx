@@ -2,6 +2,7 @@ import { TimelineEventData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
 import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchRipple';
 import { styled } from '@mui/material/styles';
+import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
 import { useAddressBar } from '../../../../contexts/address-bar';
 import { dayjs } from '../../../../services/datetime';
@@ -92,14 +93,18 @@ export default function Event(
                             {heading}
                         </h3>
                     </span>
-                    {/* TODO(dnguyen0304): Add tooltip. */}
                     {/* TODO(dnguyen0304): Remove time ago formatting for
                           certain ranges such as greater than 1 day and less
                           than 1 week. */}
                     <span>
-                        <p className={styles.Event_timestamp}>
-                            {dayjs(timestampMilli).fromNow()}
-                        </p>
+                        <Tooltip
+                            placement='top'
+                            title={dayjs(timestampMilli).format('LLLL')}
+                        >
+                            <p className={styles.Event_timestamp}>
+                                {dayjs(timestampMilli).fromNow()}
+                            </p>
+                        </Tooltip>
                     </span>
                 </StyledCardHeader>
                 <p className={styles.Event_body}>

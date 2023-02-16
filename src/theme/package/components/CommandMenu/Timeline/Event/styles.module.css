@@ -9,7 +9,9 @@
 }
 
 .Event_timestamp {
-    color: var(--color-dimmer);
+    --color-base-dimmer: hsla(var(--cm-color-base-hsl), 0.8);
+
+    color: var(--color-base-dimmer);
     font-size: var(--d9s-font-size--1);
     font-style: italic;
     margin: 0;
@@ -17,5 +19,5 @@
 }
 
 .Event_body {
-    color: var(--color-darker);
+    color: var(--cm-color-base-darker);
 }

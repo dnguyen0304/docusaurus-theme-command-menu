@@ -27,9 +27,6 @@ const Layout = styled(Box)({
 });
 
 const StyledCard = styled(Box)({
-    ['--color-darker']: 'var(--ifm-color-gray-200)',
-    ['--color-dimmer']: 'hsla(var(--cm-color-base-hsl), 0.8)',
-
     width: '80%',
 });
 

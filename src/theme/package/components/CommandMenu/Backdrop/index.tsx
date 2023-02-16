@@ -2,7 +2,6 @@ import MuiBackdrop, { BackdropProps as MuiBackdropProps } from '@mui/material/Ba
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
-import { TILE_BORDER_WIDTH_PX } from '../../../constants';
 import Gradient from '../../common/Gradient';
 
 const Tile = styled(Box)({
@@ -14,7 +13,7 @@ const Tile = styled(Box)({
         content: '""',
         position: 'absolute',
         backgroundColor: 'var(--cm-color-background)',
-        inset: `${TILE_BORDER_WIDTH_PX}px`,
+        inset: 'var(--cm-backdrop-inset)',
     },
 });
 

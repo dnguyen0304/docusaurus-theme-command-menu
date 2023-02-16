@@ -55,6 +55,7 @@ const StyledCard = styled(Box, {
         transitionProperty: 'backdrop-filter, box-shadow',
     },
     '&:hover > .MuiBox-root': {
+        // TODO(dnguyen0304): Fix flakiness.
         opacity: 1,
     },
     '& h3': {

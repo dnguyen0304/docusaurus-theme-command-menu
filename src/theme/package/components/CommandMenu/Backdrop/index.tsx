@@ -27,9 +27,6 @@ const Tile = styled(Box)({
         backgroundColor: 'var(--cm-color-background)',
         inset: `${TILE_BORDER_WIDTH_PX}px`,
     },
-    '&:hover:before': {
-        backgroundColor: 'var(--cm-color-background-hover)',
-    },
 });
 
 interface Props extends MuiBackdropProps { };

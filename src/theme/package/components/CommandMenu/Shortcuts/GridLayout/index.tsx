@@ -12,4 +12,7 @@ export default styled(Box)({
 
     overflowY: 'auto',
     padding: 'var(--spacing)',
+    ['& > *']: {
+        aspectRatio: '1 / 1',
+    },
 });

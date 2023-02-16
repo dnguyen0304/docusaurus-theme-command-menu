@@ -34,7 +34,7 @@ export default function CommandMenu(): JSX.Element {
             disableAutoFocus
         >
             <Layout>
-                <header style={{ gridArea: 'header' }}>Header</header>
+                <header style={{ gridArea: 'header' }} />
                 <Shortcuts sx={{ gridArea: 'shortcuts' }} />
                 <Timeline sx={{ gridArea: 'timeline' }} />
                 <Footer sx={{ gridArea: 'footer' }} />

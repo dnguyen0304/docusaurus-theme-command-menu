@@ -14,6 +14,9 @@ const Layout = styled(Box)({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'flex-start',
+
+    marginBottom: 'var(--cm-backdrop-inset-buffer)',
+    marginLeft: 'var(--cm-backdrop-inset-buffer)',
 });
 
 interface Props {

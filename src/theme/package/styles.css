@@ -33,6 +33,7 @@ html[data-theme='dark'] {
     --cm-annotater-color: var(--ifm-color-content-inverse);
     --cm-annotater-color-background: var(--ifm-color-content);
     --cm-backdrop-inset: 1px;
+    --cm-backdrop-inset-buffer: calc(2 * var(--cm-backdrop-inset));
     --cm-entry-color: var(--ifm-color-content);
     --cm-entry-color-background: var(--ifm-color-content-inverse);
     --cm-entry-gradient-color-background:

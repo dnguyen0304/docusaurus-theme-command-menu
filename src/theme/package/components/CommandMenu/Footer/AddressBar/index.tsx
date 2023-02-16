@@ -4,11 +4,8 @@ import * as React from 'react';
 import { useAddressBar } from '../../../../contexts/address-bar';
 
 const StyledBox = styled(Box)({
-    // Include a buffer by doubling the needed border-width. For example, we
-    // only need to subtract the left and right border-width (2X), but then we
-    // double that again (4X).
-    width: 'calc(100% - 4 * var(--cm-backdrop-inset))',
-    height: 'calc(100% - 2 * var(--cm-backdrop-inset))',
+    width: '100%',
+    height: '100%',
 
     display: 'flex',
     alignItems: 'center',

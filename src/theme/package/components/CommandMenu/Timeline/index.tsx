@@ -22,7 +22,7 @@ const StyledContainer = styled(Box)({
     position: 'relative',
 
     backgroundColor: 'var(--cm-color-background)',
-    margin: 'calc(2 * var(--cm-backdrop-inset))',
+    margin: 'var(--cm-backdrop-inset-buffer)',
     marginLeft: 0,
     overflowY: 'auto',
 });

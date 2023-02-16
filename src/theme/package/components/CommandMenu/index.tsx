@@ -37,6 +37,7 @@ export default function CommandMenu(): JSX.Element {
                 <header style={{ gridArea: 'header' }} />
                 <Shortcuts sx={{ gridArea: 'shortcuts' }} />
                 <Timeline sx={{ gridArea: 'timeline' }} />
+                {/* TODO(dnguyen0304): Merge into header command palette. */}
                 <Footer sx={{ gridArea: 'footer' }} />
             </Layout>
         </Modal>

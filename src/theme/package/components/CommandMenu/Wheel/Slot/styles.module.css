@@ -38,10 +38,6 @@
     --translate: -130% -35%;
 }
 
-.Slot_descriptionContainer {
-    margin-bottom: var(--space-3xs);
-}
-
 .text__multilineTruncate {
     --max-line-count: 4;
 

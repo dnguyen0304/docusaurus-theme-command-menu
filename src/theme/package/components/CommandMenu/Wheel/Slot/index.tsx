@@ -61,6 +61,9 @@ const StyledCard = styled(Box, {
     '&:hover > .MuiBox-root': {
         opacity: 1,
     },
+    '& h3': {
+        marginBottom: 'var(--space-3xs)',
+    },
 }));
 
 const StyledInput = styled(InputBase)({
@@ -103,7 +106,7 @@ export default function Slot(
             onMouseEnter={() => setHref(href)}
             onMouseLeave={() => setHref('')}
         >
-            <h3 className={styles.Slot_descriptionContainer}>
+            <h3>
                 <StyledInput
                     autoComplete='off'
                     maxRows={Infinity}

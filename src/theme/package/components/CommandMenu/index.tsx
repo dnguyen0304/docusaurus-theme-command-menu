@@ -10,12 +10,15 @@ import Timeline from './Timeline';
 
 const Layout = styled(Box)({
     height: '100vh',
+
     display: 'grid',
     gridTemplate: 'auto 1fr auto / auto 1fr max(250px, 25%)',
     gridTemplateAreas:
         '"header header timeline" ' +
         '"shortcuts shortcuts timeline" ' +
         '"footer footer timeline"',
+
+    color: 'var(--cm-color-base)',
 });
 
 export default function CommandMenu(): JSX.Element {
@@ -26,7 +29,6 @@ export default function CommandMenu(): JSX.Element {
             onClose={() => setIsOpen(false)}
             open={isOpen}
             slots={{ backdrop: Backdrop }}
-            sx={{ color: 'var(--cm-color-base)' }}
             // Override the default Chrome outline behavior.
             // See: https://github.com/mui/material-ui/issues/11504#issuecomment-390506409
             disableAutoFocus

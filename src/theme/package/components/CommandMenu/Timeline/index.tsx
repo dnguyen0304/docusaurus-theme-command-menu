@@ -75,6 +75,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
 
     const handleMouseLeave = () => {
         setLineColoredHeightPx(0);
+        setMouseClientY(0);
     };
 
     const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = (event) => {

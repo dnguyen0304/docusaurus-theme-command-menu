@@ -7,7 +7,6 @@ import useDomRect from '../../../hooks/useDomRect';
 import Event from './Event';
 import Line from './Line';
 
-const LINE_WIDTH_PX: number = 4;
 const LINE_POSITION_LEFT: React.CSSProperties['left'] = 'var(--d9s-space-l)';
 const LINE_NOT_COLORED_BACKGROUND_COLOR: React.CSSProperties['backgroundColor'] =
     'var(--cm-color-background-lighter)';
@@ -109,7 +108,7 @@ export default function Timeline({ sx }: Props): JSX.Element {
             <Line
                 coloredHeightPx={lineColoredHeightPx}
                 sx={{
-                    width: `${LINE_WIDTH_PX}px`,
+                    width: 'var(--cm-line-width)',
                     height: lineHeight,
                     left: LINE_POSITION_LEFT,
                     zIndex: Z_INDEX.line,
@@ -135,7 +134,6 @@ export default function Timeline({ sx }: Props): JSX.Element {
                                 LINE_NOT_COLORED_BACKGROUND_COLOR
                             }
                             linePositionLeft={LINE_POSITION_LEFT}
-                            lineWidthPx={LINE_WIDTH_PX}
                             timelineMouseClientY={mouseClientY}
                         />
                     )

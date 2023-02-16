@@ -41,7 +41,6 @@ interface Props extends TimelineEventData {
     readonly anchorZIndex: React.CSSProperties['zIndex'];
     readonly lineNotColoredBackgroundColor: React.CSSProperties['backgroundColor'];
     readonly linePositionLeft: React.CSSProperties['left'];
-    readonly lineWidthPx: number;
     readonly timelineMouseClientY: number;
 };
 
@@ -55,7 +54,6 @@ export default function Event(
         anchorZIndex,
         lineNotColoredBackgroundColor,
         linePositionLeft,
-        lineWidthPx,
         timelineMouseClientY,
     }: Props,
 ): JSX.Element {
@@ -84,7 +82,6 @@ export default function Event(
                 zIndex={anchorZIndex}
                 lineNotColoredBackgroundColor={lineNotColoredBackgroundColor}
                 linePositionLeft={linePositionLeft}
-                lineWidthPx={lineWidthPx}
                 eventPaddingTop={PADDING_TOP}
                 timelineMouseClientY={timelineMouseClientY}
             />

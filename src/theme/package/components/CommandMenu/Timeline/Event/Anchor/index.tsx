@@ -18,7 +18,6 @@ const StyledBox = styled(Box, {
 
 const getPosition = (
     linePositionLeft: React.CSSProperties['left'],
-    lineWidthPx: number,
     eventPaddingTop: React.CSSProperties['paddingTop'],
 ): Pick<React.CSSProperties, 'position' | 'top' | 'left' | 'translate'> => {
     return {
@@ -26,7 +25,7 @@ const getPosition = (
         // TODO(dnguyen0304): Investigate if this can be done programmatically.
         top: `calc(${eventPaddingTop} + 2px)`,
         left: linePositionLeft,
-        translate: `calc(-50% + ${lineWidthPx / 2}px) 0`,
+        translate: 'calc(-50% + var(--cm-line-width) / 2) 0',
     };
 };
 
@@ -34,7 +33,6 @@ interface Props {
     zIndex: React.CSSProperties['zIndex'];
     lineNotColoredBackgroundColor: React.CSSProperties['backgroundColor'];
     linePositionLeft: React.CSSProperties['left'];
-    lineWidthPx: number;
     eventPaddingTop: React.CSSProperties['paddingTop'];
     timelineMouseClientY: number;
 };
@@ -44,7 +42,6 @@ export default function Event(
         zIndex,
         lineNotColoredBackgroundColor,
         linePositionLeft,
-        lineWidthPx,
         eventPaddingTop,
         timelineMouseClientY,
     }: Props,
@@ -71,7 +68,7 @@ export default function Event(
             ref={ref}
             size='var(--d9s-font-size-0)'
             sx={{
-                ...getPosition(linePositionLeft, lineWidthPx, eventPaddingTop),
+                ...getPosition(linePositionLeft, eventPaddingTop),
                 backgroundColor,
                 zIndex,
             }}

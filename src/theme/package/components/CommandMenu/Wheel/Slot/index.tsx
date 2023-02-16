@@ -64,6 +64,9 @@ const StyledCard = styled(Box, {
     '& h3': {
         marginBottom: 'var(--space-3xs)',
     },
+    '& p': {
+        color: 'var(--cm-color-base-darker)',
+    },
 }));
 
 const StyledInput = styled(InputBase)({

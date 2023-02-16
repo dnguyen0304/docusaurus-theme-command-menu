@@ -2,8 +2,8 @@ import * as React from 'react';
 import CommandMenu from '../../package/components/CommandMenu';
 import { AddressBarProvider } from '../../package/contexts/address-bar';
 import { CommandMenuProvider } from '../../package/contexts/command-menu';
+import { ShortcutsProvider } from '../../package/contexts/shortcuts';
 import { TimelineProvider } from '../../package/contexts/timeline';
-import { WheelProvider } from '../../package/contexts/wheel';
 import CommandMenuKeyboardShortcuts from '../../package/keyboard-shortcuts/CommandMenu';
 import '../../package/styles.css';
 
@@ -17,12 +17,12 @@ export default function RootDecorator({ children }: Props): JSX.Element {
             <CommandMenuProvider>
                 <CommandMenuKeyboardShortcuts>
                     <AddressBarProvider>
-                        <WheelProvider>
+                        <ShortcutsProvider>
                             <TimelineProvider>
                                 {children}
                                 <CommandMenu />
                             </TimelineProvider>
-                        </WheelProvider>
+                        </ShortcutsProvider>
                     </AddressBarProvider>
                 </CommandMenuKeyboardShortcuts>
             </CommandMenuProvider>

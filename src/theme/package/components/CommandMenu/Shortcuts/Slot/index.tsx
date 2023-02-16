@@ -4,7 +4,7 @@ import InputBase from '@mui/material/InputBase';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { useAddressBar } from '../../../../contexts/address-bar';
-import { useWheel } from '../../../../contexts/wheel';
+import { useShortcuts } from '../../../../contexts/shortcuts';
 import ButtonGroup from './ButtonGroup';
 import styles from './styles.module.css';
 
@@ -89,7 +89,7 @@ export default function Slot(
     }: Props,
 ): JSX.Element {
     const { setHref } = useAddressBar();
-    const { dispatchSlots } = useWheel();
+    const { dispatchSlots } = useShortcuts();
 
     const handleDescriptionChange = (
         event: React.ChangeEvent<HTMLInputElement>,

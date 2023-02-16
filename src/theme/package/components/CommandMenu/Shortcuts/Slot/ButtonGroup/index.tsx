@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
-import { useWheel } from '../../../../../contexts/wheel';
+import { useShortcuts } from '../../../../../contexts/shortcuts';
 
 interface StyledBox {
     readonly slotBorderWidth: React.CSSProperties['borderWidth'];
@@ -60,7 +60,7 @@ export default function ButtonGroup(
         slotBorderWidth,
     }: Props
 ): JSX.Element {
-    const { dispatchSlots } = useWheel();
+    const { dispatchSlots } = useShortcuts();
 
     return (
         <StyledBox slotBorderWidth={slotBorderWidth}>

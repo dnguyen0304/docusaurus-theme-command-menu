@@ -101,7 +101,7 @@ interface Props {
     readonly children: React.ReactNode;
 };
 
-export const WheelProvider = ({ children }: Props): JSX.Element => {
+export const ShortcutsProvider = ({ children }: Props): JSX.Element => {
     const value = useContextValue();
 
     return (
@@ -111,10 +111,10 @@ export const WheelProvider = ({ children }: Props): JSX.Element => {
     );
 };
 
-export const useWheel = (): ContextValue => {
+export const useShortcuts = (): ContextValue => {
     const context = React.useContext(Context);
     if (context === undefined) {
-        throw new ReactContextError('WheelProvider');
+        throw new ReactContextError('ShortcutsProvider');
     }
     return context;
 };

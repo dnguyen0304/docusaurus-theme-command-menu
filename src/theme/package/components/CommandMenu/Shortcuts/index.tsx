@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import * as React from 'react';
-import { useWheel } from '../../../contexts/wheel';
+import { useShortcuts } from '../../../contexts/shortcuts';
 import Slot from './Slot';
 
 const StyledBox = styled(Box)({
@@ -21,7 +21,7 @@ interface Props {
 };
 
 export default function Shortcuts({ sx }: Props): JSX.Element {
-    const { slots } = useWheel();
+    const { slots } = useShortcuts();
 
     return (
         <StyledBox sx={sx}>

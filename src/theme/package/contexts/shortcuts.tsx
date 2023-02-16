@@ -83,6 +83,11 @@ const useContextValue = (): ContextValue => {
             snippet: 'shift + ctrl + left',
             href: 'https://www.google.com',
         },
+        {
+            heading: '',
+            snippet: '',
+            href: '',
+        },
     ]);
 
     return React.useMemo(

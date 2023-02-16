@@ -1,5 +1,12 @@
 .Shortcut__grid {
-    flex: 0 1 150px;
+    /* height: 30%; */
+    /* aspect-ratio: 1 / 1;
+    width: 150px;
+    width: 30%;
+    flex-grow: 0;
+    flex-shrink: 1; */
 
-    margin: 20px;
+    /* flex: 0 1 150px; */
+
+    /* margin: 20px; */
 }

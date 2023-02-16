@@ -103,7 +103,7 @@ export default function Slot(
 
     return (
         <StyledCard
-            className={styles.Slot_card}
+            className={`${styles.Slot_card} ${styles.Shortcuts_entry__wheel}`}
             component='section'
             hasContent={!!href}
             onMouseEnter={() => setHref(href)}

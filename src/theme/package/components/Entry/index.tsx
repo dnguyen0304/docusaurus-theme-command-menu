@@ -20,7 +20,7 @@ const ClippingBox = styled(Box)({
 
     [`&:hover .${styles.circle}::before`]: {
         backgroundColor: 'var(--d9s-color-content-inverse-hover)',
-        transition: 'var(--d9s-color-content-inverse-hover-transition)',
+        transition: 'var(--ifm-hover-overlay-transition)',
     },
 });
 

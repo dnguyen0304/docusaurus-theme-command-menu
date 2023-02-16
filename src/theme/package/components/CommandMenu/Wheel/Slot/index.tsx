@@ -104,7 +104,7 @@ export default function Slot(
             onMouseEnter={() => setHref(href)}
             onMouseLeave={() => setHref('')}
         >
-            <h2 className={styles.Slot_descriptionContainer}>
+            <h3 className={styles.Slot_descriptionContainer}>
                 <StyledInput
                     autoComplete='off'
                     maxRows={Infinity}
@@ -112,7 +112,7 @@ export default function Slot(
                     value={href ? heading : `EMPTY SLOT ${index + 1}`}
                     multiline
                 />
-            </h2>
+            </h3>
             <p className={styles.text__multilineTruncate}>
                 {href ? snippet : 'Create a shortcut to your favorite content.'}
             </p>

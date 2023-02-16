@@ -11,11 +11,10 @@ import styles from './styles.module.css';
 const BORDER_WIDTH: React.CSSProperties['borderWidth'] = '8px';
 const TRANSITION_DURATION: React.CSSProperties['transitionDuration'] = '100ms';
 
-// TODO(dnguyen0304): Remove unused properties.
 const GlassStyles: React.CSSProperties = {
     backgroundColor: 'hsla(var(--cm-color-background-hsl), 0.6)',
-    backdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
-    WebkitBackdropFilter: 'blur(6px) saturate(100%) brightness(140%)',
+    backdropFilter: 'brightness(140%)',
+    WebkitBackdropFilter: 'brightness(140%)',
     boxShadow: `
         0px 0px 12px 0px rgba(136, 165, 191, 0.48),
         0px 0px 12px 0px hsla(var(--cm-color-base-hsl), 0.8)
@@ -45,9 +44,8 @@ const StyledCard = styled(Box, {
     `,
     borderRadius: 'var(--cm-border-radius-roundest)',
     padding: 'var(--d9s-space-m)',
-    // TODO(dnguyen0304): Investigate improving performance.
     '&:hover': {
-        backdropFilter: 'blur(6px) saturate(100%) brightness(200%)',
+        backdropFilter: 'brightness(200%)',
         boxShadow: `
             0px 0px 24px 0px rgba(136, 165, 191, 0.7),
             0px 0px 24px 0px hsla(var(--cm-color-base-hsl), 0.9)

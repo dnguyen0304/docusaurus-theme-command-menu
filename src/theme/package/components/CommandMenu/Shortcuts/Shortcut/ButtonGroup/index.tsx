@@ -67,7 +67,6 @@ export default function ButtonGroup(
             <Tooltip
                 placement='right'
                 title='Copy'
-                arrow
             >
                 <IconButton
                     aria-label='open in a new tab'
@@ -80,7 +79,6 @@ export default function ButtonGroup(
             <Tooltip
                 placement='right'
                 title='Open in New Tab'
-                arrow
             >
                 <IconButton
                     aria-label='copy'
@@ -92,7 +90,6 @@ export default function ButtonGroup(
             <Tooltip
                 placement='right'
                 title='Clear'
-                arrow
             >
                 <IconButton
                     aria-label='clear'

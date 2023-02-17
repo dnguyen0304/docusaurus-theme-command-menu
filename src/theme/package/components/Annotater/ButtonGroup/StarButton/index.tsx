@@ -19,7 +19,6 @@ export default function StarButton(
         <Tooltip
             title={isClicked ? 'Unstar' : 'Star'}
             placement='top'
-            arrow
         >
             <IconButton
                 onClick={onClick}

@@ -19,6 +19,10 @@ const Layout = styled(Box)({
         '"footer footer timeline"',
 
     color: 'var(--cm-color-base)',
+    'h1, h2, h3, h4, h5, h6': {
+        /* Only dark mode is currently supported. */
+        '--ifm-heading-color': 'var(--ifm-color-gray-100)',
+    },
 });
 
 export default function CommandMenu(): JSX.Element {

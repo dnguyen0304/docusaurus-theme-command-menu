@@ -45,13 +45,3 @@ html[data-theme='dark'] {
     /* Material UI (MUI) */
     --cm-ripple-color-background: hsla(var(--ifm-color-white-hsl), 0.5);
 }
-
-/* Only dark mode is currently supported. */
-html[data-theme='light'] h1,
-html[data-theme='light'] h2,
-html[data-theme='light'] h3,
-html[data-theme='light'] h4,
-html[data-theme='light'] h5,
-html[data-theme='light'] h6 {
-    --ifm-heading-color: var(--ifm-color-gray-100);
-}

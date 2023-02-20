@@ -29,6 +29,12 @@ const StyledTooltip = styled(Box)({
         borderRight: '6px solid transparent',
         borderLeft: '6px solid transparent',
     },
+    '& button.MuiIconButton-root': {
+        color: 'var(--cm-annotater-color)',
+    },
+    '& button.MuiIconButton-root:disabled': {
+        color: 'hsla(var(--cm-annotater-color-hsl), 0.4)',
+    },
 });
 
 interface Props {

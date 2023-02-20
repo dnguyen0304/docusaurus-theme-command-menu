@@ -30,6 +30,8 @@ html[data-theme='dark'] {
     --cm-border-radius-roundest: var(--d9s-space-m);
 
     /* Components */
+    --cm-annotater-color-hsl: var(--ifm-color-content-inverse-hsl);
+
     --cm-annotater-color: var(--ifm-color-content-inverse);
     --cm-annotater-color-background: var(--ifm-color-content);
     --cm-backdrop-inset: 1px;

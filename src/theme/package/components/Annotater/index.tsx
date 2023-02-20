@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { SelectionObserver } from '../../services/annotate/selection-observer'; /* TODO(dnguyen0304): Fix missing type declaration. */
+import { useSelection } from '../../contexts/selection';
 import { SelectionTopCenterPositioner } from '../../services/annotate/tooltip/positioner';
 import * as rangeUtils from '../../services/annotate/utils/range'; /* TODO(dnguyen0304): Fix missing type declaration. */
 import ButtonGroup from './ButtonGroup';
 
 export default function Annotater(): JSX.Element {
+    const { range } = useSelection();
+
     const [isVisible, setIsVisible] = React.useState<boolean>(false);
     const [positionTopPx, setPositionTopPx] = React.useState<number>(0);
     const [positionLeftPx, setPositionLeftPx] = React.useState<number>(0);
     const [starIsClicked, setStarIsClicked] = React.useState<boolean>(false);
-
-    const selectionObserverRef = React.useRef<SelectionObserver>(null);
 
     const starHandleClick = () => {
         const selection = window.getSelection();
@@ -26,38 +26,26 @@ export default function Annotater(): JSX.Element {
         setStarIsClicked(prev => !prev);
     };
 
-    const handleSelection = (_range: Range) => {
-        const selection = document.getSelection()!;
-        const focusRect = rangeUtils.selectionFocusRect(selection);
-        if (!focusRect) {
-            // The selected range does not contain any text.
-            return;
-        }
-        const isBackwards = rangeUtils.isSelectionBackwards(selection);
-        const { left, top } = new SelectionTopCenterPositioner().position(
-            focusRect,
-            isBackwards,
-        );
-        setIsVisible(true);
-        setPositionTopPx(top);
-        setPositionLeftPx(left);
-    };
-
-    const handleNoSelection = () => {
-        setIsVisible(false);
-    };
-
     React.useEffect(() => {
-        selectionObserverRef.current = new SelectionObserver((
-            range: Range | null,
-        ) => {
-            if (range) {
-                handleSelection(range);
-            } else {
-                handleNoSelection();
+        if (range) {
+            const selection = document.getSelection()!;
+            const focusRect = rangeUtils.selectionFocusRect(selection);
+            if (!focusRect) {
+                // The selected range does not contain any text.
+                return;
             }
-        });
-    }, []);
+            const isBackwards = rangeUtils.isSelectionBackwards(selection);
+            const { left, top } = new SelectionTopCenterPositioner().position(
+                focusRect,
+                isBackwards,
+            );
+            setIsVisible(true);
+            setPositionTopPx(top);
+            setPositionLeftPx(left);
+        } else {
+            setIsVisible(false);
+        }
+    }, [range]);
 
     return (
         <ButtonGroup

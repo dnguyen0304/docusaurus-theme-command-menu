@@ -19,7 +19,6 @@ const Layout = styled(Box)({
     display: 'flex',
     justifyContent: 'flex-end',
 
-    cursor: 'pointer',
     padding: `${PADDING_TOP} var(--d9s-space-s) var(--d9s-space-m) 0`,
     '&:hover': {
         backgroundColor: 'hsla(var(--cm-color-base-hsl), 0.05)',

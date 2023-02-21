@@ -2,6 +2,8 @@ import type { ShortcutData } from '@docusaurus/theme-command-menu';
 import * as React from 'react';
 import { ReactContextError } from './errors';
 
+const shortcutCount: number = 6;
+
 type Action =
     | {
         type: 'setShortcut';
@@ -57,53 +59,9 @@ const useContextValue = (): ContextValue => {
     // TODO(dnguyen0304): Remove fake data.
     // TODO(dnguyen0304): Investigate changing to use vmax or vmin so width and
     //   height are relative to the same unit.
-    const [shortcuts, dispatchShortcuts] = React.useReducer(reducer, [
-        {
-            source: {
-                href: 'https://www.google.com',
-                hrefUserFriendly: 'https://www.google.com',
-            },
-            selectors: [],
-            heading: 'Dimensions',
-            snippet: 'between 996px and 1440px',
-        },
-        {
-            source: {
-                href: 'https://www.google.com',
-                hrefUserFriendly: 'https://www.google.com',
-            },
-            selectors: [],
-            heading: 'Latin',
-            snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et nisl fermentum, interdum ex nec, dignissim ipsum. Suspendisse potenti. Vivamus tempus tincidunt elit nec efficitur. Ut accumsan sem vel ex pellentesque, id faucibus augue dignissim. Nulla facilisi. Cras dapibus orci sed pulvinar sollicitudin.',
-        },
-        {
-            source: {
-                href: 'https://www.google.com',
-                hrefUserFriendly: 'https://www.google.com',
-            },
-            selectors: [],
-            heading: 'useReduce hook',
-            snippet: 'const [state, dispatch] = useReducer(reducer, initialState);',
-        },
-        {
-            source: {
-                href: 'https://www.google.com',
-                hrefUserFriendly: 'https://www.google.com',
-            },
-            selectors: [],
-            heading: 'Environment',
-            snippet: 'CLIENT_ID, CLIENT_SECRET, REFERER_ALLOWLIST',
-        },
-        {
-            source: {
-                href: 'https://www.google.com',
-                hrefUserFriendly: 'https://www.google.com',
-            },
-            selectors: [],
-            heading: 'Last Position Shortcut',
-            snippet: 'shift + ctrl + left',
-        },
-        {
+    const [shortcuts, dispatchShortcuts] = React.useReducer(
+        reducer,
+        Array(shortcutCount).fill({
             source: {
                 href: '',
                 hrefUserFriendly: '',
@@ -111,8 +69,8 @@ const useContextValue = (): ContextValue => {
             selectors: [],
             heading: '',
             snippet: '',
-        },
-    ]);
+        }),
+    );
 
     return React.useMemo(
         () => ({

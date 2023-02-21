@@ -6,15 +6,15 @@ import * as React from 'react';
 import { useSelection } from '../../../contexts/selection';
 import { useShortcuts } from '../../../contexts/shortcuts';
 
-const useOpenShortcutIndex = (): number | undefined => {
+const notFound: number = -1;
+
+const useOpenShortcutIndex = (): number => {
     const { shortcuts } = useShortcuts();
 
-    const [shortcutIndex, setShortcutIndex] =
-        React.useState<number | undefined>();
+    const [shortcutIndex, setShortcutIndex] = React.useState<number>(notFound);
 
     React.useEffect(() => {
-        const index = shortcuts.findIndex(x => x.href === '');
-        setShortcutIndex((index !== -1) ? index : undefined);
+        setShortcutIndex(shortcuts.findIndex(x => x.href === ''));
     }, [shortcuts]);
 
     return shortcutIndex;
@@ -42,7 +42,7 @@ export default function StarButton(): JSX.Element {
             if (prev) {
                 // TODO(dnguyen0304): Add real implementation.
             } else {
-                if (range && shortcutIndex) {
+                if (range && shortcutIndex !== notFound) {
                     dispatchShortcuts({
                         type: 'setShortcut',
                         index: shortcutIndex,
@@ -65,10 +65,10 @@ export default function StarButton(): JSX.Element {
         if (isClicked) {
             return 'Unstar';
         }
-        if (shortcutIndex !== undefined) {
-            return 'Star';
-        } else {
+        if (shortcutIndex === notFound) {
             return 'No open shortcut slots';
+        } else {
+            return 'Star';
         }
     };
 
@@ -79,7 +79,7 @@ export default function StarButton(): JSX.Element {
         >
             <div>
                 <IconButton
-                    disabled={!isClicked && shortcutIndex === undefined}
+                    disabled={!isClicked && shortcutIndex === notFound}
                     onClick={handleClick}
                 >
                     {isClicked ? <StarIcon /> : <StarOutlineIcon />}

@@ -64,13 +64,19 @@ export default function StarButton(): JSX.Element {
                                 SEARCH_PARAM_SELECTOR_ENCODED,
                                 selectorEncoded)
                             .toString();
+                    const hrefUserFriendly =
+                        new URI()
+                            // TODO(dnguyen0304): Investigate removing all
+                            //   search params.
+                            .removeSearch(SEARCH_PARAM_SELECTOR_ENCODED)
+                            .toString();
                     dispatchShortcuts({
                         type: 'setShortcut',
                         index: shortcutIndex,
                         newValue: {
                             source: {
                                 href,
-                                hrefUserFriendly: window.location.href,
+                                hrefUserFriendly,
                             },
                             selectors: [selector],
                             heading: `Shortcut #${shortcutIndex + 1}`,

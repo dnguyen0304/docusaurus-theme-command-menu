@@ -6,7 +6,7 @@ import { SelectionTopCenterPositioner } from '../../services/annotate/tooltip/po
 import * as rangeUtils from '../../services/annotate/utils/range'; /* TODO(dnguyen0304): Fix missing type declaration. */
 import StarButton from './StarButton';
 
-const StyledBox = styled(Box)({
+const ButtonGroup = styled(Box)({
     position: 'absolute',
     transform: 'translate(-50%, -100%)',
     zIndex: 'calc(var(--ifm-z-index-fixed) + 1)',
@@ -69,7 +69,7 @@ export default function Annotater(): JSX.Element {
     }, [range]);
 
     return (
-        <StyledBox
+        <ButtonGroup
             sx={{
                 top: `${positionTopPx}px`,
                 left: `${positionLeftPx}px`,
@@ -79,6 +79,6 @@ export default function Annotater(): JSX.Element {
         // role='presentation'
         >
             <StarButton />
-        </StyledBox>
+        </ButtonGroup>
     );
 };

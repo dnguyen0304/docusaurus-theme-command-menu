@@ -56,7 +56,6 @@ interface ContextValue {
 const Context = React.createContext<ContextValue | undefined>(undefined);
 
 const useContextValue = (): ContextValue => {
-    // TODO(dnguyen0304): Remove fake data.
     // TODO(dnguyen0304): Investigate changing to use vmax or vmin so width and
     //   height are relative to the same unit.
     const [shortcuts, dispatchShortcuts] = React.useReducer(

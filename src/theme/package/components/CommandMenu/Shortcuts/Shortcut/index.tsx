@@ -83,6 +83,7 @@ export default function Shortcut(
         index,
         source: {
             href,
+            hrefUserFriendly,
         },
         heading,
         snippet,
@@ -106,7 +107,7 @@ export default function Shortcut(
             className={styles.Shortcut_card}
             component='section'
             hasContent={!!href}
-            onMouseEnter={() => setHref(href)}
+            onMouseEnter={() => setHref(hrefUserFriendly)}
             onMouseLeave={() => setHref('')}
         >
             <h3>

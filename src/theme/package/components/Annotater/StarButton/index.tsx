@@ -4,6 +4,7 @@ import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
+import URI from 'urijs';
 import { useSelection } from '../../../contexts/selection';
 import { useShortcuts } from '../../../contexts/shortcuts';
 
@@ -51,22 +52,24 @@ export default function StarButton(): JSX.Element {
                 });
             } else {
                 if (range && shortcutIndex !== notFound) {
+                    // TODO(dnguyen0304): Extract to a centralized location to
+                    //   facilitate maintenance.
+                    const selector =
+                        new RangeAnchor(document.body, range).toSelector();
+                    const selectorEncoded = btoa(JSON.stringify(selector));
+                    const href =
+                        new URI()
+                            .addSearch('selectorEncoded', selectorEncoded)
+                            .toString();
                     dispatchShortcuts({
                         type: 'setShortcut',
                         index: shortcutIndex,
                         newValue: {
                             source: {
-                                href: window.location.href,
+                                href,
+                                hrefUserFriendly: window.location.href,
                             },
-                            selectors: [
-                                new RangeAnchor(
-                                    // TODO(dnguyen0304): Extract to a
-                                    //   centralized location to facilitate
-                                    //   maintenance.
-                                    document.body,
-                                    range,
-                                ).toSelector()
-                            ],
+                            selectors: [selector],
                             heading: `Shortcut #${shortcutIndex + 1}`,
                             // TODO(dnguyen0304): Investigate using
                             //   Range.cloneContents().children to handle

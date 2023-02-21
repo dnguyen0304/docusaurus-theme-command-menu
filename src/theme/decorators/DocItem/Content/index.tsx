@@ -14,6 +14,8 @@ const scrollToRange = () => {
         RangeAnchor
             .fromSelector(document.body, selector)
             .toRange();
+    // TODO(dnguyen0304): Investigate different approach.
+    //   See: http://roysharon.com/blog/37
     range.startContainer.parentElement?.scrollIntoView({
         behavior: 'smooth',
         block: 'center',

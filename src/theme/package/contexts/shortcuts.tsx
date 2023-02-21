@@ -61,6 +61,7 @@ const useContextValue = (): ContextValue => {
         {
             source: {
                 href: 'https://www.google.com',
+                hrefUserFriendly: 'https://www.google.com',
             },
             selectors: [],
             heading: 'Dimensions',
@@ -69,6 +70,7 @@ const useContextValue = (): ContextValue => {
         {
             source: {
                 href: 'https://www.google.com',
+                hrefUserFriendly: 'https://www.google.com',
             },
             selectors: [],
             heading: 'Latin',
@@ -77,6 +79,7 @@ const useContextValue = (): ContextValue => {
         {
             source: {
                 href: 'https://www.google.com',
+                hrefUserFriendly: 'https://www.google.com',
             },
             selectors: [],
             heading: 'useReduce hook',
@@ -85,6 +88,7 @@ const useContextValue = (): ContextValue => {
         {
             source: {
                 href: 'https://www.google.com',
+                hrefUserFriendly: 'https://www.google.com',
             },
             selectors: [],
             heading: 'Environment',
@@ -93,6 +97,7 @@ const useContextValue = (): ContextValue => {
         {
             source: {
                 href: 'https://www.google.com',
+                hrefUserFriendly: 'https://www.google.com',
             },
             selectors: [],
             heading: 'Last Position Shortcut',
@@ -101,6 +106,7 @@ const useContextValue = (): ContextValue => {
         {
             source: {
                 href: '',
+                hrefUserFriendly: '',
             },
             selectors: [],
             heading: '',

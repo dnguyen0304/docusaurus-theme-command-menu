@@ -18,18 +18,24 @@ const useHasOpenShortcut = (): boolean => {
     return hasOpenShortcut;
 };
 
-interface Props {
-    readonly isClicked: boolean;
-    readonly onClick: () => void;
-};
-
-export default function StarButton(
-    {
-        isClicked,
-        onClick
-    }: Props
-): JSX.Element {
+export default function StarButton(): JSX.Element {
     const hasOpenShortcut = useHasOpenShortcut();
+
+    const [isClicked, setIsClicked] = React.useState<boolean>(false);
+
+    const handleClick = () => {
+        const selection = window.getSelection();
+        if (!selection || !selection.rangeCount) {
+            return;
+        }
+        const range = selection.getRangeAt(0);
+        let spanElement = document.createElement('span');
+        spanElement.appendChild(range.extractContents());
+        range.insertNode(spanElement);
+        selection.removeAllRanges();
+
+        setIsClicked(prev => !prev);
+    };
 
     const getTooltipTitle = (): string => {
         if (isClicked) {
@@ -50,7 +56,7 @@ export default function StarButton(
             <div>
                 <IconButton
                     disabled={!isClicked && !hasOpenShortcut}
-                    onClick={onClick}
+                    onClick={handleClick}
                 >
                     {isClicked ? <StarIcon /> : <StarOutlineIcon />}
                 </IconButton>

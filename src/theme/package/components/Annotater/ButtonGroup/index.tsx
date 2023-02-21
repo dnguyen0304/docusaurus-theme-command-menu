@@ -40,17 +40,7 @@ const StyledBox = styled(Box)({
     },
 });
 
-interface Props {
-    readonly starIsClicked: boolean;
-    readonly starOnClick: () => void;
-};
-
-export default function ButtonGroup(
-    {
-        starIsClicked,
-        starOnClick,
-    }: Props,
-): JSX.Element {
+export default function ButtonGroup(): JSX.Element {
     const { range } = useSelection();
 
     const [isVisible, setIsVisible] = React.useState<boolean>(false);
@@ -88,10 +78,7 @@ export default function ButtonGroup(
         // onMouseDown={e => e.preventDefault()}
         // role='presentation'
         >
-            <StarButton
-                isClicked={starIsClicked}
-                onClick={starOnClick}
-            />
+            <StarButton />
         </StyledBox>
     );
 };

@@ -3,6 +3,7 @@ import * as React from 'react';
 import Annotater from '../../../package/components/Annotater';
 import { SEARCH_PARAM_SELECTOR_ENCODED } from '../../../package/constants';
 import { SelectionProvider } from '../../../package/contexts/selection';
+import useShortcutsOnPage from '../../../package/hooks/useShortcutsOnPage';
 import styles from './styles.module.css';
 
 // TODO(dnguyen0304): Extract to package to minimize code in decorators.
@@ -33,6 +34,12 @@ interface Props {
 };
 
 export default function ContentDecorator({ children }: Props): JSX.Element {
+    const shortcutsOnPage = useShortcutsOnPage();
+
+    React.useEffect(() => {
+        console.log(shortcutsOnPage);
+    }, [shortcutsOnPage]);
+
     React.useEffect(() => {
         // TODO(dnguyen0304): Investigate the differences between
         //   DOMContentLoaded, load, and readystatechange.

@@ -39,8 +39,15 @@ export default function StarButton(): JSX.Element {
         // selection.removeAllRanges();
         setIsClicked(prev => {
             const newValue = !prev;
+            if (shortcutIndex === notFound) {
+                return newValue;
+            }
             if (prev) {
-                // TODO(dnguyen0304): Add real implementation.
+                dispatchShortcuts({
+                    type: 'clearShortcut',
+                    // TODO(dnguyen0304): Add real implementation.
+                    index: 2,
+                });
             } else {
                 if (range && shortcutIndex !== notFound) {
                     dispatchShortcuts({

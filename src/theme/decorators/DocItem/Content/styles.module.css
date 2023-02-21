@@ -1,0 +1,18 @@
+/* TODO(dnguyen0304): Extract to a centralized location to facilitate
+   maintenance. */
+/* Keywords: pulse */
+
+.target__flicker {
+    animation-name: flicker;
+    animation-delay: 1s;
+    animation-duration: 2s;
+}
+
+@keyframes flicker {
+    0%, 50%, 100% {
+        background-color: transparent;
+    }
+    25%, 75% {
+        background-color: var(--ifm-color-warning);
+    }
+}

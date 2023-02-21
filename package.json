@@ -35,7 +35,7 @@
     "scripts": {
         "build": "docusaurus-plugin build",
         "watch": "docusaurus-plugin watch",
-        "develop": "rm -rf lib/ && npm link react react-dom && npm run build && npm run watch"
+        "develop": "rm -rf lib/ && npm link react react-dom @docupotamus/docusaurus-lib-common && npm run build && npm run watch"
     },
     "repository": {
         "type": "git",

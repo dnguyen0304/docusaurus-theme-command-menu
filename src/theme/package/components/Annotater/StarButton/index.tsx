@@ -3,7 +3,7 @@ import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
-import { useShortcuts } from '../../../../contexts/shortcuts';
+import { useShortcuts } from '../../../contexts/shortcuts';
 
 const useHasOpenShortcut = (): boolean => {
     const { shortcuts } = useShortcuts();

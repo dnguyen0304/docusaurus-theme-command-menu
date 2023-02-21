@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useSelection } from '../../../contexts/selection';
 import { SelectionTopCenterPositioner } from '../../../services/annotate/tooltip/positioner';
 import * as rangeUtils from '../../../services/annotate/utils/range'; /* TODO(dnguyen0304): Fix missing type declaration. */
-import StarButton from './StarButton';
+import StarButton from '../StarButton';
 
 const StyledBox = styled(Box)({
     position: 'absolute',

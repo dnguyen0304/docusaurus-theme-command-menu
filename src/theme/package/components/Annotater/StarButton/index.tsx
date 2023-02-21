@@ -1,3 +1,4 @@
+import { RangeAnchor } from '@docupotamus/docusaurus-lib-common/annotate/anchor';
 import StarIcon from '@mui/icons-material/Star';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import IconButton from '@mui/material/IconButton';
@@ -57,7 +58,15 @@ export default function StarButton(): JSX.Element {
                             source: {
                                 href: 'Not Yet Implemented',
                             },
-                            selectors: [],
+                            selectors: [
+                                new RangeAnchor(
+                                    // TODO(dnguyen0304): Extract to a
+                                    //   centralized location to facilitate
+                                    //   maintenance.
+                                    document.body,
+                                    range,
+                                ).toSelector()
+                            ],
                             heading: `Shortcut #${shortcutIndex + 1}`,
                             // TODO(dnguyen0304): Investigate using
                             //   Range.cloneContents().children to handle

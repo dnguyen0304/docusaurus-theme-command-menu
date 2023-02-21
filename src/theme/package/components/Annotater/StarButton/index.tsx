@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
 import URI from 'urijs';
+import { SEARCH_PARAM_SELECTOR_ENCODED } from '../../../constants';
 import { useSelection } from '../../../contexts/selection';
 import { useShortcuts } from '../../../contexts/shortcuts';
 
@@ -59,7 +60,9 @@ export default function StarButton(): JSX.Element {
                     const selectorEncoded = btoa(JSON.stringify(selector));
                     const href =
                         new URI()
-                            .addSearch('selectorEncoded', selectorEncoded)
+                            .addSearch(
+                                SEARCH_PARAM_SELECTOR_ENCODED,
+                                selectorEncoded)
                             .toString();
                     dispatchShortcuts({
                         type: 'setShortcut',

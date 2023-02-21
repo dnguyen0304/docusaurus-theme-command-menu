@@ -56,7 +56,7 @@ export default function StarButton(): JSX.Element {
                         index: shortcutIndex,
                         newValue: {
                             source: {
-                                href: 'Not Yet Implemented',
+                                href: window.location.href,
                             },
                             selectors: [
                                 new RangeAnchor(

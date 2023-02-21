@@ -24,16 +24,15 @@ export default function StarButton(): JSX.Element {
     const [isClicked, setIsClicked] = React.useState<boolean>(false);
 
     const handleClick = () => {
-        const selection = window.getSelection();
-        if (!selection || !selection.rangeCount) {
-            return;
-        }
-        const range = selection.getRangeAt(0);
-        let spanElement = document.createElement('span');
-        spanElement.appendChild(range.extractContents());
-        range.insertNode(spanElement);
-        selection.removeAllRanges();
-
+        // const selection = window.getSelection();
+        // if (!selection || !selection.rangeCount) {
+        //     return;
+        // }
+        // const range = selection.getRangeAt(0);
+        // let spanElement = document.createElement('span');
+        // spanElement.appendChild(range.extractContents());
+        // range.insertNode(spanElement);
+        // selection.removeAllRanges();
         setIsClicked(prev => !prev);
     };
 

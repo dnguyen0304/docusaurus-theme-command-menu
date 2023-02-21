@@ -1,4 +1,5 @@
 declare module '@docupotamus/docusaurus-theme-command-menu' {
+    import type { Target } from '@docupotamus/docusaurus-lib-common';
     import type { KeySequence } from 'react-hotkeys';
 
     interface PluginOptions {
@@ -7,10 +8,8 @@ declare module '@docupotamus/docusaurus-theme-command-menu' {
 
     interface CommandMenuThemeConfig { }
 
-    interface ShortcutData {
+    interface ShortcutData extends Omit<Target, 'id' | 'selectorRoot'> {
         readonly heading: string;
-        readonly snippet: string;
-        readonly href: string;
     }
 
     interface TimelineEventData {

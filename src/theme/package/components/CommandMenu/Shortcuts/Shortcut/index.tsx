@@ -73,7 +73,7 @@ const StyledInput = styled(InputBase)({
     padding: 0,
 });
 
-interface Props extends ShortcutData {
+interface Props extends Omit<ShortcutData, 'selectorRoot' | 'selectors'> {
     readonly index: number;
 };
 
@@ -81,9 +81,11 @@ interface Props extends ShortcutData {
 export default function Shortcut(
     {
         index,
+        source: {
+            href,
+        },
         heading,
         snippet,
-        href,
     }: Props,
 ): JSX.Element {
     const { setHref } = useAddressBar();

@@ -59,34 +59,52 @@ const useContextValue = (): ContextValue => {
     //   height are relative to the same unit.
     const [shortcuts, dispatchShortcuts] = React.useReducer(reducer, [
         {
+            source: {
+                href: 'https://www.google.com',
+            },
+            selectors: [],
             heading: 'Dimensions',
             snippet: 'between 996px and 1440px',
-            href: 'https://www.google.com',
         },
         {
+            source: {
+                href: 'https://www.google.com',
+            },
+            selectors: [],
             heading: 'Latin',
             snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et nisl fermentum, interdum ex nec, dignissim ipsum. Suspendisse potenti. Vivamus tempus tincidunt elit nec efficitur. Ut accumsan sem vel ex pellentesque, id faucibus augue dignissim. Nulla facilisi. Cras dapibus orci sed pulvinar sollicitudin.',
-            href: 'https://www.google.com',
         },
         {
+            source: {
+                href: 'https://www.google.com',
+            },
+            selectors: [],
             heading: 'useReduce hook',
             snippet: 'const [state, dispatch] = useReducer(reducer, initialState);',
-            href: 'https://www.google.com',
         },
         {
+            source: {
+                href: 'https://www.google.com',
+            },
+            selectors: [],
             heading: 'Environment',
             snippet: 'CLIENT_ID, CLIENT_SECRET, REFERER_ALLOWLIST',
-            href: 'https://www.google.com',
         },
         {
+            source: {
+                href: 'https://www.google.com',
+            },
+            selectors: [],
             heading: 'Last Position Shortcut',
             snippet: 'shift + ctrl + left',
-            href: 'https://www.google.com',
         },
         {
+            source: {
+                href: '',
+            },
+            selectors: [],
             heading: '',
             snippet: '',
-            href: '',
         },
     ]);
 

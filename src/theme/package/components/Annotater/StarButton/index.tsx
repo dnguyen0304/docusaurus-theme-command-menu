@@ -14,7 +14,7 @@ const useOpenShortcutIndex = (): number => {
     const [shortcutIndex, setShortcutIndex] = React.useState<number>(notFound);
 
     React.useEffect(() => {
-        setShortcutIndex(shortcuts.findIndex(x => x.href === ''));
+        setShortcutIndex(shortcuts.findIndex(x => x.source.href === ''));
     }, [shortcuts]);
 
     return shortcutIndex;
@@ -54,12 +54,15 @@ export default function StarButton(): JSX.Element {
                         type: 'setShortcut',
                         index: shortcutIndex,
                         newValue: {
+                            source: {
+                                href: 'Not Yet Implemented',
+                            },
+                            selectors: [],
                             heading: `Shortcut #${shortcutIndex + 1}`,
                             // TODO(dnguyen0304): Investigate using
                             //   Range.cloneContents().children to handle
                             //   formatting ranges containing multiple elements.
                             snippet: range?.toString(),
-                            href: 'Not Yet Implemented',
                         },
                     });
                 }

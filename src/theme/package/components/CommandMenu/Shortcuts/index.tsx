@@ -17,9 +17,9 @@ export default function Shortcuts({ sx }: Props): JSX.Element {
                 <Shortcut
                     key={`shortcut-${index}`}
                     index={index}
+                    source={shortcut.source}
                     heading={shortcut.heading}
                     snippet={shortcut.snippet}
-                    href={shortcut.href}
                 />
             ))}
         </Layout>

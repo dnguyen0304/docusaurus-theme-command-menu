@@ -5,21 +5,22 @@ import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
 import { useShortcuts } from '../../../contexts/shortcuts';
 
-const useHasOpenShortcut = (): boolean => {
+const useOpenShortcutIndex = (): number | undefined => {
     const { shortcuts } = useShortcuts();
 
-    const [hasOpenShortcut, setHasOpenShortcut] =
-        React.useState<boolean>(false);
+    const [openShortcutIndex, setOpenShortcutIndex] =
+        React.useState<number | undefined>();
 
     React.useEffect(() => {
-        setHasOpenShortcut(shortcuts.some(shortcut => shortcut.href === ''));
+        const index = shortcuts.findIndex(x => x.href === '');
+        setOpenShortcutIndex((index !== -1) ? index : undefined);
     }, [shortcuts]);
 
-    return hasOpenShortcut;
+    return openShortcutIndex;
 };
 
 export default function StarButton(): JSX.Element {
-    const hasOpenShortcut = useHasOpenShortcut();
+    const openShortcutIndex = useOpenShortcutIndex();
 
     const [isClicked, setIsClicked] = React.useState<boolean>(false);
 
@@ -40,7 +41,7 @@ export default function StarButton(): JSX.Element {
         if (isClicked) {
             return 'Unstar';
         }
-        if (hasOpenShortcut) {
+        if (openShortcutIndex !== undefined) {
             return 'Star';
         } else {
             return 'No open shortcut slots';
@@ -54,7 +55,7 @@ export default function StarButton(): JSX.Element {
         >
             <div>
                 <IconButton
-                    disabled={!isClicked && !hasOpenShortcut}
+                    disabled={!isClicked && openShortcutIndex === undefined}
                     onClick={handleClick}
                 >
                     {isClicked ? <StarIcon /> : <StarOutlineIcon />}

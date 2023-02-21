@@ -5,6 +5,7 @@ import { SEARCH_PARAM_SELECTOR_ENCODED } from '../../../package/constants';
 import { SelectionProvider } from '../../../package/contexts/selection';
 import styles from './styles.module.css';
 
+// TODO(dnguyen0304): Extract to package to minimize code in decorators.
 const scrollToRange = () => {
     const searchParams = new URLSearchParams(window.location.search);
     const selectorEncoded = searchParams.get(SEARCH_PARAM_SELECTOR_ENCODED);

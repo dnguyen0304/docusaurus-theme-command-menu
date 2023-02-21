@@ -9,19 +9,19 @@ import { useShortcuts } from '../../../contexts/shortcuts';
 const useOpenShortcutIndex = (): number | undefined => {
     const { shortcuts } = useShortcuts();
 
-    const [openShortcutIndex, setOpenShortcutIndex] =
+    const [shortcutIndex, setShortcutIndex] =
         React.useState<number | undefined>();
 
     React.useEffect(() => {
         const index = shortcuts.findIndex(x => x.href === '');
-        setOpenShortcutIndex((index !== -1) ? index : undefined);
+        setShortcutIndex((index !== -1) ? index : undefined);
     }, [shortcuts]);
 
-    return openShortcutIndex;
+    return shortcutIndex;
 };
 
 export default function StarButton(): JSX.Element {
-    const openShortcutIndex = useOpenShortcutIndex();
+    const shortcutIndex = useOpenShortcutIndex();
     const { range } = useSelection();
     const { dispatchShortcuts } = useShortcuts();
 
@@ -42,12 +42,12 @@ export default function StarButton(): JSX.Element {
             if (prev) {
                 // TODO(dnguyen0304): Add real implementation.
             } else {
-                if (range && openShortcutIndex) {
+                if (range && shortcutIndex) {
                     dispatchShortcuts({
                         type: 'setShortcut',
-                        index: openShortcutIndex,
+                        index: shortcutIndex,
                         newValue: {
-                            heading: `Shortcut #${openShortcutIndex + 1}`,
+                            heading: `Shortcut #${shortcutIndex + 1}`,
                             // TODO(dnguyen0304): Investigate using
                             //   Range.cloneContents().children to handle
                             //   formatting ranges containing multiple elements.
@@ -65,7 +65,7 @@ export default function StarButton(): JSX.Element {
         if (isClicked) {
             return 'Unstar';
         }
-        if (openShortcutIndex !== undefined) {
+        if (shortcutIndex !== undefined) {
             return 'Star';
         } else {
             return 'No open shortcut slots';
@@ -79,7 +79,7 @@ export default function StarButton(): JSX.Element {
         >
             <div>
                 <IconButton
-                    disabled={!isClicked && openShortcutIndex === undefined}
+                    disabled={!isClicked && shortcutIndex === undefined}
                     onClick={handleClick}
                 >
                     {isClicked ? <StarIcon /> : <StarOutlineIcon />}

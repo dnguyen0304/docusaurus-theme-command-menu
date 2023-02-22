@@ -70,13 +70,16 @@ const Inner = ({ children }: Props): JSX.Element => {
                 RangeAnchor
                     .fromSelector(document.body, selector)
                     .toRange();
-            const intersectsStart = shortcutRange.isPointInRange(
-                activeRange.startContainer,
-                activeRange.startOffset,
+            // Use activeRange.isPointInRange() instead of
+            //   shortcutRange.isPointInRange() to handle the case where the
+            //   activeRange contains the entire shortcutRange.
+            const intersectsStart = activeRange.isPointInRange(
+                shortcutRange.startContainer,
+                shortcutRange.startOffset,
             );
-            const intersectsEnd = shortcutRange.isPointInRange(
-                activeRange.endContainer,
-                activeRange.endOffset,
+            const intersectsEnd = activeRange.isPointInRange(
+                shortcutRange.endContainer,
+                shortcutRange.endOffset,
             );
             if (intersectsStart || intersectsEnd) {
                 setIntersectedShortcutIndex(i);

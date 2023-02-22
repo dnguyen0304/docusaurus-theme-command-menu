@@ -18,7 +18,6 @@ const ClippingBox = styled(Box)({
     translate: '-50%',
 
     clipPath: 'circle(40% at 50% 100%)',
-
     [`&:hover .${styles.circle}::before`]: {
         backgroundColor: 'var(--d9s-color-content-inverse-hover)',
         transition: 'var(--ifm-hover-overlay-transition)',

@@ -1,3 +1,4 @@
+import { dayjs } from '@docupotamus/docusaurus-lib-common/datetime';
 import { TimelineEventData } from '@docusaurus/theme-command-menu';
 import Box from '@mui/material/Box';
 import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchRipple';
@@ -5,7 +6,6 @@ import { styled } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
 import { useAddressBar } from '../../../../contexts/address-bar';
-import { dayjs } from '../../../../services/datetime';
 import Anchor from './Anchor';
 import styles from './styles.module.css';
 import Tag from './Tag';

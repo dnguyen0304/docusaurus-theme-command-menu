@@ -3,7 +3,6 @@ declare module '@docupotamus/docusaurus-theme-command-menu' {
         Source as SourceBase,
         Target
     } from '@docupotamus/docusaurus-lib-common';
-    import type { KeySequence } from 'react-hotkeys';
 
     interface PluginOptions {
         readonly swizzleIsEnabled: boolean;
@@ -37,16 +36,6 @@ declare module '@docupotamus/docusaurus-theme-command-menu' {
     type KeyBindings =
         | 'COMMAND_MENU_CLOSE'
         | 'COMMAND_MENU_OPEN';
-
-    type KeyMap = {
-        [key in KeyBindings]: KeySequence;
-    };
-
-    type KeyHandlers = {
-        [key in KeyBindings]: (
-            keyboardEvent?: KeyboardEvent | undefined,
-        ) => void;
-    };
 }
 
 declare module '@docusaurus/theme-command-menu' {

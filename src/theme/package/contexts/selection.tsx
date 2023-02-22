@@ -12,7 +12,7 @@ const Context = React.createContext<ContextValue | undefined>(undefined);
 const useContextValue = (): ContextValue => {
     const [range, setRange] = React.useState<Range | null>(null);
 
-    const rangeObserverRef = React.useRef<SelectionObserver>(null);
+    const rangeObserverRef = React.useRef<SelectionObserver | null>(null);
 
     React.useEffect(() => {
         rangeObserverRef.current = new SelectionObserver(

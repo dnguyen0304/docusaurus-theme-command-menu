@@ -50,41 +50,41 @@ export default function StarButton(): JSX.Element {
                 index: intersectedShortcutIndex,
             });
         } else {
-            if (range && shortcutIndex !== notFound) {
-                // TODO(dnguyen0304): Extract to a centralized location to
-                //   facilitate maintenance.
-                const selector =
-                    new RangeAnchor(document.body, range).toSelector();
-                const selectorEncoded = btoa(JSON.stringify(selector));
-                const href =
-                    new URI()
-                        .addSearch(
-                            SEARCH_PARAM_SELECTOR_ENCODED,
-                            selectorEncoded)
-                        .toString();
-                const hrefUserFriendly =
-                    new URI()
-                        // TODO(dnguyen0304): Investigate removing all
-                        //   search params.
-                        .removeSearch(SEARCH_PARAM_SELECTOR_ENCODED)
-                        .toString();
-                dispatchShortcuts({
-                    type: 'setShortcut',
-                    index: shortcutIndex,
-                    newValue: {
-                        source: {
-                            href,
-                            hrefUserFriendly,
-                        },
-                        selectors: [selector],
-                        heading: `Shortcut #${shortcutIndex + 1}`,
-                        // TODO(dnguyen0304): Investigate using
-                        //   Range.cloneContents().children to handle
-                        //   formatting ranges containing multiple elements.
-                        snippet: range?.toString(),
-                    },
-                });
+            if (!range || shortcutIndex === notFound) {
+                return;
             }
+            // TODO(dnguyen0304): Extract to a centralized location to
+            //   facilitate maintenance.
+            const selector = new RangeAnchor(document.body, range).toSelector();
+            const selectorEncoded = btoa(JSON.stringify(selector));
+            const href =
+                new URI()
+                    .addSearch(
+                        SEARCH_PARAM_SELECTOR_ENCODED,
+                        selectorEncoded)
+                    .toString();
+            const hrefUserFriendly =
+                new URI()
+                    // TODO(dnguyen0304): Investigate removing all
+                    //   search params.
+                    .removeSearch(SEARCH_PARAM_SELECTOR_ENCODED)
+                    .toString();
+            dispatchShortcuts({
+                type: 'setShortcut',
+                index: shortcutIndex,
+                newValue: {
+                    source: {
+                        href,
+                        hrefUserFriendly,
+                    },
+                    selectors: [selector],
+                    heading: `Shortcut #${shortcutIndex + 1}`,
+                    // TODO(dnguyen0304): Investigate using
+                    //   Range.cloneContents().children to handle
+                    //   formatting ranges containing multiple elements.
+                    snippet: range?.toString(),
+                },
+            });
         }
     };
 

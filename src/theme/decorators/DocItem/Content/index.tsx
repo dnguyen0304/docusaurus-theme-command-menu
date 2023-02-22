@@ -48,6 +48,47 @@ const rangeContainsNode = (range: Range, node: Node): boolean => {
     }
 };
 
+const checkIntersection = (anchor: Range, other: Range): boolean => {
+    return (
+        checkIntersectionHelper(anchor, other)
+        || checkIntersectionHelper(other, anchor)
+    );
+};
+
+const checkIntersectionHelper = (anchor: Range, other: Range): boolean => {
+    // "If the startContainer is a Node of type Text, Comment, or
+    // CDATASection, then the offset is the number of characters from the
+    // start of the startContainer to the boundary point of the Range."
+    //
+    // See: https://developer.mozilla.org/en-US/docs/Web/API/Range/startOffset
+    const startIsText = anchor.startContainer.nodeType === Node.TEXT_NODE;
+    const endIsText = anchor.endContainer.nodeType === Node.TEXT_NODE;
+    const hasNonTextNode = !startIsText || !endIsText;
+    if (hasNonTextNode) {
+        const intersectsStart = rangeContainsNode(anchor, other.startContainer);
+        const intersectsEnd = rangeContainsNode(anchor, other.endContainer);
+        return intersectsStart || intersectsEnd;
+    }
+    // Use anchor.isPointInRange instead of other.isPointInRange to handle the
+    //   case where the anchor contains the entire other.
+    //
+    // isPointInRange returns true for ranges that are immediately adjacent. For
+    //   example:
+    //   Given:     <p>HelloWorld</p>
+    //   range1:    Hello
+    //   range2:    World
+    //   Returns:   true
+    const intersectsStart = anchor.isPointInRange(
+        other.startContainer,
+        other.startOffset,
+    );
+    const intersectsEnd = anchor.isPointInRange(
+        other.endContainer,
+        other.endOffset,
+    );
+    return intersectsStart || intersectsEnd;
+};
+
 interface Props {
     readonly children: React.ReactNode;
 };
@@ -62,17 +103,6 @@ const Inner = ({ children }: Props): JSX.Element => {
             setIntersectedShortcutIndex(undefined);
             return;
         }
-        // "If the startContainer is a Node of type Text, Comment, or
-        // CDATASection, then the offset is the number of characters from the
-        // start of the startContainer to the boundary point of the Range."
-        //
-        // See: https://developer.mozilla.org/en-US/docs/Web/API/Range/startOffset
-        const startIsText = activeRange.startContainer.nodeType === Node.TEXT_NODE;
-        const endIsText = activeRange.endContainer.nodeType === Node.TEXT_NODE;
-        if (!startIsText || !endIsText) {
-            console.warn('Saving shortcuts for non-text Nodes is not yet implemented.');
-            return;
-        }
         for (let i = 0; i < shortcutsOnPage.length; ++i) {
             const selector = shortcutsOnPage[i]?.selectors[0];
             if (!selector) {
@@ -83,25 +113,11 @@ const Inner = ({ children }: Props): JSX.Element => {
                 RangeAnchor
                     .fromSelector(document.body, selector)
                     .toRange();
-            // Use activeRange.isPointInRange instead of
-            //   shortcutRange.isPointInRange to handle the case where the
-            //   activeRange contains the entire shortcutRange.
-            //
-            // isPointInRange returns true for ranges that are immediately
-            //   adjacent. For example:
-            //   Given:     <p>HelloWorld</p>
-            //   range1:    Hello
-            //   range2:    World
-            //   Returns:   true
-            const intersectsStart = activeRange.isPointInRange(
-                shortcutRange.startContainer,
-                shortcutRange.startOffset,
+            const hasIntersection = checkIntersection(
+                activeRange,
+                shortcutRange,
             );
-            const intersectsEnd = activeRange.isPointInRange(
-                shortcutRange.endContainer,
-                shortcutRange.endOffset,
-            );
-            if (intersectsStart || intersectsEnd) {
+            if (hasIntersection) {
                 setIntersectedShortcutIndex(i);
                 return;
             }

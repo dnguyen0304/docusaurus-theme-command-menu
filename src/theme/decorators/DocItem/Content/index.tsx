@@ -70,10 +70,10 @@ const checkIntersectionHelper = (anchor: Range, other: Range): boolean => {
         return intersectsStart || intersectsEnd;
     }
     // Use anchor.isPointInRange instead of other.isPointInRange to handle the
-    //   case where the anchor contains the entire other.
+    // case where the anchor contains the entire other.
     //
     // isPointInRange returns true for ranges that are immediately adjacent. For
-    //   example:
+    // example:
     //   Given:     <p>HelloWorld</p>
     //   range1:    Hello
     //   range2:    World

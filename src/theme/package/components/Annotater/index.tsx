@@ -1,9 +1,11 @@
-import { rangeUtils } from '@docupotamus/docusaurus-lib-common/annotate';
+import {
+    rangeUtils,
+    SelectionTopCenterPositioner
+} from '@docupotamus/docusaurus-lib-common/annotate';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { useSelection } from '../../contexts/selection';
-import { SelectionTopCenterPositioner } from '../../services/annotate/tooltip/positioner';
 import StarButton from './StarButton';
 
 const ButtonGroup = styled(Box)({

@@ -38,10 +38,13 @@ const reducer = (prev: ShortcutData[], action: Action): ShortcutData[] => {
     }
     if (action.type === 'clearShortcut') {
         const newShortcut = {
-            ...oldShortcut,
+            source: {
+                href: '',
+                hrefUserFriendly: '',
+            },
+            selectors: [],
             heading: '',
             snippet: '',
-            href: '',
         };
         newShortcuts[action.index] = newShortcut;
     }

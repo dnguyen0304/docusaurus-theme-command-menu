@@ -35,6 +35,19 @@ const scrollToRange = () => {
     startElement?.classList?.add(styles.target__flicker ?? '');
 };
 
+const rangeContainsNode = (range: Range, node: Node): boolean => {
+    try {
+        const length = node.nodeValue?.length ?? node.childNodes.length;
+        const nodeStartIsBeforeRangeEnd = range.comparePoint(node, 0) <= 0;
+        const nodeEndIsAfterRangeStart = range.comparePoint(node, length) >= 0;
+        return nodeStartIsBeforeRangeEnd && nodeEndIsAfterRangeStart;
+    } catch (e) {
+        // Range.comparePoint fails if the range and node do not share an
+        // ancestor or if node is a DOCUMENT_TYPE_NODE.
+        return false;
+    }
+};
+
 interface Props {
     readonly children: React.ReactNode;
 };

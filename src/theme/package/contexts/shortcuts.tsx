@@ -51,6 +51,10 @@ const reducer = (prev: ShortcutData[], action: Action): ShortcutData[] => {
 interface ContextValue {
     readonly shortcuts: ShortcutData[];
     readonly dispatchShortcuts: React.Dispatch<Action>;
+    readonly intersectedShortcutIndex: number | undefined;
+    readonly setIntersectedShortcutIndex: React.Dispatch<React.SetStateAction<
+        number | undefined
+    >>;
 };
 
 const Context = React.createContext<ContextValue | undefined>(undefined);
@@ -70,15 +74,21 @@ const useContextValue = (): ContextValue => {
             snippet: '',
         }),
     );
+    const [intersectedShortcutIndex, setIntersectedShortcutIndex] =
+        React.useState<number | undefined>();
 
     return React.useMemo(
         () => ({
             shortcuts,
             dispatchShortcuts,
+            intersectedShortcutIndex,
+            setIntersectedShortcutIndex,
         }),
         [
             shortcuts,
             dispatchShortcuts,
+            intersectedShortcutIndex,
+            setIntersectedShortcutIndex,
         ],
     );
 };

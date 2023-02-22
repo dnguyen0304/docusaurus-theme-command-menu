@@ -42,8 +42,8 @@ export default styled(Box, {
     backgroundSize: '200%',
     overflow: 'hidden',
 
+    animationName: getAnimation(),
     animationDuration,
     animationIterationCount,
-    animationName: getAnimation(),
     animationTimingFunction: 'linear',
 }));

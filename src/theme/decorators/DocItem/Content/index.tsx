@@ -95,19 +95,19 @@ interface Props {
 
 const Inner = ({ children }: Props): JSX.Element => {
     const { range: activeRange } = useSelection();
-    const { setIntersectedShortcutIndex } = useShortcuts();
+    const { setIntersectedShortcutIndexes } = useShortcuts();
     const shortcutsOnPage = useShortcutsOnPage();
 
     React.useEffect(() => {
+        setIntersectedShortcutIndexes([]);
         if (!activeRange) {
-            setIntersectedShortcutIndex(undefined);
             return;
         }
         for (let i = 0; i < shortcutsOnPage.length; ++i) {
             const selector = shortcutsOnPage[i]?.selectors[0];
             if (!selector) {
                 // TODO(dnguyen0304): Add error handling.
-                return;
+                continue;
             }
             const shortcutRange =
                 RangeAnchor
@@ -118,11 +118,9 @@ const Inner = ({ children }: Props): JSX.Element => {
                 shortcutRange,
             );
             if (hasIntersection) {
-                setIntersectedShortcutIndex(i);
-                return;
+                setIntersectedShortcutIndexes(prev => [...prev, i]);
             }
         }
-        setIntersectedShortcutIndex(undefined);
     }, [activeRange, shortcutsOnPage]);
 
     React.useEffect(() => {

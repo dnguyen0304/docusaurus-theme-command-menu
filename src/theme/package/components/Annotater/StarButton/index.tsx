@@ -26,7 +26,7 @@ const useOpenShortcutIndex = (): number => {
 export default function StarButton(): JSX.Element {
     const shortcutIndex = useOpenShortcutIndex();
     const { range } = useSelection();
-    const { dispatchShortcuts, intersectedShortcutIndex } = useShortcuts();
+    const { dispatchShortcuts, intersectedShortcutIndexes } = useShortcuts();
 
     const [isClicked, setIsClicked] = React.useState<boolean>(false);
 
@@ -41,13 +41,11 @@ export default function StarButton(): JSX.Element {
         // range.insertNode(spanElement);
         // selection.removeAllRanges();
         if (isClicked) {
-            // By definition, this can never happen and is only for TypeScript.
-            if (intersectedShortcutIndex === undefined) {
-                return;
-            }
-            dispatchShortcuts({
-                type: 'clearShortcut',
-                index: intersectedShortcutIndex,
+            intersectedShortcutIndexes.forEach(index => {
+                dispatchShortcuts({
+                    type: 'clearShortcut',
+                    index,
+                });
             });
         } else {
             if (!range || shortcutIndex === notFound) {
@@ -100,8 +98,8 @@ export default function StarButton(): JSX.Element {
     };
 
     React.useEffect(() => {
-        setIsClicked(intersectedShortcutIndex !== undefined);
-    }, [intersectedShortcutIndex])
+        setIsClicked(intersectedShortcutIndexes.length !== 0);
+    }, [intersectedShortcutIndexes])
 
     return (
         <Tooltip

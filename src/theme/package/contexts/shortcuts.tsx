@@ -1,6 +1,6 @@
+import { ReactContextError } from '@docupotamus/docusaurus-lib-common/contexts';
 import type { ShortcutData } from '@docusaurus/theme-command-menu';
 import * as React from 'react';
-import { ReactContextError } from './errors';
 
 const shortcutCount: number = 6;
 

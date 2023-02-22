@@ -1,6 +1,6 @@
+import { ReactContextError } from '@docupotamus/docusaurus-lib-common/contexts';
 import { TimelineEventData } from '@docusaurus/theme-command-menu';
 import * as React from 'react';
-import { ReactContextError } from './errors';
 
 interface ContextValue {
     // Events are sorted by timestampMilli in ascending order.

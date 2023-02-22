@@ -55,10 +55,8 @@ export default function Annotater(): JSX.Element {
                 // The selected range does not contain any text.
                 return;
             }
-            const isBackwards = rangeUtils.isSelectionBackwards(selection);
             const { left, top } = new SelectionTopCenterPositioner().position(
                 focusRect,
-                isBackwards,
             );
             setIsVisible(true);
             setPositionTopPx(top);

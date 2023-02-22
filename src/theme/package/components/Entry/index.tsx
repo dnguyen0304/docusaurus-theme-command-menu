@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import TouchRipple, { TouchRippleActions } from '@mui/material/ButtonBase/TouchRipple';
 import { styled } from '@mui/material/styles';
+import Tooltip from '@mui/material/Tooltip';
 import * as React from 'react';
 import { useCommandMenu } from '../../contexts/command-menu';
 import Gradient from '../Gradient';
@@ -44,18 +45,26 @@ export default function Entry(): JSX.Element {
                 animationDuration='6s'
                 animationIterationCount='infinite'
             />
-            <Box
-                className={styles.circle}
-                onClick={() => setIsOpen(true)}
-                onMouseDown={startRipple}
-                onMouseUp={stopRipple}
-                onMouseOut={stopRipple}
+            <Tooltip
+                title={
+                    <>Open command menu (<kbd>shift</kbd><kbd>shift</kbd>)</>
+                }
+                enterDelay={500}
+                placement='top'
             >
-                <Logo
-                    className={styles.Logo}
-                    viewBox='140 700 1600 600'
-                />
-            </Box>
+                <Box
+                    className={styles.circle}
+                    onClick={() => setIsOpen(true)}
+                    onMouseDown={startRipple}
+                    onMouseUp={stopRipple}
+                    onMouseOut={stopRipple}
+                >
+                    <Logo
+                        className={styles.Logo}
+                        viewBox='140 700 1600 600'
+                    />
+                </Box>
+            </Tooltip>
             <TouchRipple
                 ref={rippleRef}
                 center={false}

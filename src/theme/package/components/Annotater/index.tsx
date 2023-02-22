@@ -1,9 +1,9 @@
+import { rangeUtils } from '@docupotamus/docusaurus-lib-common/annotate';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { useSelection } from '../../contexts/selection';
 import { SelectionTopCenterPositioner } from '../../services/annotate/tooltip/positioner';
-import * as rangeUtils from '../../services/annotate/utils/range'; /* TODO(dnguyen0304): Fix missing type declaration. */
 import StarButton from './StarButton';
 
 const ButtonGroup = styled(Box)({

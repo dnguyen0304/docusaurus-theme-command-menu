@@ -1,6 +1,6 @@
+import { SelectionObserver } from '@docupotamus/docusaurus-lib-common/annotate';
 import { ReactContextError } from '@docupotamus/docusaurus-lib-common/contexts';
 import * as React from 'react';
-import { SelectionObserver } from '../services/annotate/selection-observer'; /* TODO(dnguyen0304): Fix missing type declaration. */
 
 interface ContextValue {
     readonly range: Range | null;

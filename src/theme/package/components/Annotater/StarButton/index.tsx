@@ -26,7 +26,7 @@ const useOpenShortcutIndex = (): number => {
 export default function StarButton(): JSX.Element {
     const shortcutIndex = useOpenShortcutIndex();
     const { range } = useSelection();
-    const { dispatchShortcuts } = useShortcuts();
+    const { dispatchShortcuts, intersectedShortcutIndex } = useShortcuts();
 
     const [isClicked, setIsClicked] = React.useState<boolean>(false);
 
@@ -40,56 +40,52 @@ export default function StarButton(): JSX.Element {
         // spanElement.appendChild(range.extractContents());
         // range.insertNode(spanElement);
         // selection.removeAllRanges();
-        setIsClicked(prev => {
-            const newValue = !prev;
-            if (shortcutIndex === notFound) {
-                return newValue;
+        if (isClicked) {
+            // By definition, this can never happen and is only for TypeScript.
+            if (intersectedShortcutIndex === undefined) {
+                return;
             }
-            if (prev) {
+            dispatchShortcuts({
+                type: 'clearShortcut',
+                index: intersectedShortcutIndex,
+            });
+        } else {
+            if (range && shortcutIndex !== notFound) {
+                // TODO(dnguyen0304): Extract to a centralized location to
+                //   facilitate maintenance.
+                const selector =
+                    new RangeAnchor(document.body, range).toSelector();
+                const selectorEncoded = btoa(JSON.stringify(selector));
+                const href =
+                    new URI()
+                        .addSearch(
+                            SEARCH_PARAM_SELECTOR_ENCODED,
+                            selectorEncoded)
+                        .toString();
+                const hrefUserFriendly =
+                    new URI()
+                        // TODO(dnguyen0304): Investigate removing all
+                        //   search params.
+                        .removeSearch(SEARCH_PARAM_SELECTOR_ENCODED)
+                        .toString();
                 dispatchShortcuts({
-                    type: 'clearShortcut',
-                    // TODO(dnguyen0304): Add real implementation.
-                    index: 2,
-                });
-            } else {
-                if (range && shortcutIndex !== notFound) {
-                    // TODO(dnguyen0304): Extract to a centralized location to
-                    //   facilitate maintenance.
-                    const selector =
-                        new RangeAnchor(document.body, range).toSelector();
-                    const selectorEncoded = btoa(JSON.stringify(selector));
-                    const href =
-                        new URI()
-                            .addSearch(
-                                SEARCH_PARAM_SELECTOR_ENCODED,
-                                selectorEncoded)
-                            .toString();
-                    const hrefUserFriendly =
-                        new URI()
-                            // TODO(dnguyen0304): Investigate removing all
-                            //   search params.
-                            .removeSearch(SEARCH_PARAM_SELECTOR_ENCODED)
-                            .toString();
-                    dispatchShortcuts({
-                        type: 'setShortcut',
-                        index: shortcutIndex,
-                        newValue: {
-                            source: {
-                                href,
-                                hrefUserFriendly,
-                            },
-                            selectors: [selector],
-                            heading: `Shortcut #${shortcutIndex + 1}`,
-                            // TODO(dnguyen0304): Investigate using
-                            //   Range.cloneContents().children to handle
-                            //   formatting ranges containing multiple elements.
-                            snippet: range?.toString(),
+                    type: 'setShortcut',
+                    index: shortcutIndex,
+                    newValue: {
+                        source: {
+                            href,
+                            hrefUserFriendly,
                         },
-                    });
-                }
+                        selectors: [selector],
+                        heading: `Shortcut #${shortcutIndex + 1}`,
+                        // TODO(dnguyen0304): Investigate using
+                        //   Range.cloneContents().children to handle
+                        //   formatting ranges containing multiple elements.
+                        snippet: range?.toString(),
+                    },
+                });
             }
-            return newValue;
-        });
+        }
     };
 
     const getTooltipTitle = (): string => {
@@ -102,6 +98,10 @@ export default function StarButton(): JSX.Element {
             return 'Star';
         }
     };
+
+    React.useEffect(() => {
+        setIsClicked(intersectedShortcutIndex !== undefined);
+    }, [intersectedShortcutIndex])
 
     return (
         <Tooltip

@@ -2,7 +2,7 @@ declare module '@docupotamus/docusaurus-theme-command-menu' {
     import type {
         Source as SourceBase,
         Target
-    } from '@docupotamus/docusaurus-lib-common';
+    } from '@docupotamus/docusaurus-lib-common/types';
 
     interface PluginOptions {
         readonly swizzleIsEnabled: boolean;

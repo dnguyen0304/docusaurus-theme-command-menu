@@ -1,4 +1,4 @@
-import { RangeAnchor } from '@docupotamus/docusaurus-lib-common/annotate/anchor';
+import { RangeAnchor } from '@docupotamus/docusaurus-lib-common/annotate';
 import StarIcon from '@mui/icons-material/Star';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import IconButton from '@mui/material/IconButton';

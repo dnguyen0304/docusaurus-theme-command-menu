@@ -1,6 +1,6 @@
 import {
     RangeAnchor
-} from '@docupotamus/docusaurus-lib-common/annotate/anchor';
+} from '@docupotamus/docusaurus-lib-common/annotate';
 import * as React from 'react';
 import Annotater from '../../../package/components/Annotater';
 import { SEARCH_PARAM_SELECTOR_ENCODED } from '../../../package/constants';

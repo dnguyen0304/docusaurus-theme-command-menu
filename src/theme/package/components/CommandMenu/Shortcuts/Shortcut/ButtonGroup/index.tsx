@@ -33,12 +33,12 @@ const StyledBox = styled(Box, {
             color: 'var(--cm-color-base)',
         },
     },
-    ['& a.MuiIconButton-root:first-of-type']: {
+    '& a.MuiIconButton-root:first-of-type': {
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         paddingTop: '24px',
     },
-    [`& button.MuiIconButton-root:last-of-type`]: {
+    '& button.MuiIconButton-root:last-of-type': {
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
         paddingBottom: '24px',

@@ -1,8 +1,8 @@
 .Shortcut_card {
     opacity: 0;
+    animation-name: fade-in;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
-    animation-name: fade-in;
 
     /* transform: scale(0.5);
     animation-delay: calc(0.09s * var(--animation-order));

@@ -9,6 +9,7 @@ const Tile = styled(Box)({
     height: '100%',
 
     position: 'absolute',
+
     '&:before': {
         content: '""',
         position: 'absolute',
